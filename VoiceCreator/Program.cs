@@ -1,79 +1,45 @@
 ﻿using System;
-using Microsoft.Speech.Recognition;
+using System.IO;
+using NLog;
 
-namespace VoiceRecognition
+namespace VoiceCreator
 {
     class Program
     {
-        static bool done = false;
-
         static void Main(string[] args)
         {
-            // Select a speech recognizer that supports English.  
-            foreach (RecognizerInfo ri in SpeechRecognitionEngine.InstalledRecognizers())
+            //Initialize logger
+            var config = new NLog.Config.LoggingConfiguration();
+
+            // Targets where to log to: File and Console
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "file.txt" };
+            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+
+            // Rules for mapping loggers to targets            
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
+
+            // Apply config           
+            NLog.LogManager.Configuration = config;
+
+            //
+            VoiceSynthesis vc = new VoiceSynthesis(LogManager.GetCurrentClassLogger());
+
+            while (true)
             {
-                Console.WriteLine(ri.Culture);
-            }
+                string s = Console.ReadLine();
+                if (s == "done")
+                {
+                    break;
+                }
 
-            try
-            {
-                Console.WriteLine("I'm listening");
+                string file;
 
-                System.Globalization.CultureInfo ci =
-                  new System.Globalization.CultureInfo("ru-ru");
-                SpeechRecognitionEngine sre =
-                  new SpeechRecognitionEngine(ci);
-                sre.SetInputToDefaultAudioDevice();
-                sre.SpeechRecognized += sre_SpeechRecognized;
-                sre.RecognizeCompleted += sre_RecognizeCompleted;
+                vc.Text2File(s, out file);
+                Console.WriteLine(file);
 
-                Choices colorChoices = new Choices();
-                colorChoices.Add("направо");
-                colorChoices.Add("налево");
-                colorChoices.Add("вперёд");
-                colorChoices.Add("назад");
-                colorChoices.Add("всё"); // quit
-
-                GrammarBuilder colorsGrammarBuilder =
-                  new GrammarBuilder();
-                colorsGrammarBuilder.Culture = ci;
-                colorsGrammarBuilder.Append(colorChoices);
-                Grammar keyWordsGrammar =
-                  new Grammar(colorsGrammarBuilder);
-                sre.LoadGrammarAsync(keyWordsGrammar);
-
-                sre.RecognizeAsync(RecognizeMode.Multiple);
-
-                while (done == false) {; }
-
-                Console.WriteLine("Done");
-                Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.ReadLine();
+                var filedata = File.ReadAllBytes(file);
             }
         } // Main
-
-        static void sre_SpeechRecognized(object sender,
-          SpeechRecognizedEventArgs e)
-        {
-            if (e.Result.Text == "всё")
-            {
-                ((SpeechRecognitionEngine)sender).RecognizeAsyncCancel();
-                return;
-            }
-            if (e.Result.Confidence >= 0.75)
-                Console.WriteLine("I heard " + e.Result.Text);
-            else
-                Console.WriteLine("Unknown word");
-        }
-
-        static void sre_RecognizeCompleted(object sender,
-          RecognizeCompletedEventArgs e)
-        {
-            done = true;
-        }
-    } // class Program
+    }
 } // ns

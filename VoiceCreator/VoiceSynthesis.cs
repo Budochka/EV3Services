@@ -13,7 +13,7 @@ namespace VoiceCreator
         public VoiceSynthesis(Logger log)
         { 
             _logs = log;
-            _logs.Debug("Initializing speech synthesizer");
+            _logs.Info("Initializing speech synthesizer");
 
             try
             {
@@ -23,15 +23,26 @@ namespace VoiceCreator
             {
                 _logs.Error(ex, "Error creating speech synthesizer");
             }
+
+            //Now we need to get voice that supports RU
+            System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ru-ru");
+            var voicesList = _speechSynthesizer.GetInstalledVoices(ci);
+            if (voicesList.Count < 1)
+            {
+                _logs.Error(new Exception(), "No support for Russian language installed");
+            }
+            _speechSynthesizer.SelectVoice(voicesList[0].VoiceInfo.Name);
         }
 
-        public bool Text2File(in string text, out string filepath)
+        public void Text2File(in string text, out string filepath)
         {
-            filepath = GetTempFileName();
+            filepath = Path.GetTempFileName();
 
             try
             {
                 _speechSynthesizer.SetOutputToWaveFile(filepath);
+                _speechSynthesizer.Speak(text);
+                _speechSynthesizer.SetOutputToNull();
             }
             catch (Exception ex)
             {
