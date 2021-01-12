@@ -5,24 +5,23 @@ using System;
 
 namespace VoiceCreator
 {
-    class RabbitConnector
+    class RabbitPublisher
     {
         private IModel _channel;
         private IConnection _connection;
         private Logger _logs;
 
-        public RabbitConnector(Logger log)
+        public RabbitPublisher(Logger log)
         {
             _logs = log;
         }
 
-        public bool ConnectToRabbit(in string user, in string pass, in string vhost, in string hostName, in int port, in EventHandler<BasicDeliverEventArgs> ev)
+        public bool ConnectToRabbit(in string user, in string pass, in string hostName, in int port)
         {
             ConnectionFactory factory = new ConnectionFactory()
             {
                 UserName = user,
                 Password = pass,
-                VirtualHost = vhost,
                 HostName = hostName,
                 Port = port,
                 AutomaticRecoveryEnabled = true
@@ -53,19 +52,13 @@ namespace VoiceCreator
             _channel.ExchangeDeclare(exchange: "EV3", type: "topic", autoDelete: true);
             _logs.Info("Exchange created");
 
-            var queueName = _channel.QueueDeclare().QueueName;
-            _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "voice.text");
-            _logs.Info("Queue binding complete");
-
-            var consumer = new EventingBasicConsumer(_channel);
-            consumer.Received += ev;
-            _logs.Info("Event hadler set");
-
             return true;
         }
 
-        ~RabbitConnector()
+        ~RabbitPublisher()
         {
+            _logs.Info("Destructor called");
+
             if (_channel != null)
             {
                 _channel.Close();
@@ -74,6 +67,14 @@ namespace VoiceCreator
             if (_connection != null)
             {
                 _connection.Close();
+            }
+        }
+
+        public void Publish(in byte[] data)
+        {
+            if (_channel != null)
+            {
+                _channel.BasicPublish(exchange: "EV3", routingKey: "voice.generated.wav", basicProperties: null, body: data);
             }
         }
     }

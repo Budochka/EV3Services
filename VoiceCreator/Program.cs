@@ -32,7 +32,8 @@ namespace VoiceCreator
             var logfile = new NLog.Targets.FileTarget("logfile")
             {
                 FileName = config.LogFileName,
-                DeleteOldFileOnStartup = true
+                DeleteOldFileOnStartup = true,
+                Layout = "${longdate} : ${callsite} : ${message}"
             };
 
             // set logging rules
@@ -41,41 +42,11 @@ namespace VoiceCreator
             // Apply config           
             NLog.LogManager.Configuration = NlogConfig;
 
-            new RabbitConnector(LogManager.GetCurrentClassLogger()).
-                ConnectToRabbit(config.RabbitUserName, config.RabbitPassword, config.RabbitVHost, config.RabbitHost, config.RabbitPort, HandleRabbitMessage);
-
-            VoiceSynthesis vc = new VoiceSynthesis(LogManager.GetCurrentClassLogger());
-
-            while (true)
-            {
-                string s = Console.ReadLine();
-                if (s == "done")
-                {
-                    break;
-                }
-
-                string file;
-
-                vc.Text2File(s, out file);
-                Console.WriteLine(file);
-
-                var filedata = File.ReadAllBytes(file);
-            }
+            Worker worker = new Worker(LogManager.GetCurrentClassLogger(), config);
+            worker.Initialize();
+            worker.Start();
+            Console.WriteLine("Press Enter to exit");
+            Console.ReadLine();
         } // Main
-
-        public static void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
-        {
-            string body = args.Body.ToString();
-            if (body.Length > 0)
-            {
-                VoiceSynthesis vc = new VoiceSynthesis(LogManager.GetCurrentClassLogger());
-                string file;
-
-                vc.Text2File(body, out file);
-                var filedata = File.ReadAllBytes(file);
-            }
-
-            ((IModel)sender).BasicAck(args.DeliveryTag, false);
-        }
     }
 } // ns

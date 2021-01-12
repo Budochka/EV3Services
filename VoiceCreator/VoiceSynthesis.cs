@@ -38,6 +38,8 @@ namespace VoiceCreator
         {
             filepath = Path.GetTempFileName();
 
+            _logs.Info("Converting text {0} to file {1}", text, filepath);
+
             try
             {
                 _speechSynthesizer.SetOutputToWaveFile(filepath);
