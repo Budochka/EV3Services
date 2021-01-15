@@ -2,8 +2,6 @@
 using System.IO;
 using NLog;
 using System.Text.Json;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 
 namespace VoiceCreator
 {
@@ -47,6 +45,7 @@ namespace VoiceCreator
             worker.Start();
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
+            worker.Stop();
         } // Main
     }
 } // ns

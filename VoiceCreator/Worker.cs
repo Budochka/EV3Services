@@ -56,21 +56,26 @@ namespace VoiceCreator
 
         public void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
-            string body = args.Body.ToString();
-            if ((body.Length > 0) && _started)
+            var bytes = args.Body.ToArray();
+            if ((bytes.Length > 0) && _started)
             {
+                char[] chars = new char[bytes.Length / sizeof(char)];
+                Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
+                string text = new string(chars);
+
                 string file;
 
                 if (_vs != null)
                 {
-                    _vs.Text2File(body, out file);
+                    _vs.Text2File(text, out file);
                     var filedata = File.ReadAllBytes(file);
                     File.Delete(file);
                     _publisher.Publish(filedata);
                 }
             }
 
-            ((IModel)sender).BasicAck(args.DeliveryTag, false);
+            EventingBasicConsumer ec = (EventingBasicConsumer)sender;
+            ec.Model.BasicAck(args.DeliveryTag, false);
         }
     }
 }
