@@ -11,4 +11,6 @@
 #include <cstring>
 #include <cassert>
 #include <iostream>
+#include <fstream>
+#include <boost/json.hpp>
 #include <Poco/Net/StreamSocket.h>

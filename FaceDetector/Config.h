@@ -3,34 +3,73 @@
 class Config
 {
 private:
-    string _logFileName;
-    string _rabbitUserName;
-    string _rabbitPassword;
-    string _rabbitVHost;
-    string _rabbitHost;
-    int _rabbitPort;
+	std::string _logFileName = "";
+    std::string _rabbitUserName = "guest";
+    std::string _rabbitPassword = "guest";
+    std::string _rabbitVHost = "/";
+    std::string _rabbitHost = "localhost";
+    uint16_t _rabbitPort = 5672;
 
 public:
-    Config(const string fileName);
+	Config(const std::string fileName);
 
-    const string GetLogFileName()
-    {
-        return _logFileName;
-    }
+	[[nodiscard]] std::string log_file_name() const
+	{
+		return _logFileName;
+	}
 
-    void SetLogFileName(string logFileName)
-    {
-        _logFileName = logFileName;
-    }
+	void set_log_file_name(std::string log_file_name)
+	{
+		_logFileName = log_file_name;
+	}
 
-    const string RabbitUserName() 
-    {
-        return _rabbitUserName;
-    }
+	[[nodiscard]] std::string rabbit_user_name() const
+	{
+		return _rabbitUserName;
+	}
 
-    string RabbitPassword{ get; set; }
-    string RabbitVHost{ get; set; }
-    string RabbitHost{ get; set; }
-    int RabbitPort{ get; set; }
-*/
+	void set_rabbit_user_name(std::string rabbit_user_name)
+	{
+		_rabbitUserName = rabbit_user_name;
+	}
+
+	[[nodiscard]] std::string rabbit_password() const
+	{
+		return _rabbitPassword;
+	}
+
+	void set_rabbit_password(std::string rabbit_password)
+	{
+		_rabbitPassword = rabbit_password;
+	}
+
+	[[nodiscard]] std::string rabbit_v_host() const
+	{
+		return _rabbitVHost;
+	}
+
+	void set_rabbit_v_host(std::string rabbit_v_host)
+	{
+		_rabbitVHost = rabbit_v_host;
+	}
+
+	[[nodiscard]] std::string rabbit_host() const
+	{
+		return _rabbitHost;
+	}
+
+	void set_rabbit_host(std::string rabbit_host)
+	{
+		_rabbitHost = rabbit_host;
+	}
+
+	[[nodiscard]] uint16_t rabbit_port() const
+	{
+		return _rabbitPort;
+	}
+
+	void set_rabbit_port(uint16_t rabbit_port)
+	{
+		_rabbitPort = rabbit_port;
+	}
 };

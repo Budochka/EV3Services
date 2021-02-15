@@ -58,8 +58,9 @@ namespace
     };
 }
 
-struct SimplePocoHandlerImpl
+class SimplePocoHandlerImpl
 {
+public:
     SimplePocoHandlerImpl() :
         connected(false),
         connection(nullptr),
@@ -70,6 +71,7 @@ struct SimplePocoHandlerImpl
     {
     }
 
+public:	
     Poco::Net::StreamSocket socket;
     bool connected;
     AMQP::Connection* connection;
@@ -78,6 +80,7 @@ struct SimplePocoHandlerImpl
     Buffer outBuffer;
     std::vector<char> tmpBuff;
 };
+
 SimplePocoHandler::SimplePocoHandler(const std::string& host, uint16_t port) :
     m_impl(new SimplePocoHandlerImpl)
 {

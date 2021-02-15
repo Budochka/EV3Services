@@ -59,23 +59,14 @@ namespace VoiceCreator
         {
             _logs.Info("Destructor called");
 
-            if (_channel != null)
-            {
-                _channel.Close();
-            }
+            _channel?.Close();
 
-            if (_connection != null)
-            {
-                _connection.Close();
-            }
+            _connection?.Close();
         }
 
         public void Publish(in byte[] data)
         {
-            if (_channel != null)
-            {
-                _channel.BasicPublish(exchange: "EV3", routingKey: "voice.generated.wav", basicProperties: null, body: data);
-            }
+            _channel?.BasicPublish(exchange: "EV3", routingKey: "voice.generated.wav", basicProperties: null, body: data);
         }
     }
 }

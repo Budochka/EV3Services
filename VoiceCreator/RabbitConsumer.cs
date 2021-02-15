@@ -76,15 +76,9 @@ namespace VoiceCreator
         {
             _logs.Info("Destructor called");
 
-            if (_channel != null)
-            {
-                _channel.Close();
-            }
+            _channel?.Close();
 
-            if (_connection != null)
-            {
-                _connection.Close();
-            }
+            _connection?.Close();
         }
     }
 }

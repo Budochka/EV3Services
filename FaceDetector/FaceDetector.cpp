@@ -3,15 +3,18 @@
 
 #include "stdafx.h"
 
+#include "Config.h"
 #include "SimplePocoHandler.h"
 
 using namespace std;
 
 int main()
 {
-    SimplePocoHandler handler("localhost", 5672);
+    Config cfg("config.json");
+	
+    SimplePocoHandler handler(cfg.rabbit_host(), cfg.rabbit_port());
 
-    AMQP::Connection connection(&handler, AMQP::Login("guest", "guest"), "/");
+    AMQP::Connection connection(&handler, AMQP::Login(cfg.rabbit_user_name(), cfg.rabbit_password()), cfg.rabbit_v_host());
 
     AMQP::Channel channel(&connection);
     auto receiveMessageCallback = [](const AMQP::Message& message,
@@ -37,5 +40,6 @@ int main()
 
     std::cout << " [*] Waiting for messages. To exit press CTRL-C\n";
     handler.loop();
+
     return 0;
 }

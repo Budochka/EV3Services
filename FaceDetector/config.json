@@ -1,0 +1,7 @@
+{
+	"LogFileName": "FaceDetectorLog.txt",
+        "RabbitUserName": "guest",
+        "RabbitPassword": "guest",
+        "RabbitHost": "localhost",
+        "RabbitPort": 5672
+}
