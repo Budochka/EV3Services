@@ -4,6 +4,7 @@
 #include "stdafx.h"
 
 #include "Config.h"
+#include "FaceFinder.h"
 #include "SimplePocoHandler.h"
 
 using namespace std;
@@ -11,7 +12,8 @@ using namespace std;
 int main()
 {
     Config cfg("config.json");
-	
+
+    FaceFinder ff(cfg.facePredictorSetPath(), cfg.shapePredictorSetPath());
     SimplePocoHandler handler(cfg.rabbit_host(), cfg.rabbit_port());
 
     AMQP::Connection connection(&handler, AMQP::Login(cfg.rabbit_user_name(), cfg.rabbit_password()), cfg.rabbit_v_host());
@@ -27,7 +29,7 @@ int main()
     AMQP::QueueCallback callback =
         [&](const std::string& name, int msgcount, int consumercount)
     {
-        channel.bindQueue("logs", name, "");
+        channel.bindQueue("EV3", "images.general", "");
         channel.consume(name, AMQP::noack).onReceived(receiveMessageCallback);
     };
 

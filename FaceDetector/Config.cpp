@@ -22,5 +22,7 @@ Config::Config(const std::string fileName)
     _rabbitUserName = data["RabbitUserName"].as_string().c_str();
     _rabbitPassword = data["RabbitPassword"].as_string().c_str();
     _rabbitHost = data["RabbitHost"].as_string().c_str();
+    _face_predictor_set_path = data["FacePredictorSet"].as_string().c_str();
+    _shape_predictor_set_path = data["ShapePredictorSet"].as_string().c_str();
     _rabbitPort = data["RabbitPort"].as_int64();
 }

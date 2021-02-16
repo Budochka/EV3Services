@@ -78,14 +78,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;D:\dlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc16\lib;D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;D:\dlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc16\lib;D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -128,6 +128,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>dlib19.21.99_debug_64bit_msvc1928.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -153,6 +154,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_world450.lib;dlib19.21.99_release_64bit_msvc1928.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -165,10 +167,12 @@
   <ItemGroup>
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FaceDetector.cpp" />
+    <ClCompile Include="FaceFinder.cpp" />
     <ClCompile Include="SimplePocoHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
+    <ClInclude Include="FaceFinder.h" />
     <ClInclude Include="SimplePocoHandler.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
