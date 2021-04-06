@@ -9,6 +9,8 @@
 
 using namespace std;
 
+BOOST_LOG_INLINE_GLOBAL_LOGGER_DEFAULT(my_logger, src::);
+
 int main()
 {
     Config cfg("config.json");
@@ -19,10 +21,16 @@ int main()
     AMQP::Connection connection(&handler, AMQP::Login(cfg.rabbit_user_name(), cfg.rabbit_password()), cfg.rabbit_v_host());
 
     AMQP::Channel channel(&connection);
-    auto receiveMessageCallback = [](const AMQP::Message& message,
+    auto receiveMessageCallback = [&ff, &connection](const AMQP::Message& message,
         uint64_t deliveryTag,
         bool redelivered)
     {
+    	if (!redelivered)
+    	{
+            ff.SetImage(message.body(), message.size());
+            ff.FindFaces();
+    	}
+           
         cout << " [x] " << message.body() << endl;
     };
 

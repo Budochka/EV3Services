@@ -18,6 +18,11 @@
 #include <boost/iostreams/stream.hpp>
 #include <boost/iostreams/device/back_inserter.hpp>
 #include <boost/iostreams/stream.hpp>
+#include <boost/log/sources/global_logger_storage.hpp>
+
+namespace logging = boost::log;
+namespace src = boost::log::sources;
+namespace keywords = boost::log::keywords;
 
 #include <Poco/Net/StreamSocket.h>
 

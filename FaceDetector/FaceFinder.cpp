@@ -44,6 +44,7 @@ void FaceFinder::PublishFaces(AMQP::Channel& channel)
 {
 	for (auto it = _found_faces.begin(); it != _found_faces.end(); ++it)
 	{
+		//convert image to bytes using streams
 		std::vector<char> v;
 		boost::iostreams::back_insert_device<std::vector<char>> sink{ v };
 		boost::iostreams::stream<boost::iostreams::back_insert_device<std::vector<char>>> os{ sink };
