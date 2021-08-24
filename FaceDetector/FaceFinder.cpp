@@ -32,6 +32,11 @@ UINT FaceFinder::FindFaces()
 	return _found_faces.size();
 }
 
+UINT FaceFinder::NumberOfFaces() const
+{
+	return _found_faces.size();
+}
+
 //returns image by index. Number of images is returned by FindFaces() function
 const dlib::matrix<dlib::rgb_pixel>* FaceFinder::GetImage(UINT index)
 {

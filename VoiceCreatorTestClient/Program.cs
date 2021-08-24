@@ -12,6 +12,7 @@ namespace VoiceCreatorTestClient
         static void Main(string[] args)
         {
             ConnectionFactory factory = new ConnectionFactory()
+
             {
                 UserName = "guest",
                 Password = "guest",

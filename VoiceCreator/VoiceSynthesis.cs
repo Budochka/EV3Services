@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Microsoft.Speech.Synthesis;
+using System.Speech.Synthesis;
 using NLog;
 
 namespace VoiceCreator
@@ -23,6 +23,9 @@ namespace VoiceCreator
             {
                 _logs.Error(ex, "Error creating speech synthesizer");
             }
+
+            if (_speechSynthesizer == null)
+                return;
 
             //Now we need to get voice that supports RU
             System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ru-ru");

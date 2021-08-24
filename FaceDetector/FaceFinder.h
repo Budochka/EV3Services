@@ -29,9 +29,11 @@ public:
 	//sets image from data in dng (dlib file format)
 	void SetImage(const char* data, UINT size_of_image);
 
-	//returns number of found faces
+	//looks for faces on received image, put them into array and returns number of found faces
 	UINT FindFaces();
-
+	//returns number of already found faces
+	UINT NumberOfFaces() const;
+	
 	//returns image by index. Number of images is returned by FindFaces() function
 	const dlib::matrix<dlib::rgb_pixel>* GetImage(UINT index);
 

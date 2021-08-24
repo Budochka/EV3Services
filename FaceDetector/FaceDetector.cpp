@@ -4,49 +4,25 @@
 #include "stdafx.h"
 
 #include "Config.h"
-#include "FaceFinder.h"
 #include "SimplePocoHandler.h"
+#include "RabbitConsumer.h"
+#include "RabbitPublisher.h"
 
 using namespace std;
 
-BOOST_LOG_INLINE_GLOBAL_LOGGER_DEFAULT(my_logger, src::);
+BOOST_LOG_INLINE_GLOBAL_LOGGER_DEFAULT(my_logger, src::logger_mt);
 
 int main()
 {
     Config cfg("config.json");
 
-    FaceFinder ff(cfg.facePredictorSetPath(), cfg.shapePredictorSetPath());
     SimplePocoHandler handler(cfg.rabbit_host(), cfg.rabbit_port());
-
     AMQP::Connection connection(&handler, AMQP::Login(cfg.rabbit_user_name(), cfg.rabbit_password()), cfg.rabbit_v_host());
-
     AMQP::Channel channel(&connection);
-    auto receiveMessageCallback = [&ff, &connection](const AMQP::Message& message,
-        uint64_t deliveryTag,
-        bool redelivered)
-    {
-    	if (!redelivered)
-    	{
-            ff.SetImage(message.body(), message.size());
-            ff.FindFaces();
-    	}
-           
-        cout << " [x] " << message.body() << endl;
-    };
+    FaceFinder ff(cfg.facePredictorSetPath(), cfg.shapePredictorSetPath());
 
-    AMQP::QueueCallback callback =
-        [&](const std::string& name, int msgcount, int consumercount)
-    {
-        channel.bindQueue("EV3", "images.general", "");
-        channel.consume(name, AMQP::noack).onReceived(receiveMessageCallback);
-    };
-
-    AMQP::SuccessCallback success = [&]()
-    {
-        channel.declareQueue(AMQP::exclusive).onSuccess(callback);
-    };
-
-    channel.declareExchange("logs", AMQP::fanout).onSuccess(success);
+    RabbitConsumer consumer(channel, ff);
+    consumer.Run();
 
     std::cout << " [*] Waiting for messages. To exit press CTRL-C\n";
     handler.loop();

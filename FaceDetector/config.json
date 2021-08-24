@@ -1,9 +1,9 @@
 {
 	"LogFileName": "FaceDetectorLog.txt",
-        "RabbitUserName": "guest",
-        "RabbitPassword": "guest",
-        "RabbitHost": "localhost",
-        "RabbitPort": 5672
-	"FacePredictorSet" : "D:\Robots\FaceDetection\mmod_human_face_detector.dat",
-	"ShapePredictorSet" : "D:\Robots\FaceDetection\shape_predictor_68_face_landmarks.dat"
+  "RabbitUserName": "guest",
+  "RabbitPassword": "guest",
+  "RabbitHost": "localhost",
+  "RabbitPort": 5672,
+	"FacePredictorSet" : "D:\\Robots\\FaceDetection\\mmod_human_face_detector.dat",
+	"ShapePredictorSet" : "D:\\Robots\\FaceDetection\\shape_predictor_68_face_landmarks.dat"
 }
