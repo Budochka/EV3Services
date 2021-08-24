@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Microsoft.Speech.Synthesis;
+using System.Speech.Synthesis;
 using NLog;
 
 namespace VoiceCreator
