@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceDetector", "FaceDetecto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter", "VideoConverter\VideoConverter.csproj", "{D276650B-F724-4D66-BEF5-5EF2D6B50B2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3UI", "EV3UI\EV3UI.csproj", "{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,18 @@ Global
 		{D276650B-F724-4D66-BEF5-5EF2D6B50B2B}.Release|x64.Build.0 = Release|Any CPU
 		{D276650B-F724-4D66-BEF5-5EF2D6B50B2B}.Release|x86.ActiveCfg = Release|Any CPU
 		{D276650B-F724-4D66-BEF5-5EF2D6B50B2B}.Release|x86.Build.0 = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|x64.Build.0 = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Debug|x86.Build.0 = Debug|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|x64.ActiveCfg = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|x64.Build.0 = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{84B9EB50-28A5-4DC7-9C0B-EDEE1CF74F8B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
