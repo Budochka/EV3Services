@@ -13,4 +13,24 @@ public partial class MainWindow : Gtk.Window
         Application.Quit();
         a.RetVal = true;
     }
+
+    protected void SayItButtonClicked(object sender, EventArgs e)
+    {
+    }
+
+    protected void RightButtonClicked(object sender, EventArgs e)
+    {
+    }
+
+    protected void LeftButtonClicked(object sender, EventArgs e)
+    {
+    }
+
+    protected void DownButtonClicked(object sender, EventArgs e)
+    {
+    }
+
+    protected void UpButtonClicked(object sender, EventArgs e)
+    {
+    }
 }
