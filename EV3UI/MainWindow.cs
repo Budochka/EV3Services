@@ -1,36 +1,44 @@
 ﻿using System;
 using Gtk;
+using EV3UI;
 
-public partial class MainWindow : Gtk.Window
+
+namespace EV3UI
 {
-    public MainWindow() : base(Gtk.WindowType.Toplevel)
+    partial class MainWindow : Gtk.Window
     {
-        Build();
-    }
+        public MainWindow(NLog.Logger log, Config cfg) : base(Gtk.WindowType.Toplevel)
+        {
+            Build();
+            _worker = new Worker(log, cfg);
+        }
 
-    protected void OnDeleteEvent(object sender, DeleteEventArgs a)
-    {
-        Application.Quit();
-        a.RetVal = true;
-    }
+        protected void OnDeleteEvent(object sender, DeleteEventArgs a)
+        {
+            Application.Quit();
+            a.RetVal = true;
+        }
 
-    protected void SayItButtonClicked(object sender, EventArgs e)
-    {
-    }
+        protected void SayItButtonClicked(object sender, EventArgs e)
+        {
+        }
 
-    protected void RightButtonClicked(object sender, EventArgs e)
-    {
-    }
+        protected void RightButtonClicked(object sender, EventArgs e)
+        {
+        }
 
-    protected void LeftButtonClicked(object sender, EventArgs e)
-    {
-    }
+        protected void LeftButtonClicked(object sender, EventArgs e)
+        {
+        }
 
-    protected void DownButtonClicked(object sender, EventArgs e)
-    {
-    }
+        protected void DownButtonClicked(object sender, EventArgs e)
+        {
+        }
 
-    protected void UpButtonClicked(object sender, EventArgs e)
-    {
+        protected void UpButtonClicked(object sender, EventArgs e)
+        {
+        }
+
+        Worker _worker;
     }
 }
