@@ -64,9 +64,9 @@ namespace EV3UI
             _connection?.Close();
         }
 
-        public void Publish(in byte[] data)
+        public void Publish(string key, in byte[] data)
         {
-            _channel?.BasicPublish(exchange: "EV3", routingKey: "voice.generated.wav", basicProperties: null, body: data);
+            _channel?.BasicPublish(exchange: "EV3", routingKey: key, basicProperties: null, body: data);
         }
     }
 }

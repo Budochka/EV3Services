@@ -5,7 +5,7 @@ namespace EV3UI
 	{
 		private global::Gtk.Table table2;
 
-		private global::Gtk.Button DownButton;
+		private global::Gtk.Button BackwardButton;
 
 		private global::Gtk.Entry entry1;
 
@@ -23,7 +23,7 @@ namespace EV3UI
 
 		private global::Gtk.Button SayItButton;
 
-		private global::Gtk.Button UpButton;
+		private global::Gtk.Button ForwardButton;
 
 		protected virtual void Build()
 		{
@@ -38,13 +38,13 @@ namespace EV3UI
 			this.table2.RowSpacing = ((uint)(6));
 			this.table2.ColumnSpacing = ((uint)(6));
 			// Container child table2.Gtk.Table+TableChild
-			this.DownButton = new global::Gtk.Button();
-			this.DownButton.CanFocus = true;
-			this.DownButton.Name = "DownButton";
-			this.DownButton.UseUnderline = true;
-			this.DownButton.Label = global::Mono.Unix.Catalog.GetString("Down");
-			this.table2.Add(this.DownButton);
-			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table2[this.DownButton]));
+			this.BackwardButton = new global::Gtk.Button();
+			this.BackwardButton.CanFocus = true;
+			this.BackwardButton.Name = "BackwardButton";
+			this.BackwardButton.UseUnderline = true;
+			this.BackwardButton.Label = global::Mono.Unix.Catalog.GetString("Backward");
+			this.table2.Add(this.BackwardButton);
+			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table2[this.BackwardButton]));
 			w1.TopAttach = ((uint)(3));
 			w1.BottomAttach = ((uint)(4));
 			w1.LeftAttach = ((uint)(1));
@@ -136,13 +136,13 @@ namespace EV3UI
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
 			w9.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table2.Gtk.Table+TableChild
-			this.UpButton = new global::Gtk.Button();
-			this.UpButton.CanFocus = true;
-			this.UpButton.Name = "UpButton";
-			this.UpButton.UseUnderline = true;
-			this.UpButton.Label = global::Mono.Unix.Catalog.GetString("Up");
-			this.table2.Add(this.UpButton);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table2[this.UpButton]));
+			this.ForwardButton = new global::Gtk.Button();
+			this.ForwardButton.CanFocus = true;
+			this.ForwardButton.Name = "ForwardButton";
+			this.ForwardButton.UseUnderline = true;
+			this.ForwardButton.Label = global::Mono.Unix.Catalog.GetString("Forward");
+			this.table2.Add(this.ForwardButton);
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table2[this.ForwardButton]));
 			w10.TopAttach = ((uint)(2));
 			w10.BottomAttach = ((uint)(3));
 			w10.LeftAttach = ((uint)(1));
@@ -158,11 +158,11 @@ namespace EV3UI
 			this.DefaultHeight = 502;
 			this.Show();
 			this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
-			this.UpButton.Clicked += new global::System.EventHandler(this.UpButtonClicked);
+			this.ForwardButton.Clicked += new global::System.EventHandler(this.ForwardButtonClicked);
 			this.SayItButton.Clicked += new global::System.EventHandler(this.SayItButtonClicked);
 			this.RightButton.Clicked += new global::System.EventHandler(this.RightButtonClicked);
 			this.LeftButton.Clicked += new global::System.EventHandler(this.LeftButtonClicked);
-			this.DownButton.Clicked += new global::System.EventHandler(this.DownButtonClicked);
+			this.BackwardButton.Clicked += new global::System.EventHandler(this.BackwardButtonClicked);
 		}
 	}
 }

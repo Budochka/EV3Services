@@ -57,9 +57,6 @@
       <HintPath>C:\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\gtk-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL" />
-    <Reference Include="Mono.Posix.NETStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Posix.NETStandard.1.0.0\lib\net40\Mono.Posix.NETStandard.dll</HintPath>
-    </Reference>
     <Reference Include="OpenTK, Version=3.0.1.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenTK.3.0.1\lib\net20\OpenTK.dll</HintPath>
     </Reference>
@@ -166,4 +163,7 @@
     <Error Condition="!Exists('..\packages\Xamarin.Forms.5.0.0.2083\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.5.0.0.2083\build\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\packages\Xamarin.Forms.5.0.0.2083\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2083\build\Xamarin.Forms.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(ProjectDir)config.json $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

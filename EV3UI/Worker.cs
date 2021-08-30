@@ -58,13 +58,6 @@ namespace EV3UI
                 char[] chars = new char[bytes.Length / sizeof(char)];
                 Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
                 string text = new string(chars);
-
-                string file;
-
-//                if (_vs != null)
-                {
-//                    _publisher.Publish(filedata);
-                }
             }
 
             EventingBasicConsumer ec = (EventingBasicConsumer)sender;

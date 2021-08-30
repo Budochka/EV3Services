@@ -31,11 +31,11 @@ namespace EV3UI
         {
         }
 
-        protected void DownButtonClicked(object sender, EventArgs e)
+        protected void BackwardButtonClicked(object sender, EventArgs e)
         {
         }
 
-        protected void UpButtonClicked(object sender, EventArgs e)
+        protected void ForwardButtonClicked(object sender, EventArgs e)
         {
         }
 
