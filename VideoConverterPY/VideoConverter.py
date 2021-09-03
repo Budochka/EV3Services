@@ -8,7 +8,7 @@ channel = connection.channel()
 channel.exchange_declare(exchange='EV3', exchange_type='topic', auto_delete=True)
 
 #get video stream
-cap = cv2.VideoCapture('rtmp://demo.flashphoner.com:1935/live/rtmp_b883')
+cap = cv2.VideoCapture('rtmp://demo.flashphoner.com:1935/live/rtmp_f7dd')
 
 while(cap.isOpened()):
     ret, frame = cap.read()
