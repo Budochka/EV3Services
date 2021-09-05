@@ -2,6 +2,7 @@ import cv2
 import pika
 import threading
 import time
+import json
 
 class FrameSkiper:
     def __init__(self):
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     channel.exchange_declare(exchange='EV3', exchange_type='topic', auto_delete=True)
 
     #get video stream
-    cap = cv2.VideoCapture('rtmp://demo.flashphoner.com:1935/live/rtmp_9cd0')
+    cap = cv2.VideoCapture('rtmp://demo.flashphoner.com:1935/live/rtmp_381d')
 
     while(cap.isOpened()):
         ret, frame = cap.read()
