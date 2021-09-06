@@ -4,13 +4,13 @@ namespace Stetic
 {
 	internal class Gui
 	{
-		private static bool initialized;
+		private static bool _initialized;
 
 		internal static void Initialize(Gtk.Widget iconRenderer)
 		{
-			if ((Stetic.Gui.initialized == false))
+			if ((Stetic.Gui._initialized == false))
 			{
-				Stetic.Gui.initialized = true;
+				Stetic.Gui._initialized = true;
 			}
 		}
 	}

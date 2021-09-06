@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using NLog;
 using RabbitMQ.Client;
@@ -8,12 +9,16 @@ namespace EV3UI
 {
     class Worker
     { 
-        private Logger _logs;
+        private readonly Logger _logs;
         private RabbitConsumer _consumer;
         private RabbitPublisher _publisher;
-        private Config _config;
+        private readonly Config _config;
 
         private bool _started;
+
+        //handling received messages
+        public delegate void MessageReceivedHandler(string key, byte[] data);
+        public event MessageReceivedHandler Notify;
 
         public Worker(Logger log, Config config)
         {
@@ -50,17 +55,22 @@ namespace EV3UI
             _started = false;
         }
 
-        public void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
+        public void Publish(string key, in byte[] data)
+        {
+            _publisher.Publish(key, data);
+        }
+
+        private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
             var bytes = args.Body.ToArray();
             if ((bytes.Length > 0) && _started)
             {
-                char[] chars = new char[bytes.Length / sizeof(char)];
-                Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-                string text = new string(chars);
+                var buffer = new byte[bytes.Length / sizeof(byte)];
+                Buffer.BlockCopy(bytes, 0, buffer, 0, bytes.Length);
+                Notify?.Invoke(args.RoutingKey, buffer);
             }
 
-            EventingBasicConsumer ec = (EventingBasicConsumer)sender;
+            var ec = (EventingBasicConsumer)sender;
             ec.Model.BasicAck(args.DeliveryTag, false);
         }
     }

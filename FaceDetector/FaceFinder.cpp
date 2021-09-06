@@ -12,7 +12,7 @@ void FaceFinder::SetImage(const char* data, const UINT size_of_image)
 	typedef boost::iostreams::basic_array_source<char> Device;
 	boost::iostreams::stream<Device> stream(data, sizeof(size_of_image));
 
-	load_dng(_image, stream);
+	load_bmp(_image, stream);
 }
 
 //returns number of found faces

@@ -1,18 +1,17 @@
 ﻿using System;
 using System.IO;
 using NLog;
-using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 namespace VoiceCreator
 {
     class Worker
     { 
-        private Logger _logs;
+        private readonly Logger _logs;
         private RabbitConsumer _consumer;
         private RabbitPublisher _publisher;
         private VoiceSynthesis _vs;
-        private Config _config;
+        private readonly Config _config;
 
         private bool _started;
 
@@ -54,7 +53,7 @@ namespace VoiceCreator
             _started = false;
         }
 
-        public void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
+        private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
             var bytes = args.Body.ToArray();
             if ((bytes.Length > 0) && _started)

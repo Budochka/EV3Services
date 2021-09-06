@@ -60,7 +60,7 @@ namespace EV3UI
             _logs.Info("Exchange created");
 
             var queueName = _channel.QueueDeclare().QueueName;
-            _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "voice.text");
+            _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "images.general");
             _logs.Info("Queue binding complete");
 
             var consumer = new EventingBasicConsumer(_channel);
