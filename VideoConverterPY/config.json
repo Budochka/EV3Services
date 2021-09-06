@@ -1,0 +1,9 @@
+{
+	"LogFileName": "logfile.txt",
+        "RabbitUserName": "guest",
+        "RabbitPassword": "guest",
+        "RabbitHost": "localhost",
+        "RabbitPort": 5672,
+	"DelayBetweenFrames": 1,
+	"RTMPSource": "rtmp://demo.flashphoner.com:1935/live/rtmp_381d"
+}
