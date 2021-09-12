@@ -12,8 +12,6 @@ if __name__ == "__main__":
         rabbit_login = data['RabbitUserName']
         rabbit_psw = data['RabbitPassword']
         logfile = data['LogFileName']
-        video_source = data['RTMPSource']
-        delay = data['DelayBetweenFrames']
 
     #setup logging
     logging.basicConfig(filename=logfile, level=logging.INFO)
