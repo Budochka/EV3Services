@@ -19,7 +19,7 @@ namespace EV3UI
         }
 
 
-        private static Gdk.Pixbuf ImageToPixbuf(System.Drawing.Image image)
+        private Gdk.Pixbuf ImageToPixbuf(System.Drawing.Image image)
         {
             using (MemoryStream stream = new MemoryStream())
             {
@@ -51,27 +51,35 @@ namespace EV3UI
 
         private void SayItButtonClicked(object sender, EventArgs e)
         {
-            var text = _textToSay.Text;
+            var text = _textToSay.Text.ToCharArray();
+            var data = new byte[text.Length * sizeof(char)];
+            Buffer.BlockCopy(text, 0, data, 0, text.Length * sizeof(char));
+
+            _worker.Publish("voice.text", data);
             _textToSay.DeleteText(0, text.Length);
         }
 
         private void RightButtonClicked(object sender, EventArgs e)
         {
+            //positive CW, negative CCW
+            _worker.Publish("movement.turn", new byte[] { 1 });
         }
 
         private void LeftButtonClicked(object sender, EventArgs e)
         {
+            //positive CW, negative CCW
+            _worker.Publish("movement.distance", new byte[] { 255 });
         }
 
         private void BackwardButtonClicked(object sender, EventArgs e)
         {
+            _worker.Publish("movement.distance", new byte[] { 255 });
         }
 
         private void ForwardButtonClicked(object sender, EventArgs e)
         {
+            _worker.Publish("movement.distance", new byte[] { 1 });
         }
-
-        
 
         private readonly Worker _worker;
     }

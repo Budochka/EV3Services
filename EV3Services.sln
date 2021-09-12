@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3UI", "EV3UI\EV3UI.csproj
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VideoConverterPY", "VideoConverterPY\VideoConverterPY.pyproj", "{CAC0641D-63D4-4479-B187-6E13AF26ABE1}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "EV3handler", "EV3handler\EV3handler.pyproj", "{96FA3CDD-A130-453C-8E0D-76786F615323}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,12 @@ Global
 		{CAC0641D-63D4-4479-B187-6E13AF26ABE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC0641D-63D4-4479-B187-6E13AF26ABE1}.Release|x64.ActiveCfg = Release|Any CPU
 		{CAC0641D-63D4-4479-B187-6E13AF26ABE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|x64.ActiveCfg = Release|Any CPU
+		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

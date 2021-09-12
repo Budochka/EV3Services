@@ -24,7 +24,7 @@ namespace VoiceCreator
             }
 
             //Initialize logger
-            var NlogConfig = new NLog.Config.LoggingConfiguration();
+            var nlogConfig = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
             var logfile = new NLog.Targets.FileTarget("logfile")
@@ -35,10 +35,10 @@ namespace VoiceCreator
             };
 
             // set logging rules
-            NlogConfig.AddRuleForAllLevels(logfile);
+            nlogConfig.AddRuleForAllLevels(logfile);
 
             // Apply config           
-            NLog.LogManager.Configuration = NlogConfig;
+            NLog.LogManager.Configuration = nlogConfig;
 
             Worker worker = new Worker(LogManager.GetCurrentClassLogger(), config);
             worker.Initialize();
