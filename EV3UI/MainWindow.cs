@@ -68,7 +68,7 @@ namespace EV3UI
         private void LeftButtonClicked(object sender, EventArgs e)
         {
             //positive CW, negative CCW
-            _worker.Publish("movement.distance", new byte[] { 255 });
+            _worker.Publish("movement.turn", new byte[] { 255 });
         }
 
         private void BackwardButtonClicked(object sender, EventArgs e)

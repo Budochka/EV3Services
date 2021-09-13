@@ -2,6 +2,16 @@ import json
 import logging
 import pika
 import VoiceHandler
+import MoveHandler
+
+def callback(ch, method, properties, body):
+    if (method.routing_key.find('voice.generated.wav') != -1):
+        VoiceHandler.callback_voice(ch, method, properties, body)
+        return
+
+    if (method.routing_key.find('movement.') != -1):
+        MoveHandler.callback_move(ch, method, properties, body)
+        return
 
 if __name__ == "__main__":
     #read config file
@@ -26,6 +36,12 @@ if __name__ == "__main__":
     queue_name = result.method.queue
 
     channel.queue_bind(exchange='EV3', routing_key='voice.generated.wav', queue=queue_name)
-    channel.basic_consume(queue=queue_name, on_message_callback=VoiceHandler.callback, auto_ack=True)
+    logging.info('Voice queue bind complete')
+
+    channel.queue_bind(exchange='EV3', routing_key='movement.*', queue=queue_name)
+    logging.info('Movement queue bind complete')
+
+    channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+    channel.start_consuming()
 
     input("Press Enter to exit...")
