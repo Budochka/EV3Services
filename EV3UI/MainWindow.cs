@@ -62,23 +62,29 @@ namespace EV3UI
         private void RightButtonClicked(object sender, EventArgs e)
         {
             //positive CW, negative CCW
-            _worker.Publish("movement.turn", new byte[] { 1 });
+            var ts = new TurnCommand(5, 40);
+
+            _worker.Publish("movement.turn", ts.ToByte());
         }
 
         private void LeftButtonClicked(object sender, EventArgs e)
         {
             //positive CW, negative CCW
-            _worker.Publish("movement.turn", new byte[] { 255 });
+            var ts = new TurnCommand(-5, 40);
+
+            _worker.Publish("movement.turn", ts.ToByte());
         }
 
         private void BackwardButtonClicked(object sender, EventArgs e)
         {
-            _worker.Publish("movement.distance", new byte[] { 255 });
+            var ms = new MoveCommand(-10, 60);
+            _worker.Publish("movement.distance", ms.ToByte());
         }
 
         private void ForwardButtonClicked(object sender, EventArgs e)
         {
-            _worker.Publish("movement.distance", new byte[] { 1 });
+            var ms = new MoveCommand(10, 60);
+            _worker.Publish("movement.distance", ms.ToByte());
         }
 
         private readonly Worker _worker;
