@@ -15,6 +15,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VideoConverterPY", "VideoCo
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "EV3handler", "EV3handler\EV3handler.pyproj", "{96FA3CDD-A130-453C-8E0D-76786F615323}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EV3UIWF", "EV3UIWF\EV3UIWF.csproj", "{D56B063F-B1FE-4D40-9D25-99725B4E926B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|x64.ActiveCfg = Release|Any CPU
 		{96FA3CDD-A130-453C-8E0D-76786F615323}.Release|x86.ActiveCfg = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|x64.Build.0 = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Debug|x86.Build.0 = Debug|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|x64.ActiveCfg = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|x64.Build.0 = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D56B063F-B1FE-4D40-9D25-99725B4E926B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
