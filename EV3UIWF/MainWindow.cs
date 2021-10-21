@@ -41,5 +41,29 @@ namespace EV3UIWF
             _worker.Publish("voice.text", data);
             textToSay.Clear();
         }
+
+        private void btnForward_Click(object sender, EventArgs e)
+        {
+            var mc = new MoveCommand(Convert.ToInt32(txtDistance.Text), Convert.ToInt32(txtTorqueMove.Text));
+            _worker.Publish("movement.distance", mc.ToByte());
+        }
+
+        private void btnBackward_Click(object sender, EventArgs e)
+        {
+            var mc = new MoveCommand(-Convert.ToInt32(txtDistance.Text), Convert.ToInt32(txtTorqueMove.Text));
+            _worker.Publish("movement.distance", mc.ToByte());
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            var tc = new TurnCommand(-Convert.ToInt32(txtDegree.Text), Convert.ToInt32(txtTorqueRotate.Text));
+            _worker.Publish("movement.turn", tc.ToByte());
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            var tc = new TurnCommand(Convert.ToInt32(txtDegree.Text), Convert.ToInt32(txtTorqueRotate.Text));
+            _worker.Publish("movement.turn", tc.ToByte());
+        }
     }
 }

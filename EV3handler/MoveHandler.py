@@ -7,16 +7,17 @@ def callback_move(ch, method, properties, body):
 
     if (method.routing_key.find('.turn') != -1):
         logging.info('Turn message processed')
-        CCW = 1
-        if (body[0] > 127):
-            CCW = -1
-        tank_drive.on_for_seconds(SpeedPercent(-50*CCW ), SpeedPercent(50*CCW), 1)
+        degree = int.from_bytes(body[0], byteorder ='big')
+        torque = int.from_bytes(body[4], byteorder ='big')
+
+        tank_drive.on_for_seconds(SpeedPercent(-torque), SpeedPercent(torque), 1)
         return
 
     if (method.routing_key.find('.distance') != -1):
         logging.info('Move message processed')
-        move_direction = 1
-        if (body[0] > 127):
-            move_direction = -1
-        tank_drive.on_for_seconds(SpeedPercent(60 * move_direction), SpeedPercent(60 * move_direction), 1)
+        distance = int.from_bytes(body[0], byteorder ='big')
+        torque = int.from_bytes(body[4], byteorder ='big')
+
+
+        tank_drive.on_for_seconds(SpeedPercent(torque * move_direction), SpeedPercent(torque * move_direction), 1)
         return

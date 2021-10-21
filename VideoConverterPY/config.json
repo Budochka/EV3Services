@@ -4,6 +4,6 @@
   "RabbitPassword": "guest",
   "RabbitHost": "localhost",
   "RabbitPort": 5672,
-  "DelayBetweenFrames": 1,
+  "DelayBetweenFrames": 0.1,
   "RTMPSource": "rtsp://192.168.10.109/live/ch00_1"
 }

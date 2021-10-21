@@ -41,13 +41,18 @@ namespace EV3UIWF
             this.txtLog = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDistance = new System.Windows.Forms.TextBox();
-            this.lblDistance = new System.Windows.Forms.Label();
-            this.lblDegree = new System.Windows.Forms.Label();
+            this.txtTorqueMove = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDegree = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTorqueRotate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgCameraView
@@ -76,6 +81,7 @@ namespace EV3UIWF
             this.btnForward.TabIndex = 2;
             this.btnForward.Text = "Forward";
             this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
             // btnLeft
             // 
@@ -85,6 +91,7 @@ namespace EV3UIWF
             this.btnLeft.TabIndex = 3;
             this.btnLeft.Text = "Left";
             this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnRight
             // 
@@ -94,6 +101,7 @@ namespace EV3UIWF
             this.btnRight.TabIndex = 4;
             this.btnRight.Text = "Right";
             this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // btnBackward
             // 
@@ -103,6 +111,7 @@ namespace EV3UIWF
             this.btnBackward.TabIndex = 5;
             this.btnBackward.Text = "Backward";
             this.btnBackward.UseVisualStyleBackColor = true;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // textToSay
             // 
@@ -144,7 +153,7 @@ namespace EV3UIWF
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(681, 54);
+            this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 10;
@@ -152,66 +161,96 @@ namespace EV3UIWF
             // 
             // txtDistance
             // 
-            this.txtDistance.Location = new System.Drawing.Point(746, 51);
+            this.txtDistance.Location = new System.Drawing.Point(76, 23);
             this.txtDistance.Name = "txtDistance";
             this.txtDistance.Size = new System.Drawing.Size(64, 23);
             this.txtDistance.TabIndex = 11;
+            this.txtDistance.Text = "10";
             // 
-            // lblDistance
+            // txtTorqueMove
             // 
-            this.lblDistance.Location = new System.Drawing.Point(816, 51);
-            this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(63, 23);
-            this.lblDistance.TabIndex = 12;
-            this.lblDistance.Text = "100";
-            this.lblDistance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTorqueMove.Location = new System.Drawing.Point(76, 52);
+            this.txtTorqueMove.Name = "txtTorqueMove";
+            this.txtTorqueMove.Size = new System.Drawing.Size(64, 23);
+            this.txtTorqueMove.TabIndex = 18;
+            this.txtTorqueMove.Text = "100";
             // 
-            // lblDegree
+            // label5
             // 
-            this.lblDegree.Location = new System.Drawing.Point(816, 80);
-            this.lblDegree.Name = "lblDegree";
-            this.lblDegree.Size = new System.Drawing.Size(63, 23);
-            this.lblDegree.TabIndex = 15;
-            this.lblDegree.Text = "100";
-            this.lblDegree.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 15);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Torque:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtDistance);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtTorqueMove);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(682, 51);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(197, 90);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Move";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtDegree);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtTorqueRotate);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(682, 147);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(197, 90);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Rotate";
             // 
             // txtDegree
             // 
-            this.txtDegree.Location = new System.Drawing.Point(746, 80);
+            this.txtDegree.Location = new System.Drawing.Point(76, 23);
             this.txtDegree.Name = "txtDegree";
             this.txtDegree.Size = new System.Drawing.Size(64, 23);
-            this.txtDegree.TabIndex = 14;
+            this.txtDegree.TabIndex = 11;
+            this.txtDegree.Text = "10";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Degree:";
+            // 
+            // txtTorqueRotate
+            // 
+            this.txtTorqueRotate.Location = new System.Drawing.Point(76, 52);
+            this.txtTorqueRotate.Name = "txtTorqueRotate";
+            this.txtTorqueRotate.Size = new System.Drawing.Size(64, 23);
+            this.txtTorqueRotate.TabIndex = 18;
+            this.txtTorqueRotate.Text = "100";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(681, 83);
+            this.label4.Location = new System.Drawing.Point(12, 60);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Degree:";
-            // 
-            // btnSet
-            // 
-            this.btnSet.Location = new System.Drawing.Point(681, 109);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(197, 24);
-            this.btnSet.TabIndex = 16;
-            this.btnSet.Text = "Set";
-            this.btnSet.UseVisualStyleBackColor = true;
+            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Torque:";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 614);
-            this.Controls.Add(this.btnSet);
-            this.Controls.Add(this.lblDegree);
-            this.Controls.Add(this.txtDegree);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblDistance);
-            this.Controls.Add(this.txtDistance);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSayIt);
@@ -223,6 +262,10 @@ namespace EV3UIWF
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraView)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,11 +285,14 @@ namespace EV3UIWF
         private System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDistance;
-        private System.Windows.Forms.Label lblDistance;
-        private System.Windows.Forms.Label lblDegree;
+        private System.Windows.Forms.TextBox txtTorqueMove;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtDegree;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTorqueRotate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSet;
     }
 }
 
