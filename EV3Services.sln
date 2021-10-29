@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceCreator", "VoiceCreator\VoiceCreator.csproj", "{7867BBFF-8C20-407C-B50C-50CD24C5D06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceCreatorTestClient", "VoiceCreatorTestClient\VoiceCreatorTestClient.csproj", "{831D4048-7120-4017-9516-6987E9985DA4}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceDetector", "FaceDetector\FaceDetector.vcxproj", "{3B4909BF-2B59-4C81-9D72-37D37523B247}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VideoConverterPY", "VideoConverterPY\VideoConverterPY.pyproj", "{CAC0641D-63D4-4479-B187-6E13AF26ABE1}"
@@ -37,18 +35,6 @@ Global
 		{7867BBFF-8C20-407C-B50C-50CD24C5D06A}.Release|x64.Build.0 = Release|x64
 		{7867BBFF-8C20-407C-B50C-50CD24C5D06A}.Release|x86.ActiveCfg = Release|Any CPU
 		{7867BBFF-8C20-407C-B50C-50CD24C5D06A}.Release|x86.Build.0 = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|x64.Build.0 = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Debug|x86.Build.0 = Debug|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|x64.ActiveCfg = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|x64.Build.0 = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|x86.ActiveCfg = Release|Any CPU
-		{831D4048-7120-4017-9516-6987E9985DA4}.Release|x86.Build.0 = Release|Any CPU
 		{3B4909BF-2B59-4C81-9D72-37D37523B247}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{3B4909BF-2B59-4C81-9D72-37D37523B247}.Debug|x64.ActiveCfg = Debug|x64
 		{3B4909BF-2B59-4C81-9D72-37D37523B247}.Debug|x64.Build.0 = Debug|x64
