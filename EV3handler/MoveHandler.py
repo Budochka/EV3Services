@@ -19,5 +19,5 @@ def callback_move(ch, method, properties, body):
         torque = int.from_bytes(body[4], byteorder ='big')
 
 
-        tank_drive.on_for_seconds(SpeedPercent(torque * move_direction), SpeedPercent(torque * move_direction), 1)
+        tank_drive.on_for_seconds(SpeedPercent(torque * distance), SpeedPercent(torque * distance), 1)
         return
