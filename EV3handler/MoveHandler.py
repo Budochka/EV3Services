@@ -9,9 +9,9 @@ def callback_move(ch, method, properties, body):
     if (method.routing_key.find('.turn') != -1):
         logging.info('Turn message processed')
         degree = int.from_bytes(body[0:3], byteorder ='little')
-        torque = int.from_bytes(body[4:7], byteorder ='little')
+        torque = int.from_bytes(body[4:7], byteorder ='little', signed=TRUE)
 
-        tank_drive.on_for_seconds(SpeedPercent(-torque), SpeedPercent(torque), 1)
+        tank_drive.on_for_degrees(SpeedPercent(-torque), SpeedPercent(torque), degree*5)
         return
 
     if (method.routing_key.find('.distance') != -1):
@@ -20,5 +20,5 @@ def callback_move(ch, method, properties, body):
         torque = int.from_bytes(body[4:7], byteorder ='little')
 
 
-        tank_drive.on_for_seconds(SpeedPercent(torque), SpeedPercent(torque), distance/60)
+        tank_drive.on_for_rotations(SpeedPercent(torque), SpeedPercent(torque), distance/12)
         return

@@ -56,7 +56,7 @@ namespace EV3UIWF
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            var tc = new TurnCommand(-Convert.ToInt32(txtDegree.Text), Convert.ToInt32(txtTorqueRotate.Text));
+            var tc = new TurnCommand(Convert.ToInt32(txtDegree.Text), -Convert.ToInt32(txtTorqueRotate.Text));
             _worker.Publish("movement.turn", tc.ToByte());
         }
 
