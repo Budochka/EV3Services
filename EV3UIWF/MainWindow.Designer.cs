@@ -49,15 +49,18 @@ namespace EV3UIWF
             this.label3 = new System.Windows.Forms.Label();
             this.txtTorqueRotate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgCameraView
             // 
-            this.imgCameraView.Location = new System.Drawing.Point(12, 51);
+            this.imgCameraView.Location = new System.Drawing.Point(14, 76);
             this.imgCameraView.Name = "imgCameraView";
             this.imgCameraView.Size = new System.Drawing.Size(663, 365);
             this.imgCameraView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +70,7 @@ namespace EV3UIWF
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(14, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 1;
@@ -115,14 +118,14 @@ namespace EV3UIWF
             // 
             // textToSay
             // 
-            this.textToSay.Location = new System.Drawing.Point(68, 12);
+            this.textToSay.Location = new System.Drawing.Point(70, 37);
             this.textToSay.Name = "textToSay";
             this.textToSay.Size = new System.Drawing.Size(534, 23);
             this.textToSay.TabIndex = 6;
             // 
             // btnSayIt
             // 
-            this.btnSayIt.Location = new System.Drawing.Point(600, 12);
+            this.btnSayIt.Location = new System.Drawing.Point(602, 37);
             this.btnSayIt.Name = "btnSayIt";
             this.btnSayIt.Size = new System.Drawing.Size(75, 23);
             this.btnSayIt.TabIndex = 7;
@@ -136,14 +139,14 @@ namespace EV3UIWF
             this.panel1.Controls.Add(this.btnForward);
             this.panel1.Controls.Add(this.btnLeft);
             this.panel1.Controls.Add(this.btnBackward);
-            this.panel1.Location = new System.Drawing.Point(681, 316);
+            this.panel1.Location = new System.Drawing.Point(683, 341);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 100);
             this.panel1.TabIndex = 8;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(12, 422);
+            this.txtLog.Location = new System.Drawing.Point(14, 447);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
@@ -190,7 +193,7 @@ namespace EV3UIWF
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTorqueMove);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(682, 51);
+            this.groupBox1.Location = new System.Drawing.Point(684, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(197, 90);
             this.groupBox1.TabIndex = 19;
@@ -203,7 +206,7 @@ namespace EV3UIWF
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtTorqueRotate);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(682, 147);
+            this.groupBox2.Location = new System.Drawing.Point(684, 172);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(197, 90);
             this.groupBox2.TabIndex = 20;
@@ -244,11 +247,27 @@ namespace EV3UIWF
             this.label4.TabIndex = 17;
             this.label4.Text = "Torque:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pluginsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(891, 24);
+            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pluginsToolStripMenuItem
+            // 
+            this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
+            this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.pluginsToolStripMenuItem.Text = "Plugins";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 614);
+            this.ClientSize = new System.Drawing.Size(891, 648);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtLog);
@@ -257,6 +276,8 @@ namespace EV3UIWF
             this.Controls.Add(this.textToSay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.imgCameraView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "EV3 UI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
@@ -266,6 +287,8 @@ namespace EV3UIWF
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +316,8 @@ namespace EV3UIWF
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTorqueRotate;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pluginsToolStripMenuItem;
     }
 }
 

@@ -19,6 +19,5 @@ def callback_move(ch, method, properties, body):
         distance = int.from_bytes(body[0:3], byteorder ='little', signed=TRUE)
         torque = int.from_bytes(body[4:7], byteorder ='little')
 
-
         tank_drive.on_for_rotations(SpeedPercent(torque), SpeedPercent(torque), distance/12)
         return
