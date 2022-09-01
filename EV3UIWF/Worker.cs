@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Globalization;
-using System.IO;
 using NLog;
-using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 namespace EV3UIWF

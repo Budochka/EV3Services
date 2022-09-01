@@ -1,7 +1,6 @@
 ﻿using NLog;
 using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System;
+
 
 namespace EV3UIWF
 {
@@ -9,7 +8,7 @@ namespace EV3UIWF
     {
         private IModel _channel;
         private IConnection _connection;
-        private Logger _logs;
+        private readonly Logger _logs;
 
         public RabbitPublisher(Logger log)
         {

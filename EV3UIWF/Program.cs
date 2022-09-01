@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using NLog;
@@ -36,7 +33,7 @@ namespace EV3UIWF
             }
 
             //Initialize logger
-            var nlogConfig = new NLog.Config.LoggingConfiguration();
+            var nLogConfig = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
             var logfile = new NLog.Targets.FileTarget("logfile")
@@ -47,10 +44,10 @@ namespace EV3UIWF
             };
 
             // set logging rules
-            nlogConfig.AddRuleForAllLevels(logfile);
+            nLogConfig.AddRuleForAllLevels(logfile);
 
             // Apply config           
-            NLog.LogManager.Configuration = nlogConfig;
+            NLog.LogManager.Configuration = nLogConfig;
             
             Application.Run(new frmMain(LogManager.GetCurrentClassLogger(), config));
         }

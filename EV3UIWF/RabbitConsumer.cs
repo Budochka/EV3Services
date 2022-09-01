@@ -9,7 +9,7 @@ namespace EV3UIWF
     {
         private IModel _channel;
         private IConnection _connection;
-        private Logger _logs;
+        private readonly Logger _logs;
 
         public RabbitConsumer(Logger log)
         {
