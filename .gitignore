@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/EV3handler/logfile.txt
+/EV3UIWF/Plugins/3.py
+/EV3UIWF/Plugins/2.py
+/EV3UIWF/Plugins/1.py
+/EV3UIWF/Plugins

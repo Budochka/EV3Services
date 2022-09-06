@@ -49,7 +49,7 @@ namespace EV3UIWF
             // Apply config           
             NLog.LogManager.Configuration = nLogConfig;
             
-            Application.Run(new frmMain(LogManager.GetCurrentClassLogger(), config));
+            Application.Run(new FrmMain(LogManager.GetCurrentClassLogger(), config));
         }
     }
 }

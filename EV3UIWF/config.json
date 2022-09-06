@@ -3,5 +3,6 @@
   "RabbitUserName": "guest",
   "RabbitPassword": "guest",
   "RabbitHost": "localhost",
-  "RabbitPort": 5672
+  "RabbitPort": 5672,
+  "PluginsFolder": "D:\\Robots\\EV3\\Projects\\EV3Services\\EV3UIWF\\Plugins"
 }

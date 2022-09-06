@@ -8,5 +8,6 @@
         public string RabbitVHost { get; set; }
         public string RabbitHost { get; set; }
         public int RabbitPort { get; set; }
+        public string PluginsFolder { get; set; }
     }
 }
