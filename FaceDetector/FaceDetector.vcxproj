@@ -78,14 +78,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;D:\dlib\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc16\lib;D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_80_0;D:\dlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc17\lib;D:\boost_1_80_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_75_0;D:\dlib\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc16\lib;D:\boost_1_75_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_80_0;D:\dlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc17\lib;D:\boost_1_80_0\stage\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -130,7 +130,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dlib19.21.99_debug_64bit_msvc1928.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dlib19.21.99_debug_64bit_msvc1928.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world460d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>
