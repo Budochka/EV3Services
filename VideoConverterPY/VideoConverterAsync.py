@@ -5,6 +5,7 @@ import time
 import json
 import logging
 import numpy as np
+from cv2 import VideoCapture
 
 class FrameSkiper:
     def __init__(self):
@@ -64,7 +65,7 @@ if __name__ == "__main__":
     logging.info('Rabbit connection created')
 
     #get video stream
-    cap = cv2.VideoCapture(video_source)
+    cap = VideoCapture(video_source)
 
     while(cap.isOpened()):
         ret, frame = cap.read()
