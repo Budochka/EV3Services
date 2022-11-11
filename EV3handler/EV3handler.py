@@ -5,7 +5,7 @@ import VoiceHandler
 import MoveHandler
 
 def callback(ch, method, properties, body):
-    if (method.routing_key.find('voice.generated.wav') != -1):
+    if (method.routing_key.find('voice.wav') != -1):
         VoiceHandler.callback_voice(ch, method, properties, body)
         return
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     result = channel.queue_declare(queue='')
     queue_name = result.method.queue
 
-    channel.queue_bind(exchange='EV3', routing_key='voice.generated.wav', queue=queue_name)
+    channel.queue_bind(exchange='EV3', routing_key='voice.wav', queue=queue_name)
     logging.info('Voice queue bind complete')
 
     channel.queue_bind(exchange='EV3', routing_key='movement.*', queue=queue_name)
