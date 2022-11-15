@@ -31,6 +31,6 @@ def callback_move(ch, method, properties, body):
         degree = int.from_bytes(body[0:3], byteorder ='little')
         torque = int.from_bytes(body[4:7], byteorder ='little', signed=TRUE)
 
-        GEARS_SIZE_CORRECTION = 3.4
+        GEARS_SIZE_CORRECTION = 3.4 #coefficient to compensate difference in gears size so small one should move to bigger angle
         head.on_for_degrees(torque, degree * GEARS_SIZE_CORRECTION)
         return

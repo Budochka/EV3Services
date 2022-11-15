@@ -12,7 +12,8 @@ def sensors_reporter(channel, period):
 
     cl = ColorSensor()
     # Put the color sensor into RGB mode.
-    cl.mode='RGB-RAW'
+    cl.mode='COL-COLOR'
+    
 
     ts = TouchSensor()
     print("All sensors started")
@@ -20,17 +21,15 @@ def sensors_reporter(channel, period):
     finished = False
 
     while not finished:
-        distance = us.value() / 10 #convert to cm
+        distance = us.distance_centimeters
         channel.basic_publish(exchange = 'EV3', routing_key = "sensors.distance", body=pack('f', distance))
         logging.info('Distance sent ' + str(distance))
         print('Distance sent ' + str(distance))
 
-        red = cl.value(0)
-        green = cl.value(1)
-        blue = cl.value(2)
-        channel.basic_publish(exchange = 'EV3', routing_key = "sensors.color", body=bytearray(cl.rgb))
-        logging.info('Colors are red=' + str(red) + ', green=' + str(green) + ', blue=' + str(blue))
-        print('Colors are red=' + str(red) + ', green=' + str(green) + ', blue=' + str(blue))
+        color = cl.color_name;
+        channel.basic_publish(exchange = 'EV3', routing_key = "sensors.color", body=pack('b', cl.color))
+        logging.info('Colors is ' + color)
+        print('Colors is ' + color)
 
         if ts.is_pressed:
             channel.basic_publish(exchange = 'EV3', routing_key = "sensors.touch", body=pack('b', 1))
