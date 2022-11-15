@@ -36,6 +36,7 @@ namespace Logger
 
             _connection = new MySqlConnection(_config.ConnectionString);
             _connection.Open();
+            _logs.Info("Database connection opened");
         }
 
         public void Start()
@@ -54,12 +55,12 @@ namespace Logger
             if ((bytes.Length > 0) && _started && (_connection != null))
             {
                 using var command = _connection.CreateCommand();
-                command.CommandText = @"insert into Events ('Time', 'Topic', 'Data') values (@time, @topic, @data);";
+                command.CommandText = @"insert into Events (Time, Topic, Data) values (@time, @topic, @data);";
                 command.Parameters.Add(new MySqlParameter
                 {
                     ParameterName = "@time",
                     DbType = DbType.DateTime,
-                    Value = args.BasicProperties.Timestamp.ToString()
+                    Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")
                 });
                 command.Parameters.Add(new MySqlParameter
                 {
@@ -69,10 +70,11 @@ namespace Logger
                 });
                 command.Parameters.Add(new MySqlParameter
                 {
-                    ParameterName = "@topic",
+                    ParameterName = "@data",
                     DbType = DbType.Binary,
                     Value = bytes
                 });
+                command.ExecuteNonQueryAsync();
             }
         }
     }

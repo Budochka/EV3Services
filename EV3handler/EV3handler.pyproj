@@ -24,6 +24,7 @@
     <Compile Include="MoveHandler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SensorsHandler.py" />
     <Compile Include="VoiceHandler.py">
       <SubType>Code</SubType>
     </Compile>

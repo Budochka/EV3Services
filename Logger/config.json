@@ -4,5 +4,5 @@
   "RabbitPassword": "guest",
   "RabbitHost": "localhost",
   "RabbitPort": 5672,
-  "ConnectionString": "Server=storage;User ID=ev3;Password=ev3;Database=ev3"
+  "ConnectionString": "Host=storage;Port=3307;User ID=ev3;Password=ev3;Database=ev3"
 }

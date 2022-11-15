@@ -13,4 +13,8 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy config.json $(OutDir)" />
+  </Target>
+
 </Project>

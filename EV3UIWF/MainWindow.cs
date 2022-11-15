@@ -11,11 +11,14 @@ namespace EV3UIWF
     public partial class FrmMain : Form
     {
         private readonly Worker _worker;
-        private readonly List<Plugin> _listPlgugins = new List<Plugin>();
+        private readonly List<Plugin> _listPlgugins = new();
+        private NLog.Logger _logs;
 
         public FrmMain(NLog.Logger log, Config cfg)
         {
             InitializeComponent();
+
+            _logs = log;
 
             _worker = new Worker(log, cfg);
             _worker.Initialize();
@@ -67,7 +70,16 @@ namespace EV3UIWF
 
         private void ScanPlugins(string folder)
         {
-            var files = Directory.EnumerateFiles(folder, "*.py");
+            IEnumerable<string> files;
+            try
+            {
+                files = Directory.EnumerateFiles(folder, "*.py");
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                _logs.Error(e, "No plugins directory found");
+                return;
+            }
             foreach (var f in files)
             {
                 _listPlgugins.Add(new Plugin(name: Path.GetFileNameWithoutExtension(f), fullFileName: f));
@@ -124,6 +136,18 @@ namespace EV3UIWF
         private void FrmMain_Load(object sender, EventArgs e)
         {
             FillPluginsMenu();
+        }
+
+        private void btnHeadLeft_Click(object sender, EventArgs e)
+        {
+            var htc = new HeadTurnCommand(Convert.ToInt32(txtDegreeHead.Text), Convert.ToInt32(txtTorqueHead.Text));
+            _worker.Publish("movement.headturn", htc.ToByte());
+        }
+
+        private void btnHeadRight_Click(object sender, EventArgs e)
+        {
+            var htc = new HeadTurnCommand(Convert.ToInt32(txtDegreeHead.Text), -Convert.ToInt32(txtTorqueHead.Text));
+            _worker.Publish("movement.headturn", htc.ToByte());
         }
     }
 }
