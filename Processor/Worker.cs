@@ -1,8 +1,8 @@
-﻿using System;
-using NLog;
+﻿using NLog;
 using RabbitMQ.Client.Events;
+using System.Text;
 
-namespace EV3UIWF
+namespace Processor
 {
     class Worker
     { 
@@ -12,10 +12,6 @@ namespace EV3UIWF
         private readonly Config _config;
 
         private bool _started;
-
-        //handling received messages
-        public delegate void MessageReceivedHandler(string key, byte[] data);
-        public event MessageReceivedHandler Notify;
 
         public Worker(Logger log, Config config)
         {
@@ -52,24 +48,14 @@ namespace EV3UIWF
             _started = false;
         }
 
-        public void Publish(string key, in byte[] data)
-        {
-            _publisher.Publish(key, data);
-        }
-
         private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
-            var bytes = args.Body.ToArray();
-            if ((bytes.Length > 0) && _started)
+            if (args.RoutingKey == "sensors.touch")
             {
-                var buffer = new byte[bytes.Length / sizeof(byte)];
-                Buffer.BlockCopy(bytes, 0, buffer, 0, bytes.Length);
-                Notify?.Invoke(args.RoutingKey, buffer);
+                _publisher.Publish("voice.text", Encoding.Unicode.GetBytes("Привет! Держи пять!"));
+                EventingBasicConsumer ec = (EventingBasicConsumer)sender;
+                ec.Model.BasicAck(args.DeliveryTag, false);
             }
-
-            //No ACK in UI because we just looking at the messages passed, no processing 
-//            var ec = (EventingBasicConsumer)sender;
-//            ec.Model.BasicAck(args.DeliveryTag, false);
         }
     }
 }

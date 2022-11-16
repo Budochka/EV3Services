@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using NLog;
-using RabbitMQ.Client.Events;
+﻿using RabbitMQ.Client.Events;
 using MySqlConnector;
 using System.Data;
-using System.Reflection.Metadata;
 
 namespace Logger
 {
