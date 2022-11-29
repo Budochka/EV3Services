@@ -62,11 +62,9 @@ namespace VoiceCreator
                 Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
                 string text = new string(chars);
 
-                string file;
-
                 if (_vs != null)
                 {
-                    _vs.Text2File(text, out file);
+                    _vs.Text2File(text, out var file);
                     var filedata = File.ReadAllBytes(file);
                     File.Delete(file);
                     _publisher.Publish(filedata);

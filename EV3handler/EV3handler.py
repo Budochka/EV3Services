@@ -47,7 +47,10 @@ if __name__ == "__main__":
     print('Reading configuration - done')
 
     #setup logging
-    logging.basicConfig(filename=logfile, level=logging.INFO)
+    logging.basicConfig(level=logging.INFO,
+                        format='%(asctime)s %(levelname)s %(module)s %(funcName)s %(message)s',
+                        handlers=[logging.FileHandler(logfile, mode='w'),
+                        logging.StreamHandler()])
 
     #connect to rabbitmq
     connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, port=rabbit_port, credentials=pika.PlainCredentials(rabbit_login, rabbit_psw)))
