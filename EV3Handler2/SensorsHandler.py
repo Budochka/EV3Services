@@ -11,7 +11,7 @@ def touchensor_reporter():
 
     connection, channel = Utils.connectToRabbit()
 
-    while not Utils.config.stopped:
+    while not Utils.global_config.stopped:
         if ts.is_pressed:
             channel.basic_publish(exchange = 'EV3', routing_key = "sensors.touch", body=pack('b', 1))
             logging.info('Touch sensor pushed')
@@ -32,7 +32,7 @@ def sensors_reporter():
 
     connection, channel = Utils.connectToRabbit()
 
-    while not Utils.config.stopped:
+    while not Utils.global_config.stopped:
         distance = us.distance_centimeters
         channel.basic_publish(exchange = 'EV3', routing_key = "sensors.distance", body=pack('f', distance))
         logging.info('Distance is ' + str(distance))
@@ -41,4 +41,4 @@ def sensors_reporter():
         channel.basic_publish(exchange = 'EV3', routing_key = "sensors.color", body=pack('b', cl.color))
         logging.info('Colors is ' + color)
 
-        time.sleep(Utils.config.update_period)
+        time.sleep(Utils.global_config.update_period)

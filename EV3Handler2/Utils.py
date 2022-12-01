@@ -2,21 +2,14 @@ import logging
 import json
 import pika
 
-global config
-
-#connecting to Rabbit using information from global config file
-def connectToRabbit():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host=config.rabbit_host, port=config.rabbit_port, 
-                                         credentials=pika.PlainCredentials(config.rabbit_login, config.rabbit_psw)))
-    channel = connection.channel()
-    channel.exchange_declare(exchange='EV3', exchange_type='topic', auto_delete=True)
-
-    logging.info('Rabbit connection created')
-
-    return connection, channel
+def initialize(): 
+    global global_config
+    global_config = Config()
 
 #global configuration
 class Config:
+    stopped = False
+
     def __init__(self) :
         #read json file
         with open('config.json') as json_file:
@@ -29,4 +22,14 @@ class Config:
             self.logfile = data['LogFileName']
         logging.info("Config class initialized successfully")
 
-        stopped = False
+
+#connecting to Rabbit using information from global config file
+def connectToRabbit():
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host=global_config.rabbit_host, port=global_config.rabbit_port, 
+                                         credentials=pika.PlainCredentials(global_config.rabbit_login, global_config.rabbit_psw)))
+    channel = connection.channel()
+    channel.exchange_declare(exchange='EV3', exchange_type='topic', auto_delete=True)
+
+    logging.info('Rabbit connection created')
+
+    return connection, channel

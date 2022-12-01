@@ -8,7 +8,6 @@ def callback_move(ch, method, properties, body):
     tank_drive = MoveTank(OUTPUT_B, OUTPUT_C)
     head = MediumMotor(OUTPUT_A)
 
-
     if (method.routing_key.find('.turn') != -1):
         logging.info('Turn message processed')
         degree = int.from_bytes(body[0:3], byteorder ='little')

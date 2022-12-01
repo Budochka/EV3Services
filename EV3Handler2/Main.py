@@ -1,23 +1,13 @@
 import logging
-import pika
+import sys
 import threading
-import Utils
 import MoveHandler
 import VoiceHandler
-
-#connecting to Rabbit using information from global config file
-def connectToRabbit():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host=config.rabbit_host, port=config.rabbit_port, 
-                                         credentials=pika.PlainCredentials(config.rabbit_login, config.rabbit_psw)))
-    channel = connection.channel()
-    channel.exchange_declare(exchange='EV3', exchange_type='topic', auto_delete=True)
-
-    logging.info('Rabbit connection created')
-
-    return connection, channel
+import SensorsHandler
+import Utils
 
 #callback for handling messages from Rabbit
-def callback(ch, method, properties, body):
+def callback_messages(ch, method, properties, body):
     if (method.routing_key.find('voice.wav') != -1):
         VoiceHandler.callback_voice(ch, method, properties, body)
         return
@@ -26,21 +16,12 @@ def callback(ch, method, properties, body):
         MoveHandler.callback_move(ch, method, properties, body)
         return
 
-#program entry poitnt
-if __name__ == "__main__":
-    config = Utils("config.json")
-
-    #setup logging
-    logging.basicConfig(level=logging.INFO,
-                        format='%(asctime)s %(levelname)s %(module)s %(funcName)s %(message)s',
-                        handlers=[logging.FileHandler(config.logfile, mode='w'),
-                        logging.StreamHandler()])
-
-    connection, channel = connectToRabbit()
+#consumer callback
+def consumer():
+    connection, channel = Utils.connectToRabbit()
 
     result = channel.queue_declare(queue='')
     queue_name = result.method.queue
-    print('Connecting to Rabbit - done')
 
     channel.queue_bind(exchange='EV3', routing_key='voice.wav', queue=queue_name)
     logging.info('Voice queue bind complete')
@@ -48,8 +29,37 @@ if __name__ == "__main__":
     channel.queue_bind(exchange='EV3', routing_key='movement.*', queue=queue_name)
     logging.info('Movement queue bind complete')
 
-    channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
-    print('Listening for the events')
+    channel.basic_consume(queue=queue_name, on_message_callback=callback_messages, auto_ack=True)
+    logging.info('Listening for the events')
     channel.start_consuming()
+    
 
-    input("Press Enter to exit...")
+#program entry poitnt
+if __name__ == "__main__":
+    Utils.initialize()
+
+    #setup logging
+    logging.basicConfig(level=logging.INFO,
+                        format='%(asctime)s %(levelname)s %(module)s %(funcName)s %(message)s',
+                        handlers=[
+                            logging.FileHandler(Utils.global_config.logfile),
+                            logging.StreamHandler(sys.stdout)
+                        ])
+
+    consumer_thread = threading.Thread(target=consumer)
+    consumer_thread.daemon = True
+    consumer_thread.start()
+    logging.info('Consumer thread statrted')
+
+    touch_thread = threading.Thread(target=SensorsHandler.touchensor_reporter)
+    touch_thread.start()
+    logging.info('Touch sensor thread statrted')
+
+    sensors_thread = threading.Thread(target=SensorsHandler.sensors_reporter)
+    sensors_thread.start()
+    logging.info('Distanse & color sensors thread statrted')
+
+    input("Press Enter to exit...\n")
+
+    Utils.global_config.stopped = True
+    

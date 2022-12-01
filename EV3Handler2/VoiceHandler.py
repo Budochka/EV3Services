@@ -13,4 +13,3 @@ def callback_voice(ch, method, properties, body):
 
     os.remove('ToSpeak.wav')
     logging.info('Voice message processed')
-
