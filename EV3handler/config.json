@@ -1,8 +1,0 @@
-{
-  "LogFileName": "logfile.txt",
-  "RabbitUserName": "guest",
-  "RabbitPassword": "guest",
-  "RabbitHost": "192.168.10.114",
-  "RabbitPort": 5672,
-  "UpdatePeriod": 1
-}

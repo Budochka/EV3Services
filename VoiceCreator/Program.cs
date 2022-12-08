@@ -34,8 +34,15 @@ namespace VoiceCreator
                 Layout = "${longdate} : ${callsite} : ${message}"
             };
 
+            var console = new NLog.Targets.ConsoleTarget()
+            {
+                DetectConsoleAvailable = true,
+                Layout = "${longdate} : ${callsite} : ${message}"
+            };
+
             // set logging rules
             nlogConfig.AddRuleForAllLevels(logfile);
+            nlogConfig.AddRuleForAllLevels(console);
 
             // Apply config           
             NLog.LogManager.Configuration = nlogConfig;

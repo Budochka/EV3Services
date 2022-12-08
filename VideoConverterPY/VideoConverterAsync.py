@@ -1,3 +1,4 @@
+import sys
 import cv2
 import pika
 import threading
@@ -8,6 +9,8 @@ import numpy as np
 from cv2 import VideoCapture
 
 class FrameSkiper:
+    is_finished = False
+
     def __init__(self):
         self.sending = False
         self.flag_lock = threading.Lock()
@@ -30,34 +33,11 @@ class FrameSkiper:
 
 
 def donothing(sec, flag):
-    while (True):
+    while (not flag.is_finished):
         time.sleep(sec)
         flag.set_flag()
-        logging.info('delay passed')
 
-
-if __name__ == "__main__":
-    #read config file
-    with open('config.json') as json_file:
-        data = json.load(json_file)
-        rabbit_host = data['RabbitHost']
-        rabbit_port = data['RabbitPort']
-        rabbit_login = data['RabbitUserName']
-        rabbit_psw = data['RabbitPassword']
-        logfile = data['LogFileName']
-        video_source = data['RTMPSource']
-        delay = data['DelayBetweenFrames']
-
-    #setup logging
-    logging.basicConfig(filename=logfile, level=logging.INFO)
-
-    #create class
-    frameskiper = FrameSkiper()
-
-    #initialise thread
-    x = threading.Thread(target=donothing, args=(delay,frameskiper), daemon=True)
-    x.start()
-
+def process_frames(d, flag):
     #connect to rabbitmq
     connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbit_host, port=rabbit_port, credentials=pika.PlainCredentials(rabbit_login, rabbit_psw)))
     channel = connection.channel()
@@ -67,7 +47,7 @@ if __name__ == "__main__":
     #get video stream
     cap = VideoCapture(video_source)
 
-    while(cap.isOpened()):
+    while(cap.isOpened() and not flag.is_finished):
         ret, frame = cap.read()
         
         #check if we got the image
@@ -89,3 +69,37 @@ if __name__ == "__main__":
                 frameskiper.clear_flag()
 
     cap.release()
+
+
+if __name__ == "__main__":
+    #read config file
+    with open('config.json') as json_file:
+        data = json.load(json_file)
+        rabbit_host = data['RabbitHost']
+        rabbit_port = data['RabbitPort']
+        rabbit_login = data['RabbitUserName']
+        rabbit_psw = data['RabbitPassword']
+        logfile = data['LogFileName']
+        video_source = data['RTMPSource']
+        delay = data['DelayBetweenFrames']
+
+    #setup logging
+    logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s | %(levelname)s | %(module)s | %(funcName)s | %(message)s',
+                    handlers=[
+                        logging.FileHandler(logfile),
+                        logging.StreamHandler(sys.stdout)
+                    ])
+    #create class
+    frameskiper = FrameSkiper()
+
+    #initialise thread
+    delay_thread = threading.Thread(target=donothing, args=(delay,frameskiper), daemon=True)
+    delay_thread.start()
+
+    worker_thread = threading.Thread(target=process_frames, args=(1, frameskiper), daemon=True)
+    worker_thread.start()
+
+    input("Press Enter to exit...\n")
+
+    frameskiper.is_finished = True
