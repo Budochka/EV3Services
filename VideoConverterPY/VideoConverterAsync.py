@@ -5,7 +5,6 @@ import threading
 import time
 import json
 import logging
-import numpy as np
 from cv2 import VideoCapture
 
 class FrameSkiper:
@@ -94,10 +93,10 @@ if __name__ == "__main__":
     frameskiper = FrameSkiper()
 
     #initialise thread
-    delay_thread = threading.Thread(target=donothing, args=(delay,frameskiper), daemon=True)
+    delay_thread = threading.Thread(target=donothing, args=(delay,frameskiper))
     delay_thread.start()
 
-    worker_thread = threading.Thread(target=process_frames, args=(1, frameskiper), daemon=True)
+    worker_thread = threading.Thread(target=process_frames, args=(1, frameskiper))
     worker_thread.start()
 
     input("Press Enter to exit...\n")
