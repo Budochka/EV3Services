@@ -148,6 +148,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(ProjectDir)config.json $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)
+copy $(ProjectDir)config.json $(TargetDir)
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

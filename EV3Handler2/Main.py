@@ -42,7 +42,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(module)s %(funcName)s %(message)s',
                         handlers=[
-                            logging.FileHandler(Utils.global_config.logfile),
+                            logging.FileHandler(Utils.global_config.logfile, mode='w'),
                             logging.StreamHandler(sys.stdout)
                         ])
 

@@ -1,3 +1,4 @@
+from pickle import TRUE
 import sys
 import cv2
 import pika
@@ -86,17 +87,17 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(module)s | %(funcName)s | %(message)s',
                     handlers=[
-                        logging.FileHandler(logfile),
+                        logging.FileHandler(logfile, mode='w'),
                         logging.StreamHandler(sys.stdout)
                     ])
     #create class
     frameskiper = FrameSkiper()
 
     #initialise thread
-    delay_thread = threading.Thread(target=donothing, args=(delay,frameskiper))
+    delay_thread = threading.Thread(target=donothing, args=(delay,frameskiper), daemon=True)
     delay_thread.start()
 
-    worker_thread = threading.Thread(target=process_frames, args=(1, frameskiper))
+    worker_thread = threading.Thread(target=process_frames, args=(0, frameskiper), daemon=True)
     worker_thread.start()
 
     input("Press Enter to exit...\n")

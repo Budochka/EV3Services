@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy config.json $(OutDir)" />
+    <Exec Command="copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)&#xD;&#xA;copy $(ProjectDir)config.json $(TargetDir)&#xD;&#xA;" />
   </Target>
 
 </Project>
