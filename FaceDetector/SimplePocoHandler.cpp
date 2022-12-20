@@ -147,12 +147,12 @@ void SimplePocoHandler::loop()
     }
 }
 
-void SimplePocoHandler::quit()
+void SimplePocoHandler::quit() const
 {
     m_impl->quit = true;
 }
 
-void SimplePocoHandler::SimplePocoHandler::close()
+void SimplePocoHandler::SimplePocoHandler::close() const
 {
     m_impl->socket.close();
 }
@@ -191,7 +191,7 @@ bool SimplePocoHandler::connected() const
     return m_impl->connected;
 }
 
-void SimplePocoHandler::sendDataFromBuffer()
+void SimplePocoHandler::sendDataFromBuffer() const
 {
     if (m_impl->outBuffer.available())
     {

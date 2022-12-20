@@ -59,11 +59,11 @@ def process_frames(d, flag):
             #resize image to 640*480, but preserve scale
             scale = 640 / frame.shape[1]
             resized = cv2.resize(frame, (640, int(frame.shape[0] * scale)), interpolation = cv2.INTER_AREA)
-            res, bmp_image = cv2.imencode('.bmp', resized)
+            res, image = cv2.imencode('.jpg', resized)
 
             #publish message
             if res:
-                msg = bytearray(bmp_image)
+                msg = bytearray(image)
                 channel.basic_publish(exchange='EV3', routing_key="images.general", body=msg)
                 logging.info('Frame sent to rabbit')
                 frameskiper.clear_flag()

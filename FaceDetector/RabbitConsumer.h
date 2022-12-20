@@ -11,8 +11,8 @@ public:
 	{
 	}
 
-	void Run();
-	void Stop();
+	void Run() const;
+	void Stop() const;
 
 private:
 	AMQP::Channel& _channel;

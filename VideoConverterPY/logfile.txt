@@ -1,1321 +1,640 @@
-2022-12-08 15:13:46,819 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:46,928 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,039 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,149 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,260 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,369 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,478 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,587 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,696 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,808 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:47,917 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,027 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,137 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,249 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,467 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,576 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,685 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,795 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:48,905 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,016 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,125 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,235 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,346 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,455 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,563 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,672 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,781 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,890 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:49,999 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,108 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,217 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,327 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,437 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,546 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,656 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,763 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,873 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:50,983 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,093 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,201 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,312 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,420 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,530 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,638 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,747 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,856 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:51,965 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,075 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,185 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,294 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,511 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,623 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,733 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,842 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:52,952 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,060 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,172 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,279 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,389 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,496 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,605 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,714 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,822 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:53,933 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,043 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,150 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,261 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,370 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,480 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,589 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,699 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,809 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:54,920 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,029 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,142 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,250 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,360 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,470 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,578 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,687 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,795 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:55,905 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,014 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,124 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,233 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,345 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,456 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,564 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,673 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,780 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:56,890 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,000 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,112 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,223 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,334 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,443 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,555 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,664 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,773 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,883 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:57,992 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,102 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,210 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,320 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,430 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,540 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,650 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,759 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,869 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:58,978 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,085 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,196 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,306 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,415 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,522 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,631 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,742 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,853 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:13:59,963 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,074 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,185 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,296 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,512 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,623 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,733 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,844 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:00,954 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,063 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,172 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,282 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,393 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,503 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,612 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,724 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,833 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:01,943 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,054 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,163 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,273 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,384 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,492 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,602 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,711 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,821 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:02,932 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,044 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,154 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,265 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,374 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,484 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,595 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,704 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,814 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:03,924 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,032 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,142 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,251 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,361 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,470 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,579 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,688 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,798 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:04,908 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,018 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,129 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,239 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,349 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,459 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,568 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,677 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,787 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:05,895 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,007 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,116 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,226 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,337 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,448 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,558 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,668 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,779 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:06,890 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:07,000 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:07,110 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:07,220 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:07,330 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:07,438 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:32,606 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:32,714 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:32,822 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:32,932 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,040 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,151 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,261 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,372 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,480 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,591 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,702 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,813 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:33,922 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,030 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,137 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,246 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,355 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,464 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,574 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,684 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,793 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:34,902 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,011 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,123 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,235 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,344 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,456 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,567 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,677 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,786 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:35,897 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,006 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,116 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,226 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,336 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,446 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,557 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,668 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,777 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,887 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:36,998 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,108 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,218 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,326 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,436 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,547 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,656 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,765 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,873 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:37,983 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,090 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,198 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,308 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,417 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,527 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,636 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,744 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,856 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:38,966 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,077 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,187 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,297 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,514 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,622 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,730 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,839 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:39,950 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,059 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,171 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,280 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,389 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,498 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,606 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,714 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,824 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:40,934 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,042 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,151 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,260 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,371 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,481 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,591 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,701 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,811 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:41,921 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,032 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,142 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,249 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,468 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,579 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,687 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,797 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:42,905 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:43,013 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:43,124 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:43,234 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:43,344 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:14:43,452 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:44,939 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,048 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,160 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,270 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,377 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,487 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,596 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,708 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,817 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:45,926 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,037 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,146 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,256 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,368 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,477 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,586 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,697 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,807 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:46,915 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,025 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,134 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,243 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,353 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,460 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,570 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,679 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,790 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:47,899 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,007 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,115 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,224 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,334 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,442 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,551 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,660 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,768 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,880 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:48,989 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,097 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,207 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,316 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,424 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,534 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,642 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,752 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,863 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:49,975 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,086 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,198 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,308 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,417 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,526 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,635 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,743 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,854 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:50,964 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,073 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,182 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,292 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,403 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,511 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,621 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,727 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,836 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:51,945 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,054 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,164 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,275 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,384 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,493 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,602 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,711 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,819 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:52,927 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,036 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,145 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,255 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,365 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,474 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,583 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,691 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:15:53,800 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:15,383 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:19:15,385 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1680, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12285, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:19:15,387 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000021EE84D60E0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000021EE84D60E0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:19:15,396 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000021EE84D60E0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:19:15,397 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000021EE84D60E0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:19:15,397 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000021EE84D60E0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:19:15,399 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:19:15,404 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:19:15,479 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:15,589 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:15,700 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:15,810 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:15,921 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,033 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,145 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,255 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,367 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,477 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,587 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,697 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,807 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:16,918 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,029 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,139 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,249 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,358 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,465 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,575 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,684 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,792 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:17,901 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,009 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,118 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,228 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,337 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,445 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,555 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,665 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,775 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,884 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:18,995 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,103 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,212 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,321 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,430 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,541 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,649 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,759 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,870 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:19,981 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,092 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,204 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,316 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,425 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,533 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,642 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,752 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,863 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:20,972 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,082 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,190 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,301 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,412 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,523 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,631 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,740 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,851 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:21,962 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,071 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,179 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,288 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,398 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,507 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,616 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,723 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,832 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:22,941 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,051 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,159 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,269 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,376 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,487 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,594 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,705 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,817 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:23,928 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,038 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,147 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,257 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,366 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,475 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,585 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,694 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,804 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:24,914 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,025 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,136 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,246 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,355 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,463 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,570 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,678 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,787 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:25,897 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:26,005 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:26,116 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:26,226 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:26,337 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:26,447 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,094 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,203 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,313 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,423 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,534 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,642 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,752 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,861 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:31,971 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,079 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,187 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,296 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,514 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,624 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,735 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,845 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:32,953 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:33,062 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:33,170 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:33,279 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:33,388 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:19:33,499 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,007 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:20:19,010 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1592, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12335, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:20:19,012 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F2C89F43D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F2C89F43D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:20:19,021 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F2C89F43D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:19,022 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F2C89F43D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:19,022 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F2C89F43D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:19,024 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:20:19,028 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:20:19,107 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,218 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,327 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,437 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,545 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,655 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,765 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,878 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:19,990 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,102 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,213 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,325 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,434 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,544 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,651 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,762 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,872 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:20,980 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:50,830 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:20:50,833 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1628, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12369, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:20:50,835 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297B82443D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297B82443D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:20:50,844 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297B82443D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:50,845 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297B82443D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:50,846 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297B82443D0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:20:50,847 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:20:50,851 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:20:50,927 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,038 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,148 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,258 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,369 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,479 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,588 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,697 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,807 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:51,916 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,025 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,136 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,245 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,354 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,464 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,572 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,683 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,792 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:52,901 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,009 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,119 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,228 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,338 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,447 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,558 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,668 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,777 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,884 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:53,994 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,104 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,216 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,327 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,438 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,547 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,657 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,767 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,878 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:54,988 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,098 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,209 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,321 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,433 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,541 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,650 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,759 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,869 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:55,977 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,088 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,197 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,309 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,420 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,529 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,639 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,749 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,859 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:56,968 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,081 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,190 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,299 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,409 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,519 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,629 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,736 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,846 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:57,954 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:58,064 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:58,171 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:20:58,280 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:17,748 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:21:17,751 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1588, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12395, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:21:17,753 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297676A88B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297676A88B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:21:17,763 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297676A88B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:21:17,763 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297676A88B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:21:17,764 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000297676A88B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:21:17,765 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:21:17,770 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:21:21,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:21,516 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:21,628 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:21,738 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:21,848 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:21,959 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,071 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,182 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,292 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,401 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,511 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,622 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,732 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,844 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:22,955 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,064 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,173 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,283 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,393 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,502 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,611 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,721 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,830 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:23,941 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,049 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,161 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,271 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,381 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,491 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,602 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,711 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,821 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:24,932 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,043 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,153 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,264 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,371 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,481 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,589 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,696 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,806 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:25,917 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,027 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,135 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,243 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,354 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,463 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,573 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,683 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,795 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:26,907 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,017 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,125 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,235 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,344 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,456 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,567 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,676 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,786 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:27,893 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,002 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,112 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,223 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,330 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,440 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,551 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,659 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,770 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,878 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:28,986 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,097 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,208 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,317 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,425 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,533 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,642 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,751 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,862 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:29,971 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,082 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,192 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,301 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,409 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,518 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,628 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:21:30,738 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:00,831 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:22:00,834 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1600, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12433, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:22:00,837 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000256D5A98910>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000256D5A98910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:22:00,846 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000256D5A98910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:22:00,846 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000256D5A98910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:22:00,847 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000256D5A98910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:22:00,848 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:22:00,853 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:22:00,934 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,042 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,152 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,262 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,373 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,483 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,592 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,699 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,809 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:01,919 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,029 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,140 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,251 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,467 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,578 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:22:02,687 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,338 INFO connection_workflow start Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
-2022-12-08 15:23:29,340 INFO io_services_utils _on_writable Socket connected: <socket.socket fd=1628, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 12522, 0, 0), raddr=('::1', 5672, 0, 0)>
-2022-12-08 15:23:29,343 INFO connection_workflow _on_transport_establishment_done Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000268FFD34910>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000268FFD34910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
-2022-12-08 15:23:29,352 INFO connection_workflow _report_completion_and_cleanup AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000268FFD34910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:23:29,352 INFO connection_workflow _report_completion_and_cleanup AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000268FFD34910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:23:29,353 INFO blocking_connection _create_connection Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000268FFD34910> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
-2022-12-08 15:23:29,354 INFO blocking_connection __init__ Created channel=1
-2022-12-08 15:23:29,359 INFO VideoConverterAsync process_frames Rabbit connection created
-2022-12-08 15:23:29,441 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,551 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,658 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,769 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,878 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:29,986 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,094 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,204 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,314 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,424 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,532 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,641 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,750 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,860 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:30,968 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,076 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,187 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,296 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,405 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,516 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,624 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,734 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,843 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,945 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:31,953 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:31,984 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,062 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,084 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,171 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,254 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,280 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,344 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,390 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,398 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,498 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,583 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,610 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,720 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,756 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,831 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:32,849 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:32,943 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,005 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,053 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,057 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,162 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,264 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,273 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,316 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,380 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,489 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,524 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,598 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,627 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,707 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,817 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,827 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:33,927 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:33,992 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,035 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,112 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,143 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,185 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,251 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,286 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,434 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,469 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,498 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,577 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,595 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,687 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,695 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:34,798 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,906 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:34,976 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,015 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,068 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,125 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,132 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,234 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,305 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,344 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,356 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,451 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,455 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,560 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,615 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,668 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,715 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:35,778 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,886 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:35,997 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,029 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,107 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,128 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,217 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,224 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,328 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,358 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,437 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,469 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,544 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,564 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,651 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,718 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,760 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,814 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:36,868 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:36,977 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,007 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,086 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,196 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,197 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,250 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,307 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,405 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,417 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,504 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,526 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,563 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,635 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,653 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,745 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,787 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,853 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,885 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:37,963 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:37,996 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,073 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,084 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,183 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,245 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,294 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,299 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,403 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,503 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,513 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,555 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,620 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,655 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,728 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,764 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,837 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:38,917 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:38,946 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,014 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,055 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,065 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,162 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,272 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,354 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,380 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,432 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,491 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,530 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,601 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,675 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,711 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,736 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,818 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:39,841 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:39,928 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,007 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,038 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,116 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,148 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,184 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,259 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,303 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,369 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,479 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,509 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,588 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,636 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,696 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,785 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,805 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,836 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:40,912 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:40,934 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,022 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,034 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,134 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,195 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,243 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,293 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,351 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,356 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,461 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,572 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,598 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,680 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,708 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,789 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,856 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:41,898 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:41,955 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,008 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,105 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,116 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,226 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,226 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,335 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,384 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,443 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,459 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,552 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,606 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,663 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,679 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,774 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,777 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,884 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:42,976 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:42,994 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,027 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,102 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,115 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,209 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,282 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,319 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,394 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,428 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,511 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,538 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,646 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,754 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,766 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,863 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:43,878 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:43,972 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,081 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,082 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,192 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,235 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,300 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,385 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,408 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,485 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,517 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,591 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,626 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,645 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,734 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,844 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,853 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:44,952 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:44,974 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,062 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,100 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,173 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,254 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,281 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,312 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,391 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,415 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,499 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,514 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,610 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,655 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,717 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,752 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:45,826 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,938 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:45,948 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,048 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,095 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,159 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,253 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,268 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,307 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,378 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,446 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,488 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,506 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,598 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,604 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,707 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,764 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:46,817 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,926 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:46,986 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,037 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,041 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,148 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,195 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,260 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,344 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,370 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,454 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,480 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,506 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,589 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,606 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,699 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,705 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,810 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:47,855 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:47,920 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,030 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,118 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,140 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,175 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,250 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,306 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,466 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,477 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,577 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,624 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,687 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,726 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,798 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,875 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:48,908 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:48,988 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,019 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,042 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,131 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,235 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,243 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,295 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,353 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,391 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,464 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,545 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,574 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,645 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,685 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,706 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,793 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,807 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:49,904 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:49,960 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,013 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,048 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,125 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,141 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,235 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,344 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,352 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,454 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,495 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,562 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,648 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,672 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,698 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,782 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,797 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:50,890 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:50,909 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,000 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,004 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,109 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,165 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,220 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,271 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,329 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,429 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,440 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,492 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,548 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,584 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,659 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,686 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,769 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,845 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,880 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:51,897 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:51,989 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,002 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,099 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,185 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,209 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,237 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,318 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,429 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,487 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,540 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,587 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,650 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,697 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,762 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,846 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,873 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:52,945 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:52,982 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,012 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,089 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,094 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,199 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,205 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,310 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,358 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,418 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,528 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,624 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,638 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,682 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,748 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,791 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,858 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:53,868 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:53,967 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,017 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,075 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,115 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,184 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,274 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,294 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,375 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,405 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,436 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,514 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,535 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,623 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,733 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,739 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,841 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:54,885 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:54,950 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,035 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,059 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,138 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,169 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,200 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,278 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,294 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,387 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,457 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,497 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,557 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,607 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,670 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,717 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,816 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,828 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,886 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:55,937 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:55,939 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,045 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,135 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,155 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,226 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,266 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,277 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,374 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,428 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,485 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,574 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,593 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,678 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,703 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,738 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,811 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,904 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:56,920 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:56,960 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,031 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,055 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,140 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,165 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,250 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,315 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,359 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,425 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,467 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,475 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,576 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,578 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,686 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,693 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:57,794 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,901 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:57,977 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,011 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,036 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,119 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,185 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,229 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,236 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,339 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,434 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,450 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,488 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,558 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,585 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,666 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,755 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,776 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,847 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:58,886 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:58,995 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,106 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,167 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,215 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,220 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,326 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,348 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,433 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,436 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,539 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,595 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,647 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,702 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,756 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,845 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,867 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,941 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:23:59,975 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:23:59,988 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,085 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,196 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,256 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,307 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,311 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,417 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,447 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,528 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,615 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,638 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,665 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,746 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,766 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,856 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:00,867 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:00,965 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,016 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,073 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,136 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,184 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,295 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,298 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,404 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,460 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,513 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,555 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,619 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,661 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,729 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,770 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,839 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,916 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:01,950 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:01,972 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,059 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,064 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,169 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,278 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,389 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,428 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,500 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,556 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,609 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,654 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,720 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,815 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,831 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,866 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:02,941 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:02,965 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,050 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,066 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,161 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,165 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,269 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,380 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,477 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,487 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,532 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,598 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,668 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,707 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,718 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,814 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:03,906 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:03,922 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,014 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:04,032 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,086 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:04,143 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,197 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:04,254 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,334 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:04,364 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,471 INFO VideoConverterAsync donothing delay passed
-2022-12-08 15:24:04,578 INFO VideoConverterAsync process_frames Frame sent to rabbit
-2022-12-08 15:24:04,583 INFO VideoConverterAsync donothing delay passed
+2022-12-20 16:18:16,361 | INFO | connection_workflow | start | Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
+2022-12-20 16:18:16,362 | INFO | io_services_utils | _on_writable | Socket connected: <socket.socket fd=1352, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 34340, 0, 0), raddr=('::1', 5672, 0, 0)>
+2022-12-20 16:18:16,363 | INFO | connection_workflow | _on_transport_establishment_done | Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B4D2F7DC60>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B4D2F7DC60> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2022-12-20 16:18:16,371 | INFO | connection_workflow | _report_completion_and_cleanup | AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B4D2F7DC60> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2022-12-20 16:18:16,372 | INFO | connection_workflow | _report_completion_and_cleanup | AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B4D2F7DC60> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2022-12-20 16:18:16,372 | INFO | blocking_connection | _create_connection | Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B4D2F7DC60> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2022-12-20 16:18:16,373 | INFO | blocking_connection | __init__ | Created channel=1
+2022-12-20 16:18:16,378 | INFO | VideoConverterAsync | process_frames | Rabbit connection created
+2022-12-20 16:18:19,113 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,228 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,479 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,527 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,634 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,776 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,883 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:19,951 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,087 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,186 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,341 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,608 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,725 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,887 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:20,942 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,137 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,241 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,296 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,385 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,708 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,868 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:21,925 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,069 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,158 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,259 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,362 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,478 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,830 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:22,929 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,085 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,161 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,327 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,458 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,648 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,726 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,798 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:23,969 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,060 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,149 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,267 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,368 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,477 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,607 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,660 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:24,819 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,073 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,141 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,248 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,338 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,518 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,644 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,767 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:25,888 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,152 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,219 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,355 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,500 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,551 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,662 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,812 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,929 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:26,988 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,221 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,390 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,439 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,628 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,790 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:27,949 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,157 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,394 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,526 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,677 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,750 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,909 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:28,989 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,060 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,171 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,469 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,536 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,600 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,739 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:29,869 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:30,044 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:30,271 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:30,386 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:30,696 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:30,817 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,002 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,080 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,153 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,287 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,378 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,719 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,820 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:31,928 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,042 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,190 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,269 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,487 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,850 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:32,912 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,058 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,207 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,299 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,349 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,457 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,567 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,678 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:33,920 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,049 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,105 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,281 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,371 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,472 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,608 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,647 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,787 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,872 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:34,977 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,101 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,217 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,296 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,433 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,551 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,710 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,766 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:35,859 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,024 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,074 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,187 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,367 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,473 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,583 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,631 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:36,749 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,145 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,203 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,341 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,381 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,532 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,647 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,750 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:37,866 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,208 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,269 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,370 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,490 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,648 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,719 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,822 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:38,953 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,038 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,319 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,435 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,468 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,654 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,721 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,860 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:39,965 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,029 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,213 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,242 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,449 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,665 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,739 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,799 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:40,938 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,048 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,116 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,228 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,536 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,610 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,700 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,823 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:41,943 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,091 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,140 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,250 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,718 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,773 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:42,899 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,012 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,165 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,221 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,373 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,478 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,778 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:43,889 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,046 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,110 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,300 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,464 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,557 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,686 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:44,904 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,023 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,129 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,265 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,316 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,459 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,568 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,725 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:45,800 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,031 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,103 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,249 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,363 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,498 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,629 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,738 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:46,851 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,099 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,261 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,309 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,438 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,566 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,628 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,780 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:47,888 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,079 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,213 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,291 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,497 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,549 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,682 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,750 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,888 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:48,988 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,060 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,210 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,278 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,409 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,520 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,617 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,759 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,862 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:49,961 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,081 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,376 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,574 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,583 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,695 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:50,900 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,001 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,052 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,143 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,551 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,595 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,693 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,849 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:51,973 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,024 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,219 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,339 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,677 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,782 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:52,938 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,007 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,119 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,246 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,349 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,489 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,740 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,817 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:53,919 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,008 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,109 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,269 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,329 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,508 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,561 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,825 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:54,910 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,058 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,116 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,239 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,388 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,439 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,558 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,745 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:55,967 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,082 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,259 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,311 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,508 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,560 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,658 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:56,818 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,068 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,173 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,337 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,436 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,584 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,712 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,792 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,860 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:57,960 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,205 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,305 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,381 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,515 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,607 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,743 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,878 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:58,978 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,063 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,297 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,383 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,548 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,606 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,704 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,809 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:18:59,962 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,108 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,169 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,320 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,373 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,530 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,670 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,787 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,883 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:00,988 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,042 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,142 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,260 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,497 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,576 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,689 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,806 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:01,918 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,051 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,188 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,267 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,668 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,811 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:02,958 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,091 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,133 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,337 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,441 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,544 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,749 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:03,951 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,010 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,109 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,264 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,349 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,468 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,624 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,650 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:04,859 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,070 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,125 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,230 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,386 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,429 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,582 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,654 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,761 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,940 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:05,984 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,102 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,249 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,310 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,513 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,668 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,721 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:06,864 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,079 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,171 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,372 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,433 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,536 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,628 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,787 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,844 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:07,970 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,191 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,312 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,499 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,653 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,719 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,819 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:08,990 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,071 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,320 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,380 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,482 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,588 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,720 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,836 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:09,928 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,103 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,187 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,305 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,426 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,643 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,692 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,831 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:10,897 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,086 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,150 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,229 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,360 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,594 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,673 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:11,890 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,009 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,109 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,258 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,658 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,829 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,928 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:12,990 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,168 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,221 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,324 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,438 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,548 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,709 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,785 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:13,948 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,098 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,206 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,319 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,499 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,753 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,829 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:14,954 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,172 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,299 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,424 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,501 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,611 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,881 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:15,954 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,100 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,150 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,343 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,499 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,649 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,760 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:16,901 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,031 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,148 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,241 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,371 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,554 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,732 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:17,801 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,021 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,104 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,289 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,349 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,493 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,551 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,649 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,750 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:18,910 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,160 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,212 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,300 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,459 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,569 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,669 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,779 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:19,881 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,024 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,278 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,508 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,661 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,810 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,862 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:20,969 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,069 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,432 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,505 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,600 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,802 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,849 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:21,942 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,099 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,152 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,250 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,503 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,613 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,761 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,826 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:22,910 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,062 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,167 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,279 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,391 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,571 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,670 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,791 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:23,921 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,043 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,189 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,245 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,321 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,552 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,659 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,850 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:24,901 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,059 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,161 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,225 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,333 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,443 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,545 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,691 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,776 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,939 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:25,991 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,181 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,287 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,351 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,499 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,597 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,745 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,870 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:26,993 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,149 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,238 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,307 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,412 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,565 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,650 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,870 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:27,951 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,126 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,191 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,335 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,508 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,662 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:28,711 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,041 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,152 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,299 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,410 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,510 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,612 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,778 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:29,863 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,124 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,288 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,505 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,678 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,809 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:30,910 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,278 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,352 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,453 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,599 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,704 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,779 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,950 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:31,999 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,343 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,509 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,615 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,690 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,860 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:32,980 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,123 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,239 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,430 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,579 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,635 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,785 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,868 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:33,988 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,132 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,178 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,377 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,534 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,672 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,853 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:34,957 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,101 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,201 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,298 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,432 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,711 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,898 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:35,941 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,041 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,180 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,336 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,489 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,743 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,804 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:36,913 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,050 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,146 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,268 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,410 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,503 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,664 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,862 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:37,992 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,070 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,175 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,257 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,473 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,589 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,741 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:38,998 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,139 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,252 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,354 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,450 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,571 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,704 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,789 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:39,883 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,121 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,236 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,312 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,521 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,669 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,840 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,890 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:40,985 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,088 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,246 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,292 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,534 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,641 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,836 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit
+2022-12-20 16:19:41,957 | INFO | VideoConverterAsync | process_frames | Frame sent to rabbit

@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "stdafx.h"
 
 #include "Config.h"
 #include "SimplePocoHandler.h"
@@ -19,6 +20,16 @@ int main()
     SimplePocoHandler handler(cfg.rabbit_host(), cfg.rabbit_port());
     AMQP::Connection connection(&handler, AMQP::Login(cfg.rabbit_user_name(), cfg.rabbit_password()), cfg.rabbit_v_host());
     AMQP::Channel channel(&connection);
+    channel.onError([&handler](const char* message)
+        {
+            std::cout << "Channel error: " << message << std::endl; 
+			handler.quit();
+        });
+    
+    channel.declareExchange("EV3", AMQP::topic, AMQP::autodelete);
+    channel.declareQueue("images", AMQP::exclusive);
+    channel.bindQueue("EV3", "images", "images.general");
+
     FaceFinder ff(cfg.facePredictorSetPath(), cfg.shapePredictorSetPath());
 
     RabbitConsumer consumer(channel, ff);

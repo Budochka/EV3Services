@@ -9,10 +9,10 @@ FaceFinder::FaceFinder(const std::string face_predictor_set_path, const std::str
 
 void FaceFinder::SetImage(const char* data, const UINT size_of_image)
 {
-	typedef boost::iostreams::basic_array_source<char> Device;
-	boost::iostreams::stream<Device> stream(data, sizeof(size_of_image));
-
-	load_bmp(_image, stream);
+	if (data != nullptr)
+	{
+		load_jpeg(_image, data, size_of_image);
+	}
 }
 
 //returns number of found faces
@@ -38,7 +38,7 @@ UINT FaceFinder::NumberOfFaces() const
 }
 
 //returns image by index. Number of images is returned by FindFaces() function
-const dlib::matrix<dlib::rgb_pixel>* FaceFinder::GetImage(UINT index)
+const dlib::matrix<dlib::rgb_pixel>* FaceFinder::GetImage(UINT index) const
 {
 	if (index < _found_faces.size())
 		return &_found_faces[index];

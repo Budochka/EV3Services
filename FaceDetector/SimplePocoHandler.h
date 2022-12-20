@@ -12,7 +12,7 @@ public:
     virtual ~SimplePocoHandler();
 
     void loop();
-    void quit();
+    void quit() const;
 
     bool connected() const;
 
@@ -21,7 +21,7 @@ private:
     SimplePocoHandler(const SimplePocoHandler&) = delete;
     SimplePocoHandler& operator=(const SimplePocoHandler&) = delete;
 
-    void close();
+    void close() const;
 
     virtual void onData(
         AMQP::Connection* connection, const char* data, size_t size);
@@ -32,7 +32,7 @@ private:
 
     virtual void onClosed(AMQP::Connection* connection);
 
-    void sendDataFromBuffer();
+    void sendDataFromBuffer() const;
 
 private:
 

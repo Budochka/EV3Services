@@ -1,7 +1,7 @@
 {
-	"LogFileName": "logfile.txt",
-        "RabbitUserName": "guest",
-        "RabbitPassword": "guest",
-        "RabbitHost": "localhost",
-        "RabbitPort": 5672
+  "LogFileName": "logfile.txt",
+  "RabbitUserName": "guest",
+  "RabbitPassword": "guest",
+  "RabbitHost": "localhost",
+  "RabbitPort": 5672
 }

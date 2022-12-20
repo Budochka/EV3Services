@@ -35,7 +35,7 @@ public:
 	UINT NumberOfFaces() const;
 	
 	//returns image by index. Number of images is returned by FindFaces() function
-	const dlib::matrix<dlib::rgb_pixel>* GetImage(UINT index);
+	const dlib::matrix<dlib::rgb_pixel>* GetImage(UINT index) const;
 
 	void PublishFaces(AMQP::Channel& channel);
 };

@@ -3,36 +3,27 @@
 
 using namespace std;
 
-void RabbitConsumer::Run()
+void RabbitConsumer::Run() const
 {
-    auto receiveMessageCallback = [this](const AMQP::Message& message,
-        uint64_t deliveryTag,
-        bool redelivered)
-    {
-        if (!redelivered)
-        {
-            _ff.SetImage(message.body(), message.size());
-            _ff.FindFaces();
-        }
-    };
+	_channel.consume("images")
+		.onReceived(
+			[this](const AMQP::Message& message,
+				uint64_t deliveryTag,
+				bool redelivered)
+			{
+				if (!redelivered)
+				{
+					_ff.SetImage(message.body(), message.bodySize());
+					_channel.ack(deliveryTag);
 
-    AMQP::QueueCallback callback =
-        [&](const std::string& name, int msgcount, int consumercount)
-    {
-        _channel.bindQueue("EV3", "images.general", "");
-        _channel.consume(name, AMQP::noack).onReceived(receiveMessageCallback);
-    };
-
-    AMQP::SuccessCallback success = [&]()
-    {
-        _channel.declareQueue(AMQP::exclusive).onSuccess(callback);
-    };
-
-    _channel.declareExchange("logs", AMQP::fanout).onSuccess(success);
+					_ff.FindFaces();
+				}
+			}
+	);
 }
 
 
-void RabbitConsumer::Stop()
+void RabbitConsumer::Stop() const
 {
     _channel.close();
 }

@@ -14,6 +14,7 @@
     <InterpreterId>Global|PythonCore|3.10</InterpreterId>
     <Name>VideoConverterPY</Name>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <PublishUrl>d:\Robots\EV3\Projects\EV3Services\Bin\Release</PublishUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
