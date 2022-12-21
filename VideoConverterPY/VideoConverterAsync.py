@@ -58,7 +58,7 @@ def process_frames(d, flag):
         if frameskiper.get_flag():
             #resize image to 640*480, but preserve scale
             scale = 640 / frame.shape[1]
-            resized = cv2.resize(frame, (640, int(frame.shape[0] * scale)), interpolation = cv2.INTER_AREA)
+            resized = cv2.resize(frame, (640, int(frame.shape[0] * scale)), interpolation = cv2.INTER_LINEAR)
             res, image = cv2.imencode('.jpg', resized)
 
             #publish message
