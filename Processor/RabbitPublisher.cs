@@ -7,8 +7,8 @@ namespace Processor
 {
     class RabbitPublisher
     {
-        private IModel _channel;
-        private IConnection _connection;
+        private IModel? _channel;
+        private IConnection? _connection;
         private Logger _logs;
 
         public RabbitPublisher(Logger log)

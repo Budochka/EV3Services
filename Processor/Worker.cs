@@ -7,8 +7,8 @@ namespace Processor
     class Worker
     { 
         private readonly Logger _logs;
-        private RabbitConsumer _consumer;
-        private RabbitPublisher _publisher;
+        private RabbitConsumer? _consumer;
+        private RabbitPublisher? _publisher;
         private readonly Config _config;
 
         private bool _started;
@@ -52,7 +52,7 @@ namespace Processor
         {
             if (args.RoutingKey == "sensors.touch")
             {
-                _publisher.Publish("voice.text", Encoding.Unicode.GetBytes("Привет! Держи пять!"));
+                _publisher?.Publish("voice.text", Encoding.Unicode.GetBytes("Привет! Держи пять!"));
                 EventingBasicConsumer ec = (EventingBasicConsumer)sender;
                 ec.Model.BasicAck(args.DeliveryTag, false);
             }

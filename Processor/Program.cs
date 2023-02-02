@@ -13,7 +13,7 @@ namespace Processor
             try
             {
                 string jsonConfig = File.ReadAllText("config.json");
-                config = JsonSerializer.Deserialize<Config>(jsonConfig);
+                config = JsonSerializer.Deserialize<Config>(jsonConfig) ?? throw new InvalidOperationException();
             }
             catch (Exception ex)
             {

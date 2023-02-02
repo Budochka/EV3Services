@@ -2,11 +2,11 @@
 {
     class Config
     {
-        public string LogFileName { get; set; }
-        public string RabbitUserName { get; set; }
-        public string RabbitPassword { get; set; }
-        public string RabbitVHost { get; set; }
-        public string RabbitHost { get; set; }
+        public string? LogFileName => null;
+        public string? RabbitUserName => null;
+        public string? RabbitPassword => null;
+        public string? RabbitVHost => null;
+        public string? RabbitHost => null;
         public int RabbitPort { get; set; }
     }
 }
