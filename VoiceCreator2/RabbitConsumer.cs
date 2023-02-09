@@ -1,22 +1,21 @@
 ﻿using NLog;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
 
 namespace VoiceCreator
 {
-    class RabbitPublisher
+    class RabbitConsumer
     {
         private IModel _channel;
         private IConnection _connection;
         private Logger _logs;
 
-        public RabbitPublisher(Logger log)
+        public RabbitConsumer(Logger log)
         {
             _logs = log;
         }
 
-        public bool ConnectToRabbit(in string user, in string pass, in string hostName, in int port)
+        public bool ConnectToRabbit(in string user, in string pass, in string hostName, in int port, in EventHandler<BasicDeliverEventArgs> ev)
         {
             ConnectionFactory factory = new ConnectionFactory()
             {
@@ -29,7 +28,14 @@ namespace VoiceCreator
 
             //creating connection
             _logs.Info("Creating Rabbit MQ connection host:{0}, port: {1}", hostName, port);
-            _connection = factory.CreateConnection();
+            try
+            {
+                _connection = factory.CreateConnection();
+            }
+            catch (Exception ex)
+            {
+                _logs.Error(ex, "Error creating RabbitMQ connection");
+            }
             if (_connection != null)
             {
                 _logs.Info("Connection created");
@@ -52,21 +58,26 @@ namespace VoiceCreator
             _channel.ExchangeDeclare(exchange: "EV3", type: "topic", autoDelete: true);
             _logs.Info("Exchange created");
 
+            var queueName = _channel.QueueDeclare().QueueName;
+            _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "voice.text");
+            _logs.Info("Queue binding complete");
+
+            var consumer = new EventingBasicConsumer(_channel);
+            consumer.Received += ev;
+            _channel.BasicConsume(queue: queueName, autoAck: false, consumer: consumer);
+
+            _logs.Info("Event hadler set");
+
             return true;
         }
 
-        ~RabbitPublisher()
+        ~RabbitConsumer()
         {
             _logs.Info("Destructor called");
 
             _channel?.Close();
 
             _connection?.Close();
-        }
-
-        public void Publish(in byte[] data)
-        {
-            _channel?.BasicPublish(exchange: "EV3", routingKey: "voice.wav", basicProperties: null, body: data);
         }
     }
 }

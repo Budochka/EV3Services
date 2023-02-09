@@ -1,16 +1,13 @@
-﻿using System;
-using System.IO;
-using NLog;
+﻿using NLog;
 using RabbitMQ.Client.Events;
 
 namespace VoiceCreator
 {
     class Worker
-    { 
+    {
         private readonly Logger _logs;
         private RabbitConsumer _consumer;
         private RabbitPublisher _publisher;
-        private VoiceSynthesis _vs;
         private readonly Config _config;
 
         private bool _started;
@@ -38,9 +35,6 @@ namespace VoiceCreator
                                       _config.RabbitHost,
                                       _config.RabbitPort);
             _logs.Info("RabbitPublisher created");
-
-            _vs = new VoiceSynthesis(_logs);
-            _logs.Info("VoiceSyntheses created");
         }
 
         public void Start()
@@ -62,12 +56,12 @@ namespace VoiceCreator
                 Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
                 string text = new string(chars);
 
-                if (_vs != null)
+                var httpClient = new HttpClient();
+                var openTTSClient = new OpenTTS(httpClient);
+                openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", text, Vocoder.High, 0.005, false).Wait();
+                if (openTTSClient.IsSuccess)
                 {
-                    _vs.Text2File(text, out var file);
-                    var filedata = File.ReadAllBytes(file);
-                    File.Delete(file);
-                    _publisher.Publish(filedata);
+                    _publisher.Publish(openTTSClient.LastResponse);
                 }
             }
 
