@@ -54,11 +54,10 @@ namespace VoiceCreator
             {
                 char[] chars = new char[bytes.Length / sizeof(char)];
                 Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-                string text = new string(chars);
 
                 var httpClient = new HttpClient();
                 var openTTSClient = new OpenTTS(httpClient);
-                openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", text, Vocoder.High, 0.005, false).Wait();
+                openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false).Wait();
                 if (openTTSClient.IsSuccess)
                 {
                     _publisher.Publish(openTTSClient.LastResponse);
