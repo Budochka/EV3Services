@@ -7,7 +7,6 @@
 #include "Config.h"
 #include "SimplePocoHandler.h"
 #include "RabbitConsumer.h"
-#include "RabbitPublisher.h"
 
 using namespace std;
 
