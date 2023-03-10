@@ -52,8 +52,7 @@ class FaceRecognizer
 private:
     anet_type _descriptors_net;
     multimap<string, matrix<float, 0, 1>> _knownFaces;
-//    std::vector<matrix<float, 0, 1>> _face_descriptors;
-    matrix<float, 0, 1> _face_descriptors;
+    matrix<float, 0, 1> _face_descriptor;
 
 public:
     FaceRecognizer(const string human_face_recognizer_net, const string trained_faces_set);

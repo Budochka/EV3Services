@@ -73,10 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc17\lib;D:\boost_1_80_0\stage\lib;C:\Program Files\NVIDIA\CUDNN\v8.8\lib\x64;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenCV\bin\install\include;D:\boost_1_80_0;D:\dlib\include;</IncludePath>
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\lib\x64;D:\dlib\lib;D:\OpenCV\bin\install\x64\vc17\lib;D:\boost_1_80_0\stage\lib;C:\Program Files\NVIDIA\CUDNN\v8.8\lib\x64;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);D:\OpenCV\bin\install\include;D:\boost_1_80_0;D:\dlib\include;</IncludePath>
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -113,12 +115,17 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>dlib19.24.0_debug_64bit_msvc1934.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world470d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -128,6 +135,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +145,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opencv_world470.lib;dlib19.24.0_release_64bit_msvc1934.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Config.cpp">
@@ -166,6 +178,7 @@
   <ItemGroup>
     <ClInclude Include="Config.h" />
     <ClInclude Include="FaceRecognizer.h" />
+    <ClInclude Include="memstream.h" />
     <ClInclude Include="RabbitConsumer.h" />
     <ClInclude Include="RabbitPublisher.h" />
     <ClInclude Include="SimplePocoHandler.h" />

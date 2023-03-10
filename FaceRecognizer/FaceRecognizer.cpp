@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FaceRecognizer.h"
+#include "memstream.h"
 
 FaceRecognizer::FaceRecognizer(const string trained_faces_set, const string human_face_detector_net)
 {
@@ -51,9 +52,9 @@ void FaceRecognizer::SetImage(const char* data, UINT size_of_image)
 
     if (data != nullptr)
     {
-
-//        load_dng(_image, );
-        _face_descriptors = _descriptors_net(image);
+        memstream ms((uint8_t*)data, size_of_image);
+        load_dng(image, ms);
+        _face_descriptor = _descriptors_net(image);
     }
 }
 
@@ -63,7 +64,7 @@ string FaceRecognizer::ReconizedFace()
 
     for (auto&& known_face : _knownFaces)
     {
-        if (length(_face_descriptors - known_face.second) < THRESHOLD)
+        if (length(_face_descriptor - known_face.second) < THRESHOLD)
         {
             auto it = voting.find(known_face.first);
             if (it != voting.end())
@@ -79,7 +80,7 @@ string FaceRecognizer::ReconizedFace()
 
     if (voting.size() > 0)
     {
-        auto max = std::max_element(voting.begin(), voting.end(), [](const pair<string, int>& a, const pair<string, int>& b)->bool { return a.second < b.second; });
+        auto max = ranges::max_element(voting, [](const pair<string, int>& a, const pair<string, int>& b)->bool { return a.second < b.second; });
         return max->first;
     }
     else
