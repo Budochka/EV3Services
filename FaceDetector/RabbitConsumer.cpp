@@ -17,6 +17,10 @@ void RabbitConsumer::Run() const
 					_channel.ack(deliveryTag);
 
 					_ff.FindFaces();
+					if (_ff.NumberOfFaces() > 0)
+					{
+						_ff.PublishFaces(_channel);
+					}
 				}
 			}
 	);
