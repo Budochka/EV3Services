@@ -1,0 +1,9 @@
+{
+  "LogFileName": "FaceDetectorLog.txt",
+  "RabbitUserName": "guest",
+  "RabbitPassword": "guest",
+  "RabbitHost": "localhost",
+  "RabbitPort": 5672,
+  "FaceRecognitionSet": "D:\\Robots\\FaceDetection\\dlib_face_recognition_resnet_model_v1.dat",
+  "KnownFacesVectors": "D:\\Robots\\FaceDetection\\known_faces.json"
+}

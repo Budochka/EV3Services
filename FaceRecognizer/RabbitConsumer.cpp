@@ -13,13 +13,8 @@ void RabbitConsumer::Run() const
 			{
 				if (!redelivered)
 				{
-					_ff.SetImage(message.body(), message.bodySize());
+					_fr.SetImage(message.body(), message.bodySize());
 					_channel.ack(deliveryTag);
-
-					if (_ff.FindFaces() > 0)
-					{
-						_ff.PublishFaces(_channel);
-					}
 				}
 			}
 	);

@@ -32,11 +32,6 @@ UINT FaceFinder::FindFaces()
 	return _found_faces.size();
 }
 
-UINT FaceFinder::NumberOfFaces() const
-{
-	return _found_faces.size();
-}
-
 //returns image by index. Number of images is returned by FindFaces() function
 const dlib::matrix<dlib::rgb_pixel>* FaceFinder::GetImage(UINT index) const
 {
@@ -55,6 +50,6 @@ void FaceFinder::PublishFaces(AMQP::Channel& channel)
 		boost::iostreams::stream<boost::iostreams::back_insert_device<std::vector<char>>> os{ sink };
 
 		save_dng(*it, os);
-		channel.publish("EV3", "image.face", v.data(), v.size());
+		channel.publish("EV3", "images.face", v.data(), v.size());
 	}
 }

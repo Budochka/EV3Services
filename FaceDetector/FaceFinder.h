@@ -18,8 +18,8 @@ using net_type = loss_mmod<con<1, 9, 9, 1, 1, Rcon5<Rcon5<Rcon5<Downsampler<inpu
 class FaceFinder
 {
 private:
-	dlib::matrix<dlib::rgb_pixel> _image;
-	std::vector<dlib::matrix<dlib::rgb_pixel>> _found_faces;
+	matrix<rgb_pixel> _image;
+	std::vector<matrix<rgb_pixel>> _found_faces;
 	net_type _detector_net;
 	shape_predictor _sp;
 
@@ -31,11 +31,9 @@ public:
 
 	//looks for faces on received image, put them into array and returns number of found faces
 	UINT FindFaces();
-	//returns number of already found faces
-	UINT NumberOfFaces() const;
 	
 	//returns image by index. Number of images is returned by FindFaces() function
-	const dlib::matrix<dlib::rgb_pixel>* GetImage(UINT index) const;
+	const matrix<rgb_pixel>* GetImage(UINT index) const;
 
 	void PublishFaces(AMQP::Channel& channel);
 };
