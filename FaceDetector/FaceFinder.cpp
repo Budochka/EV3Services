@@ -42,10 +42,12 @@ const dlib::matrix<dlib::rgb_pixel>* FaceFinder::GetImage(UINT index) const
 
 void FaceFinder::PublishFaces(AMQP::Channel& channel)
 {
+	std::vector<char> v;
 	for (auto it = _found_faces.begin(); it != _found_faces.end(); ++it)
 	{
+		v.clear();
+
 		//convert image to bytes using streams
-		std::vector<char> v;
 		boost::iostreams::back_insert_device<std::vector<char>> sink{ v };
 		boost::iostreams::stream<boost::iostreams::back_insert_device<std::vector<char>>> os{ sink };
 

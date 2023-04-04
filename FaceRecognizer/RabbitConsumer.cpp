@@ -14,6 +14,11 @@ void RabbitConsumer::Run() const
 				if (!redelivered)
 				{
 					_fr.SetImage(message.body(), message.bodySize());
+					string name = _fr.ReconizedFace();
+					if (!name.empty())
+					{
+						_channel.publish("EV3", "text.face_name", name.c_str(), name.size());
+					}
 					_channel.ack(deliveryTag);
 				}
 			}

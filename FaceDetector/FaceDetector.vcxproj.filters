@@ -33,9 +33,6 @@
     <ClCompile Include="RabbitConsumer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RabbitPublisher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -51,9 +48,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RabbitConsumer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RabbitPublisher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

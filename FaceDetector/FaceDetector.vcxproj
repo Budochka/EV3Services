@@ -188,10 +188,6 @@ copy $(ProjectDir)config.json $(TargetDir)
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="RabbitPublisher.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="SimplePocoHandler.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
@@ -202,7 +198,6 @@ copy $(ProjectDir)config.json $(TargetDir)
     <ClInclude Include="Config.h" />
     <ClInclude Include="FaceFinder.h" />
     <ClInclude Include="RabbitConsumer.h" />
-    <ClInclude Include="RabbitPublisher.h" />
     <ClInclude Include="SimplePocoHandler.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

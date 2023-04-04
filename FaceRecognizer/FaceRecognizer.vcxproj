@@ -164,9 +164,6 @@
     <ClCompile Include="RabbitConsumer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="RabbitPublisher.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="SimplePocoHandler.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
@@ -180,7 +177,6 @@
     <ClInclude Include="FaceRecognizer.h" />
     <ClInclude Include="memstream.h" />
     <ClInclude Include="RabbitConsumer.h" />
-    <ClInclude Include="RabbitPublisher.h" />
     <ClInclude Include="SimplePocoHandler.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
