@@ -121,7 +121,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dlib19.24.0_debug_64bit_msvc1934.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world470d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dlib19.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world470d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)</Command>
@@ -143,7 +143,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world470.lib;dlib19.24.0_release_64bit_msvc1934.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world470.lib;dlib.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)</Command>
