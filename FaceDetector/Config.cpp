@@ -9,7 +9,7 @@ Config::Config(const std::string fileName)
     std::string str((std::istreambuf_iterator<char>(t)),
         std::istreambuf_iterator<char>());
 
-    error_code ec;
+    boost::system::error_code ec;
     value config = parse(str, ec);
 	if (ec)
 	{

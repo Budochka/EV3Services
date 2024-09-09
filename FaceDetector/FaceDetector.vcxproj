@@ -78,14 +78,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;D:\boost_1_80_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\lib\x64;D:\OpenCV\bin\install\x64\vc17\lib;C:\Program Files\NVIDIA\CUDNN\v8.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64;C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\OpenCV\bin\install\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\lib\x64;D:\OpenCV\bin\install\x64\vc17\lib;C:\Program Files\NVIDIA\CUDNN\v8.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64;C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -130,7 +130,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dlib.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;opencv_world4d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dlib.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_9.lib;cudnn_adv64_9.lib;cudnn_cnn64_9.lib;opencv_world4d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -159,7 +159,7 @@ copy $(ProjectDir)config.json $(TargetDir)
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world4.lib;dlib.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_8.lib;cudnn_adv_infer64_8.lib;cudnn_adv_train64_8.lib;cudnn_cnn_infer64_8.lib;cudnn_cnn_train64_8.lib;cudnn_ops_infer64_8.lib;cudnn_ops_train64_8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world4.lib;dlib.lib;cuda.lib;cublas.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusolverMg.lib;cusparse.lib;cudadevrt.lib;cudart.lib;cudnn64_9.lib;cudnn_adv64_9.lib;cudnn_cnn64_9.lib;cudnn_ops64_9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>

@@ -67,7 +67,7 @@ namespace EV3UIWF
                 Notify?.Invoke(args.RoutingKey, buffer);
             }
 
-            //No ACK in UI because we just looking at the messages passed, no processing 
+            //No ACK in UI because we're just looking at the messages passed, no processing 
 //            var ec = (EventingBasicConsumer)sender;
 //            ec.Model.BasicAck(args.DeliveryTag, false);
         }
