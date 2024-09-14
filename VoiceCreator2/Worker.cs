@@ -6,13 +6,13 @@ namespace VoiceCreator
     class Worker
     {
         private readonly Logger _logs;
-        private RabbitConsumer _consumer;
-        private RabbitPublisher _publisher;
-        private readonly Config _config;
+        private RabbitConsumer? _consumer;
+        private RabbitPublisher? _publisher;
+        private readonly Config? _config;
 
         private bool _started;
 
-        public Worker(Logger log, Config config)
+        public Worker(Logger log, Config? config)
         {
             _logs = log;
             _config = config;
@@ -60,7 +60,7 @@ namespace VoiceCreator
                 openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false).Wait();
                 if (openTTSClient.IsSuccess)
                 {
-                    _publisher.Publish(openTTSClient.LastResponse);
+                    _publisher?.Publish(openTTSClient.LastResponse);
                 }
             }
 

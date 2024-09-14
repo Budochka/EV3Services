@@ -7,7 +7,7 @@ namespace VoiceCreator
     {
         static void Main(string[] args)
         {
-            Config config = new Config();
+            Config? config = new Config();
 
             //Load config file
             try
@@ -27,7 +27,7 @@ namespace VoiceCreator
             // Targets where to log to: File and Console
             var logfile = new NLog.Targets.FileTarget("logfile")
             {
-                FileName = config.LogFileName,
+                FileName = config?.LogFileName,
                 DeleteOldFileOnStartup = true,
                 Layout = "${longdate} : ${callsite} : ${message}"
             };

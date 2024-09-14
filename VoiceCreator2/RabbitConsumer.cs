@@ -6,8 +6,8 @@ namespace VoiceCreator
 {
     class RabbitConsumer
     {
-        private IModel _channel;
-        private IConnection _connection;
+        private IModel? _channel;
+        private IConnection? _connection;
         private Logger _logs;
 
         public RabbitConsumer(Logger log)

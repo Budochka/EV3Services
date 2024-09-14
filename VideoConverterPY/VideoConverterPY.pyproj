@@ -25,9 +25,6 @@
     <Compile Include="VideoConverterAsync.py" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.10" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="config.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
