@@ -1,6 +1,5 @@
 ﻿using NLog;
 using RabbitMQ.Client.Events;
-using System.Text;
 
 namespace Processor
 {
@@ -11,6 +10,10 @@ namespace Processor
         private RabbitPublisher? _publisher;
         private readonly Config _config;
 
+        private WorldModel _worldModel;
+
+        private List<IMessageHandler> _handlers;
+
         private bool _started;
 
         public Worker(Logger log, Config config)
@@ -18,10 +21,12 @@ namespace Processor
             _logs = log;
             _config = config;
             _started = false;
+            _handlers = [];
         }
 
         public void Initialize()
         {
+            //Create RabitMQ consumer
             _consumer = new RabbitConsumer(_logs);
             _consumer.ConnectToRabbit(_config.RabbitUserName,
                                       _config.RabbitPassword,
@@ -30,12 +35,21 @@ namespace Processor
                                       HandleRabbitMessage);
             _logs.Info("RabbitConsumer created");
 
+            //Create RabitMQ producer
             _publisher = new RabbitPublisher(_logs);
             _publisher.ConnectToRabbit(_config.RabbitUserName,
                                       _config.RabbitPassword,
                                       _config.RabbitHost,
                                       _config.RabbitPort);
             _logs.Info("RabbitPublisher created");
+
+            //Create world model
+            _worldModel = new WorldModel();
+
+            //Initialize list of message handlers
+            _handlers.Add(new TouchHandler());
+            _handlers.Add(new DistanceHandler());
+            _handlers.Add(new FacesHanler());
         }
 
         public void Start()
@@ -50,11 +64,8 @@ namespace Processor
 
         private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
-            if (args.RoutingKey == "sensors.touch")
+            foreach (var messageHandler in _handlers.TakeWhile(messageHandler => _publisher == null || !messageHandler.HandleRabbitMessage(_worldModel, _publisher, sender, args)))
             {
-                _publisher?.Publish("voice.text", Encoding.Unicode.GetBytes("Привет! Держи пять!"));
-                EventingBasicConsumer ec = (EventingBasicConsumer)sender;
-                ec.Model.BasicAck(args.DeliveryTag, false);
             }
         }
     }

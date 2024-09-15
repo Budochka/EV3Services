@@ -2,14 +2,14 @@
 {
     class Config
     {
-        public string? LogFileName => null;
-        public string? RabbitUserName => null;
-        public string? RabbitPassword => null;
+        public string? LogFileName { get; set; }
+        public string? RabbitUserName { get; set; }
+        public string? RabbitPassword { get; set; }
 
-        public string? RabbitVHost => null;
-        public string? RabbitHost => null;
+        public string? RabbitVHost { get; set; }
+        public string? RabbitHost { get; set; }
 
         public int RabbitPort { get; set; }
-        public string? ConnectionString => null;
+        public string? ConnectionString { get; set; }
     }
 }
