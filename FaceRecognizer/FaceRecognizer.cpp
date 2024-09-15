@@ -2,7 +2,7 @@
 #include "FaceRecognizer.h"
 #include "memstream.h"
 
-FaceRecognizer::FaceRecognizer(const string trained_faces_set, const string human_face_detector_net)
+FaceRecognizer::FaceRecognizer(const string human_face_detector_net, const string trained_faces_set)
 {
     //initialize face descriptors net
     deserialize(human_face_detector_net) >> _descriptors_net;
