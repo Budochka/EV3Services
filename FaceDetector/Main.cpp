@@ -25,7 +25,7 @@ int main()
         });
     
     channel.declareExchange("EV3", AMQP::topic, AMQP::autodelete);
-    channel.declareQueue("images", AMQP::exclusive);
+    channel.declareQueue("images");
     channel.bindQueue("EV3", "images", "images.general");
 
     FaceFinder ff(cfg.facePredictorSetPath(), cfg.shapePredictorSetPath());

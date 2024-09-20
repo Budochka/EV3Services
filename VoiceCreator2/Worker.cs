@@ -58,6 +58,7 @@ namespace VoiceCreator
                 var httpClient = new HttpClient();
                 var openTTSClient = new OpenTTS(httpClient);
                 openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false).Wait();
+                //                openTTSClient.TtsAsync("espeak: Russian", new string(chars), null, null, false).Wait();
                 if (openTTSClient.IsSuccess)
                 {
                     _publisher?.Publish(openTTSClient.LastResponse);

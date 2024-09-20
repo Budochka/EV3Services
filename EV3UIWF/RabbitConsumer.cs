@@ -65,7 +65,7 @@ namespace EV3UIWF
 
             var consumer = new EventingBasicConsumer(_channel);
             consumer.Received += ev;
-            _channel.BasicConsume(queue: queueName, autoAck: false, consumer: consumer);
+            _channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
 
             _logs.Info("Event hadler set");
 
