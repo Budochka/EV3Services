@@ -44,12 +44,13 @@ namespace Processor
             _logs.Info("RabbitPublisher created");
 
             //Create world model
-            _robotStateMachine = new RobotStateMachine();
+            _robotStateMachine = new RobotStateMachine(_logs);
 
             //Initialize list of message handlers
             _handlers.Add(new TouchHandler());
             _handlers.Add(new DistanceHandler());
             _handlers.Add(new FacesHanler());
+            _handlers.Add(new StateHandler());
         }
 
         public void Start()

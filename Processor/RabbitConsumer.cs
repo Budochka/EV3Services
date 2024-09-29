@@ -1,7 +1,6 @@
 ﻿using NLog;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
 
 namespace Processor
 {
