@@ -5,7 +5,7 @@ namespace Processor
 {
     class TouchHandler : IMessageHandler
     {
-        public bool HandleRabbitMessage(WorldModel wold, RabbitPublisher publisher, object sender,
+        public bool HandleRabbitMessage(RobotStateMachine sm, RabbitPublisher publisher, object sender,
             BasicDeliverEventArgs args)
         {
             if (args.RoutingKey == "sensors.touch")

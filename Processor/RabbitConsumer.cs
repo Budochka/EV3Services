@@ -62,6 +62,7 @@ namespace Processor
 
             var queueName = _channel.QueueDeclare().QueueName;
             _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "sensors.*");
+            _channel.QueueBind(queue: queueName, exchange: "EV3", routingKey: "state.*");
             _logs.Info("Queue binding complete");
 
             var consumer = new EventingBasicConsumer(_channel);

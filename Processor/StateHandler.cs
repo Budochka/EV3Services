@@ -2,13 +2,16 @@
 
 namespace Processor;
 
-class FacesHanler : IMessageHandler
+class StateHandler : IMessageHandler
 {
     public bool HandleRabbitMessage(RobotStateMachine sm, RabbitPublisher publisher, object sender,
         BasicDeliverEventArgs args)
     {
-        if (args.RoutingKey == "faces.ids")
+        var key = args.RoutingKey;
+
+        if ((key == "state.greet") || (key == "state.direct") || (key == "state.explore"))
         {
+            sm.SetState(key);
             return true;
         }
 

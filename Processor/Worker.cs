@@ -10,7 +10,7 @@ namespace Processor
         private RabbitPublisher? _publisher;
         private readonly Config _config;
 
-        private WorldModel _worldModel;
+        private RobotStateMachine _robotStateMachine;
 
         private List<IMessageHandler> _handlers;
 
@@ -44,7 +44,7 @@ namespace Processor
             _logs.Info("RabbitPublisher created");
 
             //Create world model
-            _worldModel = new WorldModel();
+            _robotStateMachine = new RobotStateMachine();
 
             //Initialize list of message handlers
             _handlers.Add(new TouchHandler());
@@ -64,7 +64,7 @@ namespace Processor
 
         private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
         {
-            foreach (var messageHandler in _handlers.TakeWhile(messageHandler => _publisher == null || !messageHandler.HandleRabbitMessage(_worldModel, _publisher, sender, args)))
+            foreach (var messageHandler in _handlers.TakeWhile(messageHandler => _publisher == null || !messageHandler.HandleRabbitMessage(_robotStateMachine, _publisher, sender, args)))
             {
             }
         }

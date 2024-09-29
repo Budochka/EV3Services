@@ -4,6 +4,6 @@ namespace Processor
 {
     internal interface IMessageHandler
     {
-        bool HandleRabbitMessage(WorldModel wold, RabbitPublisher publisher, object sender, BasicDeliverEventArgs args);
+        bool HandleRabbitMessage(RobotStateMachine sm, RabbitPublisher publisher, object sender, BasicDeliverEventArgs args);
     } 
 }
