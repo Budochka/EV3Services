@@ -71,7 +71,7 @@ class RobotStateMachine
 
     public void StartGreeting()
     {
-        _logs.Info("State changed to DirectCoontrol");
+        _logs.Info("State changed to Greeting");
 
         ClearAll();
     }
@@ -82,7 +82,7 @@ class RobotStateMachine
 
     public void StartExplore()
     {
-        _logs.Info("State changed to DirectCoontrol");
+        _logs.Info("State changed to Explore");
 
         ClearAll();
     }

@@ -25,7 +25,7 @@ namespace EV3UIWF
             _worker.Start();
 
             _worker.Notify += (key, bytes) => ProcessMessage(key, bytes);
-            
+
             ScanPlugins(cfg.PluginsFolder);
         }
 
@@ -148,6 +148,26 @@ namespace EV3UIWF
         {
             var htc = new HeadTurnCommand(Convert.ToInt32(txtDegreeHead.Text), -Convert.ToInt32(txtTorqueHead.Text));
             _worker.Publish("movement.headturn", htc.ToByte());
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            var mode = cmbMode.SelectedIndex;
+
+            switch (mode)
+            {
+                case 0: //Direct Control
+                    _worker.Publish("state.direct", null);
+                    break;
+
+                case 1: //Explore
+                    _worker.Publish("state.explore", null);
+                    break;
+
+                case 2: //Greeting
+                    _worker.Publish("state.greet", null);
+                    break;
+            }
         }
     }
 }

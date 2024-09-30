@@ -29,382 +29,404 @@ namespace EV3UIWF
         /// </summary>
         private void InitializeComponent()
         {
-            this.imgCameraView = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnForward = new System.Windows.Forms.Button();
-            this.btnLeft = new System.Windows.Forms.Button();
-            this.btnRight = new System.Windows.Forms.Button();
-            this.btnBackward = new System.Windows.Forms.Button();
-            this.textToSay = new System.Windows.Forms.TextBox();
-            this.btnSayIt = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDistance = new System.Windows.Forms.TextBox();
-            this.txtTorqueMove = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtDegree = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTorqueRotate = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHeadRight = new System.Windows.Forms.Button();
-            this.btnHeadLeft = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtDegreeHead = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTorqueHead = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCameraView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.menuStrip.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.SuspendLayout();
+            imgCameraView = new System.Windows.Forms.PictureBox();
+            label1 = new System.Windows.Forms.Label();
+            btnForward = new System.Windows.Forms.Button();
+            btnLeft = new System.Windows.Forms.Button();
+            btnRight = new System.Windows.Forms.Button();
+            btnBackward = new System.Windows.Forms.Button();
+            textToSay = new System.Windows.Forms.TextBox();
+            btnSayIt = new System.Windows.Forms.Button();
+            panel1 = new System.Windows.Forms.Panel();
+            txtLog = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            txtDistance = new System.Windows.Forms.TextBox();
+            txtTorqueMove = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            txtDegree = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            txtTorqueRotate = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            menuStrip = new System.Windows.Forms.MenuStrip();
+            pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            panel2 = new System.Windows.Forms.Panel();
+            btnHeadRight = new System.Windows.Forms.Button();
+            btnHeadLeft = new System.Windows.Forms.Button();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            txtDegreeHead = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            txtTorqueHead = new System.Windows.Forms.TextBox();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            cmbMode = new System.Windows.Forms.ComboBox();
+            btnSet = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)imgCameraView).BeginInit();
+            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            menuStrip.SuspendLayout();
+            panel2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // imgCameraView
             // 
-            this.imgCameraView.Location = new System.Drawing.Point(14, 76);
-            this.imgCameraView.Name = "imgCameraView";
-            this.imgCameraView.Size = new System.Drawing.Size(663, 365);
-            this.imgCameraView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCameraView.TabIndex = 0;
-            this.imgCameraView.TabStop = false;
+            imgCameraView.Location = new System.Drawing.Point(14, 76);
+            imgCameraView.Name = "imgCameraView";
+            imgCameraView.Size = new System.Drawing.Size(663, 365);
+            imgCameraView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            imgCameraView.TabIndex = 0;
+            imgCameraView.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Text";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(14, 41);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(28, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Text";
             // 
             // btnForward
             // 
-            this.btnForward.Location = new System.Drawing.Point(65, 10);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(75, 23);
-            this.btnForward.TabIndex = 2;
-            this.btnForward.Text = "Forward";
-            this.btnForward.UseVisualStyleBackColor = true;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            btnForward.Location = new System.Drawing.Point(65, 10);
+            btnForward.Name = "btnForward";
+            btnForward.Size = new System.Drawing.Size(75, 23);
+            btnForward.TabIndex = 2;
+            btnForward.Text = "Forward";
+            btnForward.UseVisualStyleBackColor = true;
+            btnForward.Click += btnForward_Click;
             // 
             // btnLeft
             // 
-            this.btnLeft.Location = new System.Drawing.Point(27, 39);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(75, 23);
-            this.btnLeft.TabIndex = 3;
-            this.btnLeft.Text = "Left";
-            this.btnLeft.UseVisualStyleBackColor = true;
-            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            btnLeft.Location = new System.Drawing.Point(27, 39);
+            btnLeft.Name = "btnLeft";
+            btnLeft.Size = new System.Drawing.Size(75, 23);
+            btnLeft.TabIndex = 3;
+            btnLeft.Text = "Left";
+            btnLeft.UseVisualStyleBackColor = true;
+            btnLeft.Click += btnLeft_Click;
             // 
             // btnRight
             // 
-            this.btnRight.Location = new System.Drawing.Point(108, 39);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(75, 23);
-            this.btnRight.TabIndex = 4;
-            this.btnRight.Text = "Right";
-            this.btnRight.UseVisualStyleBackColor = true;
-            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            btnRight.Location = new System.Drawing.Point(108, 39);
+            btnRight.Name = "btnRight";
+            btnRight.Size = new System.Drawing.Size(75, 23);
+            btnRight.TabIndex = 4;
+            btnRight.Text = "Right";
+            btnRight.UseVisualStyleBackColor = true;
+            btnRight.Click += btnRight_Click;
             // 
             // btnBackward
             // 
-            this.btnBackward.Location = new System.Drawing.Point(65, 68);
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(75, 23);
-            this.btnBackward.TabIndex = 5;
-            this.btnBackward.Text = "Backward";
-            this.btnBackward.UseVisualStyleBackColor = true;
-            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
+            btnBackward.Location = new System.Drawing.Point(65, 68);
+            btnBackward.Name = "btnBackward";
+            btnBackward.Size = new System.Drawing.Size(75, 23);
+            btnBackward.TabIndex = 5;
+            btnBackward.Text = "Backward";
+            btnBackward.UseVisualStyleBackColor = true;
+            btnBackward.Click += btnBackward_Click;
             // 
             // textToSay
             // 
-            this.textToSay.Location = new System.Drawing.Point(70, 37);
-            this.textToSay.Name = "textToSay";
-            this.textToSay.Size = new System.Drawing.Size(534, 23);
-            this.textToSay.TabIndex = 6;
+            textToSay.Location = new System.Drawing.Point(70, 37);
+            textToSay.Name = "textToSay";
+            textToSay.Size = new System.Drawing.Size(534, 23);
+            textToSay.TabIndex = 6;
             // 
             // btnSayIt
             // 
-            this.btnSayIt.Location = new System.Drawing.Point(602, 37);
-            this.btnSayIt.Name = "btnSayIt";
-            this.btnSayIt.Size = new System.Drawing.Size(75, 23);
-            this.btnSayIt.TabIndex = 7;
-            this.btnSayIt.Text = "Say It!";
-            this.btnSayIt.UseVisualStyleBackColor = true;
-            this.btnSayIt.Click += new System.EventHandler(this.btnSayIt_Click);
+            btnSayIt.Location = new System.Drawing.Point(602, 37);
+            btnSayIt.Name = "btnSayIt";
+            btnSayIt.Size = new System.Drawing.Size(75, 23);
+            btnSayIt.TabIndex = 7;
+            btnSayIt.Text = "Say It!";
+            btnSayIt.UseVisualStyleBackColor = true;
+            btnSayIt.Click += btnSayIt_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnRight);
-            this.panel1.Controls.Add(this.btnForward);
-            this.panel1.Controls.Add(this.btnLeft);
-            this.panel1.Controls.Add(this.btnBackward);
-            this.panel1.Location = new System.Drawing.Point(709, 290);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 100);
-            this.panel1.TabIndex = 8;
+            panel1.Controls.Add(btnRight);
+            panel1.Controls.Add(btnForward);
+            panel1.Controls.Add(btnLeft);
+            panel1.Controls.Add(btnBackward);
+            panel1.Location = new System.Drawing.Point(709, 290);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(198, 100);
+            panel1.TabIndex = 8;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(14, 447);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ReadOnly = true;
-            this.txtLog.Size = new System.Drawing.Size(1129, 180);
-            this.txtLog.TabIndex = 9;
+            txtLog.Location = new System.Drawing.Point(14, 447);
+            txtLog.Multiline = true;
+            txtLog.Name = "txtLog";
+            txtLog.ReadOnly = true;
+            txtLog.Size = new System.Drawing.Size(1129, 180);
+            txtLog.TabIndex = 9;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Distance:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(12, 26);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(55, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Distance:";
             // 
             // txtDistance
             // 
-            this.txtDistance.Location = new System.Drawing.Point(76, 23);
-            this.txtDistance.Name = "txtDistance";
-            this.txtDistance.Size = new System.Drawing.Size(64, 23);
-            this.txtDistance.TabIndex = 11;
-            this.txtDistance.Text = "10";
+            txtDistance.Location = new System.Drawing.Point(76, 23);
+            txtDistance.Name = "txtDistance";
+            txtDistance.Size = new System.Drawing.Size(64, 23);
+            txtDistance.TabIndex = 11;
+            txtDistance.Text = "10";
             // 
             // txtTorqueMove
             // 
-            this.txtTorqueMove.Location = new System.Drawing.Point(76, 52);
-            this.txtTorqueMove.Name = "txtTorqueMove";
-            this.txtTorqueMove.Size = new System.Drawing.Size(64, 23);
-            this.txtTorqueMove.TabIndex = 18;
-            this.txtTorqueMove.Text = "100";
+            txtTorqueMove.Location = new System.Drawing.Point(76, 52);
+            txtTorqueMove.Name = "txtTorqueMove";
+            txtTorqueMove.Size = new System.Drawing.Size(64, 23);
+            txtTorqueMove.TabIndex = 18;
+            txtTorqueMove.Text = "100";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 15);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Torque:";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(12, 60);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(46, 15);
+            label5.TabIndex = 17;
+            label5.Text = "Torque:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDistance);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtTorqueMove);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(709, 98);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 90);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Move";
+            groupBox1.Controls.Add(txtDistance);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtTorqueMove);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Location = new System.Drawing.Point(709, 98);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(197, 90);
+            groupBox1.TabIndex = 19;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Move";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtDegree);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtTorqueRotate);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(709, 194);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(197, 90);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Rotate";
+            groupBox2.Controls.Add(txtDegree);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(txtTorqueRotate);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Location = new System.Drawing.Point(709, 194);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new System.Drawing.Size(197, 90);
+            groupBox2.TabIndex = 20;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Rotate";
             // 
             // txtDegree
             // 
-            this.txtDegree.Location = new System.Drawing.Point(76, 23);
-            this.txtDegree.Name = "txtDegree";
-            this.txtDegree.Size = new System.Drawing.Size(64, 23);
-            this.txtDegree.TabIndex = 11;
-            this.txtDegree.Text = "10";
+            txtDegree.Location = new System.Drawing.Point(76, 23);
+            txtDegree.Name = "txtDegree";
+            txtDegree.Size = new System.Drawing.Size(64, 23);
+            txtDegree.TabIndex = 11;
+            txtDegree.Text = "10";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Degree:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 26);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(47, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Degree:";
             // 
             // txtTorqueRotate
             // 
-            this.txtTorqueRotate.Location = new System.Drawing.Point(76, 52);
-            this.txtTorqueRotate.Name = "txtTorqueRotate";
-            this.txtTorqueRotate.Size = new System.Drawing.Size(64, 23);
-            this.txtTorqueRotate.TabIndex = 18;
-            this.txtTorqueRotate.Text = "100";
+            txtTorqueRotate.Location = new System.Drawing.Point(76, 52);
+            txtTorqueRotate.Name = "txtTorqueRotate";
+            txtTorqueRotate.Size = new System.Drawing.Size(64, 23);
+            txtTorqueRotate.TabIndex = 18;
+            txtTorqueRotate.Text = "100";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Torque:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(12, 60);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(46, 15);
+            label4.TabIndex = 17;
+            label4.Text = "Torque:";
             // 
             // menuStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pluginsToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1155, 24);
-            this.menuStrip.TabIndex = 21;
+            menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { pluginsToolStripMenuItem });
+            menuStrip.Location = new System.Drawing.Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new System.Drawing.Size(1155, 24);
+            menuStrip.TabIndex = 21;
             // 
             // pluginsToolStripMenuItem
             // 
-            this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
-            this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.pluginsToolStripMenuItem.Text = "Plugins";
+            pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
+            pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            pluginsToolStripMenuItem.Text = "Plugins";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnHeadRight);
-            this.panel2.Controls.Add(this.btnHeadLeft);
-            this.panel2.Location = new System.Drawing.Point(935, 290);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(179, 44);
-            this.panel2.TabIndex = 9;
+            panel2.Controls.Add(btnHeadRight);
+            panel2.Controls.Add(btnHeadLeft);
+            panel2.Location = new System.Drawing.Point(935, 290);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(179, 44);
+            panel2.TabIndex = 9;
             // 
             // btnHeadRight
             // 
-            this.btnHeadRight.Location = new System.Drawing.Point(93, 10);
-            this.btnHeadRight.Name = "btnHeadRight";
-            this.btnHeadRight.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadRight.TabIndex = 4;
-            this.btnHeadRight.Text = "Right";
-            this.btnHeadRight.UseVisualStyleBackColor = true;
-            this.btnHeadRight.Click += new System.EventHandler(this.btnHeadRight_Click);
+            btnHeadRight.Location = new System.Drawing.Point(93, 10);
+            btnHeadRight.Name = "btnHeadRight";
+            btnHeadRight.Size = new System.Drawing.Size(75, 23);
+            btnHeadRight.TabIndex = 4;
+            btnHeadRight.Text = "Right";
+            btnHeadRight.UseVisualStyleBackColor = true;
+            btnHeadRight.Click += btnHeadRight_Click;
             // 
             // btnHeadLeft
             // 
-            this.btnHeadLeft.Location = new System.Drawing.Point(12, 10);
-            this.btnHeadLeft.Name = "btnHeadLeft";
-            this.btnHeadLeft.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadLeft.TabIndex = 3;
-            this.btnHeadLeft.Text = "Left";
-            this.btnHeadLeft.UseVisualStyleBackColor = true;
-            this.btnHeadLeft.Click += new System.EventHandler(this.btnHeadLeft_Click);
+            btnHeadLeft.Location = new System.Drawing.Point(12, 10);
+            btnHeadLeft.Name = "btnHeadLeft";
+            btnHeadLeft.Size = new System.Drawing.Size(75, 23);
+            btnHeadLeft.TabIndex = 3;
+            btnHeadLeft.Text = "Left";
+            btnHeadLeft.UseVisualStyleBackColor = true;
+            btnHeadLeft.Click += btnHeadLeft_Click;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtDegreeHead);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtTorqueHead);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(935, 98);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(179, 90);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Rotate";
+            groupBox3.Controls.Add(txtDegreeHead);
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(txtTorqueHead);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Location = new System.Drawing.Point(935, 98);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new System.Drawing.Size(179, 90);
+            groupBox3.TabIndex = 21;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Rotate";
             // 
             // txtDegreeHead
             // 
-            this.txtDegreeHead.Location = new System.Drawing.Point(76, 23);
-            this.txtDegreeHead.Name = "txtDegreeHead";
-            this.txtDegreeHead.Size = new System.Drawing.Size(64, 23);
-            this.txtDegreeHead.TabIndex = 11;
-            this.txtDegreeHead.Text = "10";
+            txtDegreeHead.Location = new System.Drawing.Point(76, 23);
+            txtDegreeHead.Name = "txtDegreeHead";
+            txtDegreeHead.Size = new System.Drawing.Size(64, 23);
+            txtDegreeHead.TabIndex = 11;
+            txtDegreeHead.Text = "10";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Degree:";
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(12, 26);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(47, 15);
+            label6.TabIndex = 10;
+            label6.Text = "Degree:";
             // 
             // txtTorqueHead
             // 
-            this.txtTorqueHead.Location = new System.Drawing.Point(76, 52);
-            this.txtTorqueHead.Name = "txtTorqueHead";
-            this.txtTorqueHead.Size = new System.Drawing.Size(64, 23);
-            this.txtTorqueHead.TabIndex = 18;
-            this.txtTorqueHead.Text = "100";
+            txtTorqueHead.Location = new System.Drawing.Point(76, 52);
+            txtTorqueHead.Name = "txtTorqueHead";
+            txtTorqueHead.Size = new System.Drawing.Size(64, 23);
+            txtTorqueHead.TabIndex = 18;
+            txtTorqueHead.Text = "100";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 15);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Torque:";
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(12, 60);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(46, 15);
+            label7.TabIndex = 17;
+            label7.Text = "Torque:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(709, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 15);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Body";
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(709, 67);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(34, 15);
+            label8.TabIndex = 22;
+            label8.Text = "Body";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(935, 67);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 15);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Head";
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(935, 67);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(35, 15);
+            label9.TabIndex = 23;
+            label9.Text = "Head";
+            // 
+            // cmbMode
+            // 
+            cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbMode.FormattingEnabled = true;
+            cmbMode.Items.AddRange(new object[] { "Direct Control", "Explore", "Greeting" });
+            cmbMode.Location = new System.Drawing.Point(709, 408);
+            cmbMode.Name = "cmbMode";
+            cmbMode.Size = new System.Drawing.Size(198, 23);
+            cmbMode.TabIndex = 24;
+            // 
+            // btnSet
+            // 
+            btnSet.Location = new System.Drawing.Point(947, 408);
+            btnSet.Name = "btnSet";
+            btnSet.Size = new System.Drawing.Size(156, 23);
+            btnSet.TabIndex = 25;
+            btnSet.Text = "Set";
+            btnSet.UseVisualStyleBackColor = true;
+            btnSet.Click += btnSet_Click;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 641);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnSayIt);
-            this.Controls.Add(this.textToSay);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.imgCameraView);
-            this.Controls.Add(this.menuStrip);
-            this.MainMenuStrip = this.menuStrip;
-            this.Name = "FrmMain";
-            this.Text = "EV3 UI";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
-            this.Load += new System.EventHandler(this.FrmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgCameraView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1155, 641);
+            Controls.Add(btnSet);
+            Controls.Add(cmbMode);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(groupBox3);
+            Controls.Add(panel2);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(txtLog);
+            Controls.Add(panel1);
+            Controls.Add(btnSayIt);
+            Controls.Add(textToSay);
+            Controls.Add(label1);
+            Controls.Add(imgCameraView);
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
+            Name = "FrmMain";
+            Text = "EV3 UI";
+            FormClosed += frmMain_FormClosed;
+            Load += FrmMain_Load;
+            ((System.ComponentModel.ISupportInitialize)imgCameraView).EndInit();
+            panel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            panel2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -441,6 +463,8 @@ namespace EV3UIWF
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbMode;
+        private System.Windows.Forms.Button btnSet;
     }
 }
 
