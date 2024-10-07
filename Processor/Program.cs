@@ -5,9 +5,9 @@ namespace Processor
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Config config = new Config();
+            Config config = new();
 
             //Load config file
             try
@@ -38,7 +38,7 @@ namespace Processor
             // Apply config           
             NLog.LogManager.Configuration = nlogConfig;
 
-            Worker worker = new Worker(LogManager.GetCurrentClassLogger(), config);
+            Worker worker = new(LogManager.GetCurrentClassLogger(), config);
             worker.Initialize();
             worker.Start();
             Console.WriteLine("Press Enter to exit");

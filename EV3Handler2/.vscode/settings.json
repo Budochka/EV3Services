@@ -1,3 +1,6 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "inference.endpoint": "htttp://localhost:11434",
+    "inference.model": "codellama:70b-code-fp16",
+    "inference.custom.format": "codellama"
 }
