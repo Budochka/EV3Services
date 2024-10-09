@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoiceCreator", "VoiceCreato
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceRecognizer", "FaceRecognizer\FaceRecognizer.vcxproj", "{CEFAECA4-26C0-4C6E-AF5A-7186006B27B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v380stream", "v380strem\v380stream.csproj", "{EC30CAF8-DF27-4153-A8CE-8D30B9729CA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v380stream", "v380stream\v380stream.csproj", "{EC30CAF8-DF27-4153-A8CE-8D30B9729CA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechToText", "SpeechToText\SpeechToText.csproj", "{81FE148D-2523-4DFF-A8F9-CE8BB94C635B}"
 EndProject

@@ -12,19 +12,19 @@ namespace v380stream;
 class ConnectionHanler
 {
     private readonly Logger _logs;
-    private readonly Config conf;
+    private readonly Config _conf;
 
     // Define data classes or structs for the requests and responses
     private class LoginRequest
     {
         public int Command { get; set; }
-        public byte[] DeviceId { get; set; }
+        public byte[]? DeviceId { get; set; }
         public int Unknown1 { get; set; }
         public byte Unknown2 { get; set; }
         public int Unknown3 { get; set; }
-        public byte[] HostDateTime { get; set; }
-        public byte[] Username { get; set; }
-        public byte[] Password { get; set; }
+        public byte[]? HostDateTime { get; set; }
+        public byte[]? Username { get; set; }
+        public byte[]? Password { get; set; }
 
         public byte[] Serialize()
         {
@@ -33,21 +33,33 @@ class ConnectionHanler
 
             writer.Write(Command);
 
-            writer.Write(DeviceId.Length);
-            writer.Write(DeviceId);
+            if (DeviceId != null)
+            {
+                writer.Write(DeviceId.Length);
+                writer.Write(DeviceId);
+            }
 
             writer.Write(Unknown1);
             writer.Write(Unknown2);
             writer.Write(Unknown3);
 
-            writer.Write(HostDateTime.Length);
-            writer.Write(HostDateTime);
+            if (HostDateTime != null)
+            {
+                writer.Write(HostDateTime.Length);
+                writer.Write(HostDateTime);
+            }
 
-            writer.Write(Username.Length);
-            writer.Write(Username);
+            if (Username != null)
+            {
+                writer.Write(Username.Length);
+                writer.Write(Username);
+            }
 
-            writer.Write(Password.Length);
-            writer.Write(Password);
+            if (Password != null)
+            {
+                writer.Write(Password.Length);
+                writer.Write(Password);
+            }
 
             return memoryStream.ToArray();
         }
@@ -65,7 +77,7 @@ class ConnectionHanler
         public byte CamType { get; set; }
         public ushort VendorId { get; set; }
         public ushort IsDomainExists { get; set; }
-        public byte[] Domain { get; set; }
+        public byte[]? Domain { get; set; }
         public int RecDevId { get; set; }
         public byte NChannels { get; set; }
         public byte NAudioPri { get; set; }
@@ -75,7 +87,7 @@ class ConnectionHanler
         public byte NReversePri { get; set; }
         public byte NPtzXPri { get; set; }
         public byte NPtzXCount { get; set; }
-        public byte[] Settings { get; set; }
+        public byte[]? Settings { get; set; }
         public ushort PanoX { get; set; }
         public ushort PanoY { get; set; }
         public ushort PanoRad { get; set; }
@@ -124,7 +136,7 @@ class ConnectionHanler
     private class StreamLoginLanRequest
     {
         public int Command { get; set; }
-        public byte[] DeviceId { get; set; }
+        public byte[]? DeviceId { get; set; }
         public int Unknown1 { get; set; }
         public ushort MaybeFps { get; set; }
         public int AuthTicket { get; set; }
@@ -147,9 +159,10 @@ class ConnectionHanler
         public int Unknown1 { get; set; }
     }
 
-    public ConnectionHanler(Logger log)
+    public ConnectionHanler(Logger log, Config conf)
     {
         _logs = log;
+        _conf = conf;
     }
 
     private byte[] GenerateRandomPrintable(int length)
@@ -214,64 +227,71 @@ class ConnectionHanler
         return result;
     }
 
-    private async Task HandleAuthAndStreaming()
+    private int HandleAuthAndStreaming()
     {
-        using (var socketAuth = new TcpClient())
+        if (_conf.IP != null)
         {
-            await socketAuth.ConnectAsync(IPAddress.Parse(conf.IP), conf.Port);
-            using (var networkStream = socketAuth.GetStream())
+            using var socketAuth = new TcpClient(_conf.IP, _conf.Port);
+            using var networkStream = socketAuth.GetStream();
+
+            var loginRequest = new byte[256];
+            if (_conf is { ID: not null, UserName: not null, Password: not null })
             {
-                var loginRequest = new byte[256];
                 var loginReqData = new LoginRequest
                 {
                     Command = 1167,
-                    DeviceId = Encoding.ASCII.GetBytes(conf.ID),
+                    DeviceId = Encoding.ASCII.GetBytes(_conf.ID),
                     Unknown1 = 1022,
                     Unknown2 = 2,
                     Unknown3 = 1,
                     HostDateTime = new byte[32],
-                    Username = Encoding.ASCII.GetBytes(conf.UserName),
-                    Password = GeneratePassword(conf.Password)
+                    Username = Encoding.ASCII.GetBytes(_conf.UserName),
+                    Password = GeneratePassword(_conf.Password)
                 };
 
                 // Pack the loginReqData into loginRequest buffer
                 loginReqData.Serialize().CopyTo(loginRequest, 0);
+            }
 
-                await networkStream.WriteAsync(loginRequest, 0, loginRequest.Length);
+            networkStream.Write(loginRequest, 0, loginRequest.Length);
 
-                var response = new byte[256];
-                int bytesRead = await networkStream.ReadAsync(response, 0, response.Length);
+            var response = new byte[256];
+            var bytesRead = networkStream.Read(response, 0, response.Length);
+            if (bytesRead < 0)
+            {
+                return 0;
+            }
 
-                var loginResp = LoginResponse.Deserialize(response);
+            var loginResp = LoginResponse.Deserialize(response);
 
-                if (loginResp.Command == 1168)
+            if (loginResp.Command == 1168)
+            {
+                switch (loginResp.LoginResult)
                 {
-                    switch (loginResp.LoginResult)
-                    {
-                        case 1001:
-                            Console.WriteLine("Camera logged in");
-                            break;
-                        case 1011:
-                            throw new Exception("Invalid username");
-                        case 1012:
-                            throw new Exception("Invalid password");
-                        case 1018:
-                            throw new Exception("Invalid device id");
-                    }
+                    case 1001:
+                        _logs.Trace("Camera logged in");
+                        return loginResp.AuthTicket;
+                    case 1011:
+                        _logs.Trace("Invalid username");
+                        break;
+                    case 1012:
+                        _logs.Trace("Invalid password");
+                        break;
+                    case 1018:
+                        _logs.Trace("Invalid device id");
+                        break;
                 }
-
-                StartStreaming(conf, loginResp);
             }
         }
-    }
 
-    private void StartStreaming(LoginResponse loginResp)
+        return 0;
+    }
+/*
+    private void StartStreaming(int authToken)
     {
         int stage = 0;
         var buff = new byte[256];
-        var socketStream = new TcpClient();
-
-        socketStream.Connect(IPAddress.Parse(conf.IP), conf.Port);
+        var socketStream = new TcpClient(conf.IP, conf.Port);
         var networkStream = socketStream.GetStream();
         networkStream.WriteTimeout = 5000;
 
@@ -281,7 +301,7 @@ class ConnectionHanler
             DeviceId = Encoding.ASCII.GetBytes(conf.ID),
             Unknown1 = 0,
             MaybeFps = 20,
-            AuthTicket = loginResp.AuthTicket,
+            AuthTicket = authToken,
             Unknown4 = 4096 + 1,
             Resolution = 1
         };
@@ -291,53 +311,50 @@ class ConnectionHanler
         networkStream.Write(buff, 0, buff.Length);
 
         networkStream.ReadTimeout = 5000;
-        Task.Run(async () =>
+        while (true)
         {
-            while (true)
+            if (stage == 0)
             {
-                if (stage == 0)
+                var data = new byte[256];
+                int bytesRead = await networkStream.ReadAsync(data, 0, data.Length);
+                if (bytesRead == 0) break;
+
+                var streamLoginResp = UnpackStreamLogin301Response(data);
+                if (streamLoginResp.Command != 401)
                 {
-                    var data = new byte[256];
-                    int bytesRead = await networkStream.ReadAsync(data, 0, data.Length);
-                    if (bytesRead == 0) break;
-
-                    var streamLoginResp = UnpackStreamLogin301Response(data);
-                    if (streamLoginResp.Command != 401)
-                    {
-                        throw new Exception($"Login response: expected 401, got {streamLoginResp.Command}");
-                    }
-
-                    if (streamLoginResp.V21 == -11 || streamLoginResp.V21 == -12)
-                    {
-                        Console.Error.WriteLine($"Login response: unsupported {streamLoginResp.V21}, continuing");
-                    }
-                    else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
-                    {
-                        throw new Exception($"Login response: unsupported {streamLoginResp.V21}");
-                    }
-
-                    var streamStartReq = new StreamStartRequest
-                    {
-                        Command = 303,
-                        Unknown1 = streamLoginResp.V21
-                    };
-
-                    PackStreamStartRequest(streamStartReq, buff);
-                    await networkStream.WriteAsync(buff, 0, buff.Length);
-
-                    stage++;
-                    Init(conf.ServerPort, streamLoginResp);
-                    await ReadStreamPacket(networkStream);
+                    throw new Exception($"Login response: expected 401, got {streamLoginResp.Command}");
                 }
-                else if (stage == 1)
+
+                if (streamLoginResp.V21 == -11 || streamLoginResp.V21 == -12)
                 {
-                    // Handle additional stages if necessary
+                    Console.Error.WriteLine($"Login response: unsupported {streamLoginResp.V21}, continuing");
                 }
+                else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
+                {
+                    throw new Exception($"Login response: unsupported {streamLoginResp.V21}");
+                }
+
+                var streamStartReq = new StreamStartRequest
+                {
+                    Command = 303,
+                    Unknown1 = streamLoginResp.V21
+                };
+
+                PackStreamStartRequest(streamStartReq, buff);
+                networkStream.WriteAsync(buff, 0, buff.Length);
+
+                stage++;
+                Init(conf.ServerPort, streamLoginResp);
+                ReadStreamPacket(networkStream);
             }
-        });
+            else if (stage == 1)
+            {
+                // Handle additional stages if necessary
+            }
+        }
     }
 
-    private async Task ReadStreamPacket(NetworkStream networkStream)
+    private void ReadStreamPacket(NetworkStream networkStream)
     {
         var header = new byte[12];
         while (true)
@@ -348,7 +365,7 @@ class ConnectionHanler
             switch (header[0])
             {
                 case 0x7f:
-                    await HandleStream(header, networkStream);
+                    HandleStream(header, networkStream);
                     break;
                 case 0x1f:
                     Console.Error.WriteLine("Unparsed 0x1f data");
@@ -362,4 +379,5 @@ class ConnectionHanler
             }
         }
     }
+*/
 }
