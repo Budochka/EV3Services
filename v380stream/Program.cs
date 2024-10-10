@@ -1,5 +1,4 @@
 ﻿using NLog;
-using Xabe.FFmpeg;
 using System.Text.Json;
 
 namespace v380stream;
@@ -37,5 +36,11 @@ class Program
 
         // Apply config           
         NLog.LogManager.Configuration = nlogConfig;
+
+        var connection = new ConnectionHanler(LogManager.GetCurrentClassLogger(), config);
+        var res = connection.Authorise();
+
+        Console.WriteLine(res);
+        Console.ReadKey();
     }
 }

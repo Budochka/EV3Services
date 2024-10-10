@@ -1,11 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
 using NLog;
-using System.Net;
 
 namespace v380stream;
 
@@ -17,14 +13,14 @@ class ConnectionHanler
     // Define data classes or structs for the requests and responses
     private class LoginRequest
     {
-        public int Command { get; set; }
-        public byte[]? DeviceId { get; set; }
-        public int Unknown1 { get; set; }
-        public byte Unknown2 { get; set; }
-        public int Unknown3 { get; set; }
-        public byte[]? HostDateTime { get; set; }
-        public byte[]? Username { get; set; }
-        public byte[]? Password { get; set; }
+        public UInt32 Command;
+        public UInt32 Unknown1;
+        public byte Unknown2;
+        public UInt32 Unknown3;
+        public UInt32 DeviceId;
+        public byte[] HostDateTime = new byte[32];
+        public byte[] UserName = new byte[32];
+        public byte[] Password = new byte[32];
 
         public byte[] Serialize()
         {
@@ -32,34 +28,14 @@ class ConnectionHanler
             using var writer = new BinaryWriter(memoryStream);
 
             writer.Write(Command);
-
-            if (DeviceId != null)
-            {
-                writer.Write(DeviceId.Length);
-                writer.Write(DeviceId);
-            }
-
             writer.Write(Unknown1);
             writer.Write(Unknown2);
             writer.Write(Unknown3);
+            writer.Write(DeviceId);
 
-            if (HostDateTime != null)
-            {
-                writer.Write(HostDateTime.Length);
-                writer.Write(HostDateTime);
-            }
-
-            if (Username != null)
-            {
-                writer.Write(Username.Length);
-                writer.Write(Username);
-            }
-
-            if (Password != null)
-            {
-                writer.Write(Password.Length);
-                writer.Write(Password);
-            }
+            writer.Write(HostDateTime);
+            writer.Write(UserName);
+            writer.Write(Password);
 
             return memoryStream.ToArray();
         }
@@ -67,32 +43,32 @@ class ConnectionHanler
 
     private class LoginResponse
     {
-        public int Command { get; set; }
-        public int LoginResult { get; set; }
-        public int ResultValue { get; set; }
-        public byte Version { get; set; }
-        public int AuthTicket { get; set; }
-        public int Session { get; set; }
-        public byte DeviceType { get; set; }
-        public byte CamType { get; set; }
-        public ushort VendorId { get; set; }
-        public ushort IsDomainExists { get; set; }
-        public byte[]? Domain { get; set; }
-        public int RecDevId { get; set; }
-        public byte NChannels { get; set; }
-        public byte NAudioPri { get; set; }
-        public byte NVideoPri { get; set; }
-        public byte NSpeaker { get; set; }
-        public byte NPtzPri { get; set; }
-        public byte NReversePri { get; set; }
-        public byte NPtzXPri { get; set; }
-        public byte NPtzXCount { get; set; }
-        public byte[]? Settings { get; set; }
-        public ushort PanoX { get; set; }
-        public ushort PanoY { get; set; }
-        public ushort PanoRad { get; set; }
-        public int Unknown1 { get; set; }
-        public int CanUpdateDevice { get; set; }
+        public Int32 Command;
+        public Int32 LoginResult;
+        public Int32 ResultValue;
+        public byte Version;
+        public UInt32 AuthTicket;
+        public UInt32 Session;
+        public byte DeviceType;
+        public byte CamType;
+        public UInt16 VendorId;
+        public UInt16 IsDomainExists;
+        public byte[] Domain = new byte[32];
+        public Int32 RecDevId;
+        public byte NChannels;
+        public byte NAudioPri;
+        public byte NVideoPri;
+        public byte NSpeaker;
+        public byte NPtzPri;
+        public byte NReversePri;
+        public byte NPtzXPri;
+        public byte NPtzXCount;
+        public byte[] Settings = new byte[32];
+        public UInt16 PanoX;
+        public UInt16 PanoY;
+        public UInt16 PanoRad;
+        public UInt32 Unknown1;
+        public byte CanUpdateDevice;
 
         public static LoginResponse Deserialize(byte[] bytes)
         {
@@ -104,14 +80,13 @@ class ConnectionHanler
             response.LoginResult = br.ReadInt32();
             response.ResultValue = br.ReadInt32();
             response.Version = br.ReadByte();
-            response.AuthTicket = br.ReadInt32();
-            response.Session = br.ReadInt32();
+            response.AuthTicket = br.ReadUInt32();
+            response.Session = br.ReadUInt32();
             response.DeviceType = br.ReadByte();
             response.CamType = br.ReadByte();
             response.VendorId = br.ReadUInt16();
             response.IsDomainExists = br.ReadUInt16();
-            var domainLength = br.ReadInt32(); // Read the length of Domain
-            response.Domain = br.ReadBytes(domainLength);
+            response.Domain = br.ReadBytes(response.Domain.Length);
             response.RecDevId = br.ReadInt32();
             response.NChannels = br.ReadByte();
             response.NAudioPri = br.ReadByte();
@@ -121,13 +96,12 @@ class ConnectionHanler
             response.NReversePri = br.ReadByte();
             response.NPtzXPri = br.ReadByte();
             response.NPtzXCount = br.ReadByte();
-            var settingsLength = br.ReadInt32(); // Read the length of Settings
-            response.Settings = br.ReadBytes(settingsLength);
+            response.Settings = br.ReadBytes(response.Settings.Length);
             response.PanoX = br.ReadUInt16();
             response.PanoY = br.ReadUInt16();
             response.PanoRad = br.ReadUInt16();
-            response.Unknown1 = br.ReadInt32();
-            response.CanUpdateDevice = br.ReadInt32();
+            response.Unknown1 = br.ReadUInt32();
+            response.CanUpdateDevice = br.ReadByte();
 
             return response;
         }
@@ -197,13 +171,13 @@ class ConnectionHanler
         byte[] randomKey = GenerateRandomPrintable(nBlockLen);
         byte[] staticKey = Encoding.ASCII.GetBytes("macrovideo+*#!^@".PadRight(nBlockLen, '\0'));
         byte[] pad = new byte[nBlockLen - (password.Length % nBlockLen)];
-        
+
         using var aes1 = Aes.Create();
         using var aes2 = Aes.Create();
 
         aes1.Key = staticKey;
         aes1.Mode = CipherMode.ECB;
-        aes1.Padding = PaddingMode.PKCS7;
+        aes1.Padding = PaddingMode.None;
 
         aes2.Key = randomKey;
         aes2.Mode = CipherMode.ECB;
@@ -227,7 +201,7 @@ class ConnectionHanler
         return result;
     }
 
-    private int HandleAuthAndStreaming()
+    public UInt32 Authorise()
     {
         if (_conf.IP != null)
         {
@@ -240,14 +214,16 @@ class ConnectionHanler
                 var loginReqData = new LoginRequest
                 {
                     Command = 1167,
-                    DeviceId = Encoding.ASCII.GetBytes(_conf.ID),
+                    //                    DeviceId = int.Parse(_conf.ID),
+                    DeviceId = 44463380,
                     Unknown1 = 1022,
                     Unknown2 = 2,
                     Unknown3 = 1,
-                    HostDateTime = new byte[32],
-                    Username = Encoding.ASCII.GetBytes(_conf.UserName),
-                    Password = GeneratePassword(_conf.Password)
                 };
+                Buffer.BlockCopy(Encoding.ASCII.GetBytes(_conf.UserName), 0, loginReqData.UserName, 0,
+                    _conf.UserName.Length);
+                var password = GeneratePassword(_conf.Password);
+                Buffer.BlockCopy(password, 0, loginReqData.Password, 0, password.Length);
 
                 // Pack the loginReqData into loginRequest buffer
                 loginReqData.Serialize().CopyTo(loginRequest, 0);
@@ -257,7 +233,7 @@ class ConnectionHanler
 
             var response = new byte[256];
             var bytesRead = networkStream.Read(response, 0, response.Length);
-            if (bytesRead < 0)
+            if (bytesRead <= 0)
             {
                 return 0;
             }
