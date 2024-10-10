@@ -214,8 +214,7 @@ class ConnectionHanler
                 var loginReqData = new LoginRequest
                 {
                     Command = 1167,
-                    //                    DeviceId = int.Parse(_conf.ID),
-                    DeviceId = 44463380,
+                    DeviceId = UInt32.Parse(_conf.ID),
                     Unknown1 = 1022,
                     Unknown2 = 2,
                     Unknown3 = 1,
