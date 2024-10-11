@@ -2,6 +2,8 @@
 using System.Text;
 using System.Security.Cryptography;
 using NLog;
+using NAudio.Wave;
+using System.Threading.Channels;
 
 namespace v380stream;
 
@@ -9,6 +11,9 @@ class ConnectionHanler
 {
     private readonly Logger _logs;
     private readonly Config _conf;
+
+    private List<byte> vframe = [];
+    private List<byte> aframe = [];
 
     // Define data classes or structs for the requests and responses
     private class LoginRequest
@@ -109,28 +114,74 @@ class ConnectionHanler
 
     private class StreamLoginLanRequest
     {
-        public int Command { get; set; }
-        public byte[]? DeviceId { get; set; }
-        public int Unknown1 { get; set; }
-        public ushort MaybeFps { get; set; }
-        public int AuthTicket { get; set; }
-        public int Unknown4 { get; set; }
-        public int Resolution { get; set; }
+        public UInt32 Command;
+        public UInt32 DeviceId;
+        public UInt32 Unknown1;
+        public UInt16 MaybeFps;
+        public UInt32 AuthTicket;
+        public UInt32 Unknown3;
+        public UInt32 Unknown4;
+        public UInt32 Resolution;
+        public UInt32 Unknown6;
+
+        public byte[] Serialize()
+        {
+            using var memoryStream = new MemoryStream();
+            using var writer = new BinaryWriter(memoryStream);
+
+            writer.Write(Command);
+            writer.Write(DeviceId);
+            writer.Write(Unknown1);
+            writer.Write(MaybeFps);
+            writer.Write(AuthTicket);
+            writer.Write(Unknown3);
+            writer.Write(Unknown4);
+            writer.Write(Resolution);
+            writer.Write(Unknown6);
+
+            return memoryStream.ToArray();
+        }
     }
 
     private class StreamLogin301Response
     {
-        public int Command { get; set; }
-        public int V21 { get; set; }
-        public ushort MaybeFps { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public Int32 Command;
+        public Int32 V21;
+        public UInt32 MaybeFps;
+        public UInt32 Width;
+        public UInt32 Height;
+
+        public static StreamLogin301Response Deserialize(byte[] bytes)
+        {
+            using var ms = new MemoryStream(bytes);
+            using var br = new BinaryReader(ms);
+
+            var response = new StreamLogin301Response();
+            response.Command = br.ReadInt32();
+            response.V21 = br.ReadInt32();
+            response.MaybeFps = br.ReadUInt32();
+            response.Width = br.ReadUInt32();
+            response.Height = br.ReadUInt32();
+
+            return response;
+        }
     }
 
     private class StreamStartRequest
     {
-        public int Command { get; set; }
-        public int Unknown1 { get; set; }
+        public Int32 Command;
+        public UInt32 Unknown1;
+
+        public byte[] Serialize()
+        {
+            using var memoryStream = new MemoryStream();
+            using var writer = new BinaryWriter(memoryStream);
+
+            writer.Write(Command);
+            writer.Write(Unknown1);
+
+            return memoryStream.ToArray();
+        }
     }
 
     public ConnectionHanler(Logger log, Config conf)
@@ -148,6 +199,7 @@ class ConnectionHanler
         {
             result[i] = (byte)set[random.Next(set.Length)];
         }
+
         return result;
     }
 
@@ -261,98 +313,164 @@ class ConnectionHanler
 
         return 0;
     }
-/*
-    private void StartStreaming(int authToken)
+
+    public void StartStreaming(UInt32 authToken)
     {
-        int stage = 0;
         var buff = new byte[256];
-        var socketStream = new TcpClient(conf.IP, conf.Port);
-        var networkStream = socketStream.GetStream();
-        networkStream.WriteTimeout = 5000;
-
-        var streamLoginLanReq = new StreamLoginLanRequest
+        if (_conf is { IP: not null, ID: not null })
         {
-            Command = 301,
-            DeviceId = Encoding.ASCII.GetBytes(conf.ID),
-            Unknown1 = 0,
-            MaybeFps = 20,
-            AuthTicket = authToken,
-            Unknown4 = 4096 + 1,
-            Resolution = 1
-        };
+            var socketStream = new TcpClient(_conf.IP, _conf.Port);
+            var networkStream = socketStream.GetStream();
+            networkStream.WriteTimeout = 5000;
 
-        // Pack the streamLoginLanData into buff
-        PackStreamLoginLanRequest(streamLoginLanReq, buff);
-        networkStream.Write(buff, 0, buff.Length);
-
-        networkStream.ReadTimeout = 5000;
-        while (true)
-        {
-            if (stage == 0)
+            var streamLoginLanReq = new StreamLoginLanRequest
             {
-                var data = new byte[256];
-                int bytesRead = await networkStream.ReadAsync(data, 0, data.Length);
-                if (bytesRead == 0) break;
+                Command = 301,
+                DeviceId = UInt32.Parse(_conf.ID),
+                Unknown1 = 0,
+                MaybeFps = 20,
+                AuthTicket = authToken,
+                Unknown3 = 0,
+                Unknown4 = 4096 + 1,
+                Resolution = 1,
+                Unknown6 = 0
+            };
+            streamLoginLanReq.Serialize().CopyTo(buff, 0);
+            networkStream.Write(buff, 0, buff.Length);
+            Array.Clear(buff);
 
-                var streamLoginResp = UnpackStreamLogin301Response(data);
-                if (streamLoginResp.Command != 401)
-                {
-                    throw new Exception($"Login response: expected 401, got {streamLoginResp.Command}");
-                }
-
-                if (streamLoginResp.V21 == -11 || streamLoginResp.V21 == -12)
-                {
-                    Console.Error.WriteLine($"Login response: unsupported {streamLoginResp.V21}, continuing");
-                }
-                else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
-                {
-                    throw new Exception($"Login response: unsupported {streamLoginResp.V21}");
-                }
-
-                var streamStartReq = new StreamStartRequest
-                {
-                    Command = 303,
-                    Unknown1 = streamLoginResp.V21
-                };
-
-                PackStreamStartRequest(streamStartReq, buff);
-                networkStream.WriteAsync(buff, 0, buff.Length);
-
-                stage++;
-                Init(conf.ServerPort, streamLoginResp);
-                ReadStreamPacket(networkStream);
+            int bytesRead = networkStream.Read(buff, 0, buff.Length);
+            if (bytesRead == 0)
+            {
+                _logs.Trace("Error starting stream");
+                return;
             }
-            else if (stage == 1)
+
+            var streamLoginResp = StreamLogin301Response.Deserialize(buff);
+            if (streamLoginResp.Command != 401)
             {
-                // Handle additional stages if necessary
+                _logs.Trace("Login response: expected 401, got {streamLoginResp.Command}");
+            }
+
+            if (streamLoginResp.V21 == -11 || streamLoginResp.V21 == -12)
+            {
+                _logs.Trace("Login response: unsupported {streamLoginResp.V21}, continuing");
+            }
+            else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
+            {
+                _logs.Trace("Login response: unsupported {streamLoginResp.V21}");
+            }
+
+            Array.Clear(buff);
+
+            //start stream
+            var streamStartReq = new StreamStartRequest
+            {
+                Command = 303,
+                Unknown1 = (UInt32)streamLoginResp.V21
+            };
+            streamStartReq.Serialize().CopyTo(buff, 0);
+            networkStream.Write(buff, 0, buff.Length);
+
+            //receive bytes
+            var header = new byte[12];
+            while (true)
+            {
+                bytesRead = networkStream.Read(header, 0, header.Length);
+                if (bytesRead < 12)
+                {
+                    _logs.Trace("Error receiving header");
+                    break;
+                }
+
+                switch (header[0])
+                {
+                    case 0x7f:
+                        HandleStream(header, networkStream);
+                        break;
+
+                    case 0x1f:
+                        _logs.Trace("Unparsed 0x1f data");
+                        break;
+
+                    case 0x6f:
+                        Thread.Sleep(20);
+                        break;
+
+                    default:
+                        _logs.Trace("Unknown data: " + header[0]);
+                        break;
+                }
             }
         }
     }
 
-    private void ReadStreamPacket(NetworkStream networkStream)
+    private void HandleStream(byte[] hdr, NetworkStream networkStream)
     {
-        var header = new byte[12];
-        while (true)
-        {
-            int bytesRead = await networkStream.ReadAsync(header, 0, header.Length);
-            if (bytesRead == 0) break;
+        // Read the total frame count, current frame number, and length from the header
+        ushort totalFrame = BitConverter.ToUInt16(hdr, 3);
+        ushort curFrame = BitConverter.ToUInt16(hdr, 5);
+        ushort len = BitConverter.ToUInt16(hdr, 7);
+        byte type = hdr[1];
 
-            switch (header[0])
-            {
-                case 0x7f:
-                    HandleStream(header, networkStream);
-                    break;
-                case 0x1f:
-                    Console.Error.WriteLine("Unparsed 0x1f data");
-                    break;
-                case 0x6f:
-                    // Implement a 20ms delay if necessary
-                    break;
-                default:
-                    Console.Error.WriteLine("Unknown data: " + header[0]);
-                    break;
-            }
+        if (len > 500 || totalFrame == 0 || curFrame > totalFrame)
+        {
+            _logs.Trace("Sanity check failed, should not happen");
+            return;
+        }
+
+        // Receive the frame data from the server
+        byte[] frameData = new byte[len];
+        int n = 0;
+        while (n < len)
+        {
+            n += networkStream.Read(frameData, n, len - n);
+        }
+
+        // Handle the received frame based on its type (I-Frame or P-Frame)
+        switch (type)
+        {
+            // Handle video
+            case 0x00: //i-frame
+            case 0x01: //p-frame
+                vframe.AddRange(frameData);
+                if (curFrame == totalFrame - 1)
+                {
+                    //handle flv stream
+                    vframe.Clear();
+                }
+
+                break;
+
+            case 0x16:
+                // Audio
+                // sox -t ima -r 8000 -e ms-adpcm streamfile.raw -e signed-integer -b 16 out.wav
+                // ffmpeg -f s16le -ar 8000 -ac 1 -acodec adpcm_ima_ws streamfile.raw out.wav
+                aframe.AddRange(frameData);
+                if (curFrame == totalFrame - 1)
+                {
+                    //handle flv stream
+
+                    //to test NAdio
+                    PlayAudio();
+                    aframe.Clear();
+
+                }
+
+                break;
         }
     }
-*/
+
+    private void PlayAudio()
+    {
+        var audioSample = new MemoryStream(aframe.ToArray());
+        var fileFormat = new ImaAdpcmWaveFormat(8000, 1, 16);
+        var provider = new RawSourceWaveStream(audioSample, fileFormat);
+
+        var stream = WaveFormatConversionStream.CreatePcmStream(provider);
+
+        using var outputDevice = new WaveOutEvent();
+        outputDevice.Init(stream);
+        outputDevice.Play();
+    }
 }
