@@ -87,7 +87,7 @@ namespace v380stream
             }
         }
 
-        public void WriteAudio(byte[] packet)
+        private void WriteAudio(byte[] packet)
         {
             if (!_enableAudio || _exit || packet.Length == 0)
             {
