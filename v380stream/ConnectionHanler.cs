@@ -12,8 +12,12 @@ class ConnectionHanler
     private readonly Logger _logs;
     private readonly Config _conf;
 
-    private List<byte> vframe = [];
+  private List<byte> vframe = [];
     private List<byte> aframe = [];
+
+    // File streams for output (matching C++ implementation)
+    private FileStream? _videoFile;
+    private FileStream? _audioFile;
 
     // Define data classes or structs for the requests and responses
     private class LoginRequest
@@ -187,7 +191,7 @@ class ConnectionHanler
     public ConnectionHanler(Logger log, Config conf)
     {
         _logs = log;
-        _conf = conf;
+      _conf = conf;
     }
 
     private byte[] GenerateRandomPrintable(int length)
@@ -316,148 +320,190 @@ class ConnectionHanler
 
     public void StartStreaming(UInt32 authToken)
     {
-        var buff = new byte[256];
+   var buff = new byte[256];
         if (_conf is { IP: not null, ID: not null })
-        {
-            var socketStream = new TcpClient(_conf.IP, _conf.Port);
-            var networkStream = socketStream.GetStream();
+      {
+            // Open output files (exactly like C++ implementation)
+   try
+            {
+         _videoFile = new FileStream("video.h264", FileMode.Create, FileAccess.Write);
+      _audioFile = new FileStream("audio.raw", FileMode.Create, FileAccess.Write);
+                _logs.Info("Created output files: video.h264 and audio.raw");
+            }
+          catch (Exception ex)
+            {
+                _logs.Error(ex, "Failed to create output files");
+      return;
+  }
+
+      var socketStream = new TcpClient(_conf.IP, _conf.Port);
+   var networkStream = socketStream.GetStream();
             networkStream.WriteTimeout = 5000;
 
-            var streamLoginLanReq = new StreamLoginLanRequest
+  // ...existing stream login code...
+
+         var streamLoginLanReq = new StreamLoginLanRequest
             {
-                Command = 301,
-                DeviceId = UInt32.Parse(_conf.ID),
-                Unknown1 = 0,
-                MaybeFps = 20,
-                AuthTicket = authToken,
-                Unknown3 = 0,
-                Unknown4 = 4096 + 1,
-                Resolution = 1,
-                Unknown6 = 0
-            };
+      Command = 301,
+          DeviceId = UInt32.Parse(_conf.ID),
+     Unknown1 = 0,
+              MaybeFps = 20,
+   AuthTicket = authToken,
+     Unknown3 = 0,
+      Unknown4 = 4096 + 1,
+          Resolution = 1,
+           Unknown6 = 0
+      };
             streamLoginLanReq.Serialize().CopyTo(buff, 0);
-            networkStream.Write(buff, 0, buff.Length);
+       networkStream.Write(buff, 0, buff.Length);
             Array.Clear(buff);
 
             int bytesRead = networkStream.Read(buff, 0, buff.Length);
             if (bytesRead == 0)
-            {
-                _logs.Trace("Error starting stream");
-                return;
-            }
+     {
+    _logs.Trace("Error starting stream");
+         StopStreaming();
+              return;
+          }
 
-            var streamLoginResp = StreamLogin301Response.Deserialize(buff);
-            if (streamLoginResp.Command != 401)
-            {
-                _logs.Trace("Login response: expected 401, got {streamLoginResp.Command}");
+  var streamLoginResp = StreamLogin301Response.Deserialize(buff);
+      if (streamLoginResp.Command != 401)
+ {
+     _logs.Trace("Login response: expected 401, got {streamLoginResp.Command}");
             }
 
             if (streamLoginResp.V21 == -11 || streamLoginResp.V21 == -12)
             {
-                _logs.Trace("Login response: unsupported {streamLoginResp.V21}, continuing");
+         _logs.Trace("Login response: unsupported {streamLoginResp.V21}, continuing");
             }
-            else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
+else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
             {
-                _logs.Trace("Login response: unsupported {streamLoginResp.V21}");
-            }
+          _logs.Trace("Login response: unsupported {streamLoginResp.V21}");
+          }
 
             Array.Clear(buff);
 
             //start stream
             var streamStartReq = new StreamStartRequest
             {
-                Command = 303,
-                Unknown1 = (UInt32)streamLoginResp.V21
+  Command = 303,
+              Unknown1 = (UInt32)streamLoginResp.V21
             };
             streamStartReq.Serialize().CopyTo(buff, 0);
             networkStream.Write(buff, 0, buff.Length);
 
-            //receive bytes
-            var header = new byte[12];
+         //receive bytes
+     var header = new byte[12];
             while (true)
-            {
-                bytesRead = networkStream.Read(header, 0, header.Length);
-                if (bytesRead < 12)
-                {
-                    _logs.Trace("Error receiving header");
-                    break;
-                }
+      {
+      bytesRead = networkStream.Read(header, 0, header.Length);
+     if (bytesRead < 12)
+   {
+ _logs.Trace("Error receiving header");
+   break;
+  }
 
-                switch (header[0])
-                {
-                    case 0x7f:
-                        HandleStream(header, networkStream);
-                        break;
+           switch (header[0])
+  {
+         case 0x7f:
+         HandleStream(header, networkStream);
+  break;
 
-                    case 0x1f:
-                        _logs.Trace("Unparsed 0x1f data");
-                        break;
+             case 0x1f:
+ _logs.Trace("Unparsed 0x1f data");
+        break;
 
                     case 0x6f:
-                        Thread.Sleep(20);
-                        break;
+            Thread.Sleep(20);
+   break;
 
-                    default:
-                        _logs.Trace("Unknown data: " + header[0]);
-                        break;
-                }
-            }
+          default:
+    _logs.Trace("Unknown data: " + header[0]);
+           break;
         }
+            }
+       
+            // Clean up when streaming stops
+    StopStreaming();
+  }
     }
 
     private void HandleStream(byte[] hdr, NetworkStream networkStream)
     {
         // Read the total frame count, current frame number, and length from the header
-        ushort totalFrame = BitConverter.ToUInt16(hdr, 3);
-        ushort curFrame = BitConverter.ToUInt16(hdr, 5);
-        ushort len = BitConverter.ToUInt16(hdr, 7);
+    ushort totalFrame = BitConverter.ToUInt16(hdr, 3);
+    ushort curFrame = BitConverter.ToUInt16(hdr, 5);
+ ushort len = BitConverter.ToUInt16(hdr, 7);
         byte type = hdr[1];
 
-        if (len > 500 || totalFrame == 0 || curFrame > totalFrame)
-        {
-            _logs.Trace("Sanity check failed, should not happen");
-            return;
+    if (len > 500 || totalFrame == 0 || curFrame > totalFrame)
+      {
+        _logs.Trace("Sanity check failed, should not happen");
+     return;
         }
 
         // Receive the frame data from the server
         byte[] frameData = new byte[len];
-        int n = 0;
-        while (n < len)
-        {
-            n += networkStream.Read(frameData, n, len - n);
+     int n = 0;
+    while (n < len)
+  {
+  n += networkStream.Read(frameData, n, len - n);
         }
 
-        // Handle the received frame based on its type (I-Frame or P-Frame)
+   // Handle the received frame based on its type (I-Frame or P-Frame)
         switch (type)
         {
             // Handle video
-            case 0x00: //i-frame
-            case 0x01: //p-frame
-                vframe.AddRange(frameData);
-                if (curFrame == totalFrame - 1)
-                {
-                    //handle flv stream
-                    vframe.Clear();
-                }
+       case 0x00: //i-frame
+        case 0x01: //p-frame
+          vframe.AddRange(frameData);
+       if (curFrame == totalFrame - 1)
+ {
+         // Write to video.h264 (matching C++ implementation)
+           try
+  {
+         _videoFile?.Write(vframe.ToArray(), 0, vframe.Count);
+     _videoFile?.Flush();
+             _logs.Trace($"Wrote video frame: {vframe.Count} bytes");
+        }
+               catch (Exception ex)
+          {
+          _logs.Error(ex, "Failed to write video frame");
+       }
+            vframe.Clear();
+      }
+      break;
 
-                break;
-
-            case 0x16:
-                // Audio
-                // sox -t ima -r 8000 -e ms-adpcm streamfile.raw -e signed-integer -b 16 out.wav
+          case 0x16:
+          // Audio
+       // sox -t ima -r 8000 -e ms-adpcm streamfile.raw -e signed-integer -b 16 out.wav
                 // ffmpeg -f s16le -ar 8000 -ac 1 -acodec adpcm_ima_ws streamfile.raw out.wav
-                aframe.AddRange(frameData);
-                if (curFrame == totalFrame - 1)
-                {
-                    //handle flv stream
+           aframe.AddRange(frameData);
+        if (curFrame == totalFrame - 1)
+       {
+ // Write to audio.raw (matching C++ implementation)
+         try
+    {
+   _audioFile?.Write(aframe.ToArray(), 0, aframe.Count);
+_audioFile?.Flush();
+    _logs.Trace($"Wrote audio frame: {aframe.Count} bytes");
+}
+            catch (Exception ex)
+   {
+          _logs.Error(ex, "Failed to write audio frame");
+     }
 
-                    //to test NAdio
-                    PlayAudio();
-                    aframe.Clear();
-
-                }
-
-                break;
+ try
+ {
+        }
+     catch (Exception ex)
+ {
+           _logs.Error(ex, "Failed to play audio");
+            }
+     
+           aframe.Clear();
+         }
+              break;
         }
     }
 
@@ -469,8 +515,35 @@ class ConnectionHanler
 
         var stream = WaveFormatConversionStream.CreatePcmStream(provider);
 
-        using var outputDevice = new WaveOutEvent();
-        outputDevice.Init(stream);
+      using var outputDevice = new WaveOutEvent();
+     outputDevice.Init(stream);
         outputDevice.Play();
+    }
+
+    public void StopStreaming()
+    {
+        _logs.Info("Stopping stream and closing files");
+        
+   try
+    {
+            _videoFile?.Close();
+   _videoFile?.Dispose();
+            _videoFile = null;
+        }
+        catch (Exception ex)
+        {
+            _logs.Error(ex, "Error closing video file");
+        }
+
+        try
+        {
+        _audioFile?.Close();
+       _audioFile?.Dispose();
+   _audioFile = null;
+        }
+    catch (Exception ex)
+     {
+        _logs.Error(ex, "Error closing audio file");
+    }
     }
 }

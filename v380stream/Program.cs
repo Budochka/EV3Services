@@ -37,15 +37,42 @@ class Program
         // set logging rules
         nlogConfig.AddRuleForAllLevels(logfile);
 
-        // Apply config           
+        // Apply config   
         NLog.LogManager.Configuration = nlogConfig;
 
-        var connection = new ConnectionHanler(LogManager.GetCurrentClassLogger(), config);
-        var token= connection.Authorise();
-        Console.WriteLine(token);
+        var logger = LogManager.GetCurrentClassLogger();
+        var connection = new ConnectionHanler(logger, config);
+        
+        Console.WriteLine("V380 Stream Capture - Press Ctrl+C to stop");
+        Console.WriteLine("Output files: video.h264, audio.raw");
+        Console.WriteLine();
+        
+        var token = connection.Authorise();
+        if (token == 0)
+        {
+            logger.Error("Authentication failed");
+            Console.WriteLine("Authentication failed. Check credentials and try again.");
+            return;
+        }
+    
+        Console.WriteLine($"Authentication successful. Token: {token}");
+        Console.WriteLine("Starting stream capture...");
+
+        // Set up Ctrl+C handler for clean shutdown
+        Console.CancelKeyPress += (sender, e) =>
+        {
+            e.Cancel = true;
+            logger.Info("Ctrl+C received, stopping stream...");
+            connection.StopStreaming();
+            Console.WriteLine("\nStream stopped. Files saved:");
+            Console.WriteLine("  - video.h264 (raw H.264 stream)");
+            Console.WriteLine("  - audio.raw (raw IMA ADPCM audio)");
+            Console.WriteLine("\nTo play audio: ffmpeg -f s16le -ar 8000 -ac 1 -i audio.raw output.wav");
+        };
 
         connection.StartStreaming(token);
 
+        Console.WriteLine("Press any key to exit...");
         Console.ReadKey();
     }
 
