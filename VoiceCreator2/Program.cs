@@ -1,11 +1,12 @@
 ﻿using NLog;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace VoiceCreator
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Config? config = new Config();
 
@@ -42,11 +43,11 @@ namespace VoiceCreator
             nlogConfig.AddRuleForAllLevels(logfile);
             nlogConfig.AddRuleForAllLevels(console);
 
-            // Apply config           
+            // Apply config      
             NLog.LogManager.Configuration = nlogConfig;
 
             Worker worker = new Worker(LogManager.GetCurrentClassLogger(), config);
-            worker.Initialize();
+            await worker.InitializeAsync();
             worker.Start();
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();

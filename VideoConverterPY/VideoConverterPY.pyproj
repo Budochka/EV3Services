@@ -15,6 +15,7 @@
     <Name>VideoConverterPY</Name>
     <IsWindowsApplication>False</IsWindowsApplication>
     <PublishUrl>d:\Robots\EV3\Projects\EV3Services\Bin\Release</PublishUrl>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -26,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.json" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.11" />

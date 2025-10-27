@@ -1,11 +1,12 @@
 ﻿using NLog;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Processor
 {
     class Program
     {
-        static void Main()
+        static async Task Main()
         {
             Config config = new();
 
@@ -39,7 +40,7 @@ namespace Processor
             NLog.LogManager.Configuration = nlogConfig;
 
             Worker worker = new(LogManager.GetCurrentClassLogger(), config);
-            worker.Initialize();
+            await worker.InitializeAsync();
             worker.Start();
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();

@@ -1,5 +1,6 @@
 ﻿using NLog;
 using RabbitMQ.Client.Events;
+using System.Threading.Tasks;
 
 namespace VoiceCreator
 {
@@ -19,21 +20,21 @@ namespace VoiceCreator
             _started = false;
         }
 
-        public void Initialize()
+        public async Task InitializeAsync()
         {
             _consumer = new RabbitConsumer(_logs);
-            _consumer.ConnectToRabbit(_config.RabbitUserName,
-                                      _config.RabbitPassword,
-                                      _config.RabbitHost,
-                                      _config.RabbitPort,
-                                      HandleRabbitMessage);
+            await _consumer.ConnectToRabbitAsync(_config.RabbitUserName,
+                                              _config.RabbitPassword,
+                                              _config.RabbitHost,
+                                              _config.RabbitPort,
+                                              HandleRabbitMessageAsync);
             _logs.Info("RabbitConsumer created");
 
             _publisher = new RabbitPublisher(_logs);
-            _publisher.ConnectToRabbit(_config.RabbitUserName,
-                                      _config.RabbitPassword,
-                                      _config.RabbitHost,
-                                      _config.RabbitPort);
+            await _publisher.ConnectToRabbitAsync(_config.RabbitUserName,
+                                              _config.RabbitPassword,
+                                              _config.RabbitHost,
+                                              _config.RabbitPort);
             _logs.Info("RabbitPublisher created");
         }
 
@@ -47,7 +48,7 @@ namespace VoiceCreator
             _started = false;
         }
 
-        private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
+        private async Task HandleRabbitMessageAsync(object sender, BasicDeliverEventArgs args)
         {
             var bytes = args.Body.ToArray();
             if ((bytes.Length > 0) && _started)
@@ -57,16 +58,16 @@ namespace VoiceCreator
 
                 var httpClient = new HttpClient();
                 var openTTSClient = new OpenTTS(httpClient);
-                openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false).Wait();
-                //                openTTSClient.TtsAsync("espeak: Russian", new string(chars), null, null, false).Wait();
+                await openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false);
+                //           openTTSClient.TtsAsync("espeak: Russian", new string(chars), null, null, false).Wait();
                 if (openTTSClient.IsSuccess)
                 {
-                    _publisher?.Publish(openTTSClient.LastResponse);
+                    await _publisher?.PublishAsync(openTTSClient.LastResponse);
                 }
             }
 
-            EventingBasicConsumer ec = (EventingBasicConsumer)sender;
-            ec.Model.BasicAck(args.DeliveryTag, false);
+            AsyncEventingBasicConsumer ec = (AsyncEventingBasicConsumer)sender;
+            await ec.Channel.BasicAckAsync(args.DeliveryTag, false);
         }
     }
 }

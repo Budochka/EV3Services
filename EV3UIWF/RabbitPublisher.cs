@@ -1,13 +1,15 @@
 ﻿using NLog;
 using RabbitMQ.Client;
+using System;
+using System.Threading.Tasks;
 
 
 namespace EV3UIWF
 {
-    class RabbitPublisher
+    class RabbitPublisher : IAsyncDisposable
     {
-        private IModel _channel;
-        private IConnection _connection;
+        private IChannel? _channel;
+        private IConnection? _connection;
         private readonly Logger _logs;
 
         public RabbitPublisher(Logger log)
@@ -15,7 +17,7 @@ namespace EV3UIWF
             _logs = log;
         }
 
-        public bool ConnectToRabbit(in string user, in string pass, in string hostName, in int port)
+        public async Task<bool> ConnectToRabbitAsync(string user, string pass, string hostName, int port)
         {
             ConnectionFactory factory = new ConnectionFactory()
             {
@@ -28,11 +30,11 @@ namespace EV3UIWF
 
             //creating connection
             _logs.Info("Creating Rabbit MQ connection host:{0}, port: {1}", hostName, port);
-            _connection = factory.CreateConnection();
+            _connection = await factory.CreateConnectionAsync();
             if (_connection != null)
             {
                 _logs.Info("Connection created");
-                _channel = _connection.CreateModel();
+                _channel = await _connection.CreateChannelAsync();
                 if (_channel != null)
                 {
                     _logs.Info("Channel created");
@@ -48,24 +50,35 @@ namespace EV3UIWF
             }
 
             //declaring exchange 
-            _channel.ExchangeDeclare(exchange: "EV3", type: "topic", autoDelete: true);
+            await _channel.ExchangeDeclareAsync(exchange: "EV3", type: "topic", autoDelete: true);
             _logs.Info("Exchange created");
 
             return true;
         }
 
-        ~RabbitPublisher()
+        public async ValueTask DisposeAsync()
         {
-            _logs.Info("Destructor called");
+            _logs.Info("DisposeAsync called");
 
-            _channel?.Close();
+            if (_channel != null)
+            {
+                await _channel.CloseAsync();
+                await _channel.DisposeAsync();
+            }
 
-            _connection?.Close();
+            if (_connection != null)
+            {
+                await _connection.CloseAsync();
+                await _connection.DisposeAsync();
+            }
         }
 
-        public void Publish(string key, in byte[] data)
+        public async Task PublishAsync(string key, byte[] data)
         {
-            _channel?.BasicPublish(exchange: "EV3", routingKey: key, basicProperties: null, body: data);
+            if (_channel != null)
+            {
+                await _channel.BasicPublishAsync(exchange: "EV3", routingKey: key, body: data);
+            }
         }
     }
 }

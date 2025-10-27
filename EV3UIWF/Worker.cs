@@ -1,6 +1,7 @@
 ﻿using System;
 using NLog;
 using RabbitMQ.Client.Events;
+using System.Threading.Tasks;
 
 namespace EV3UIWF
 {
@@ -24,18 +25,18 @@ namespace EV3UIWF
             _started = false;
         }
 
-        public void Initialize()
+        public async Task InitializeAsync()
         {
             _consumer = new RabbitConsumer(_logs);
-            _consumer.ConnectToRabbit(_config.RabbitUserName,
+            await _consumer.ConnectToRabbitAsync(_config.RabbitUserName,
                                       _config.RabbitPassword,
                                       _config.RabbitHost,
                                       _config.RabbitPort,
-                                      HandleRabbitMessage);
+                                      HandleRabbitMessageAsync);
             _logs.Info("RabbitConsumer created");
 
             _publisher = new RabbitPublisher(_logs);
-            _publisher.ConnectToRabbit(_config.RabbitUserName,
+            await _publisher.ConnectToRabbitAsync(_config.RabbitUserName,
                                       _config.RabbitPassword,
                                       _config.RabbitHost,
                                       _config.RabbitPort);
@@ -52,12 +53,12 @@ namespace EV3UIWF
             _started = false;
         }
 
-        public void Publish(string key, in byte[] data)
+        public async Task PublishAsync(string key, byte[] data)
         {
-            _publisher.Publish(key, data);
+            await _publisher.PublishAsync(key, data);
         }
 
-        private void HandleRabbitMessage(object sender, BasicDeliverEventArgs args)
+        private async Task HandleRabbitMessageAsync(object sender, BasicDeliverEventArgs args)
         {
             var bytes = args.Body.ToArray();
             if ((bytes.Length > 0) && _started)
@@ -67,8 +68,8 @@ namespace EV3UIWF
                 Notify?.Invoke(args.RoutingKey, buffer);
             }
 
-            var ec = (EventingBasicConsumer)sender;
-            ec.Model.BasicAck(args.DeliveryTag, false);
+            var ec = (AsyncEventingBasicConsumer)sender;
+            await ec.Channel.BasicAckAsync(args.DeliveryTag, false);
         }
     }
 }
