@@ -1,6 +1,6 @@
 ﻿namespace Logger
 {
-    class Config
+    public class Config
     {
         public string? LogFileName { get; set; }
         public string? RabbitUserName { get; set; }

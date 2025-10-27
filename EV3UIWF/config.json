@@ -2,7 +2,7 @@
   "LogFileName": "logfile.txt",
   "RabbitUserName": "guest",
   "RabbitPassword": "guest",
-  "RabbitHost": "localhost",
+  "RabbitHost": "storage2",
   "RabbitPort": 5672,
   "PluginsFolder": "D:\\Robots\\EV3\\Projects\\EV3Services\\EV3UIWF\\Plugins"
 }

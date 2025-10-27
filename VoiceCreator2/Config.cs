@@ -1,6 +1,6 @@
 ﻿namespace VoiceCreator
 {
-    class Config
+    public class Config
     {
         public string? LogFileName { get; init; }
         public string? RabbitUserName { get; init; }
