@@ -71,8 +71,13 @@ class Program
                 Console.WriteLine("\nStream stopped. Files saved:");
                 Console.WriteLine("  - video.h264 (raw H.264 stream)");
                 Console.WriteLine("  - audio.raw (raw IMA ADPCM audio)");
-                Console.WriteLine("\nTo convert audio (C++ command):");
-                Console.WriteLine("  sox -t ima -r 8000 -e ms-adpcm audio.raw -e signed-integer -b 16 audio.wav");
+                Console.WriteLine("\nTo convert audio:");
+                Console.WriteLine("  PowerShell command (from any location):");
+                Console.WriteLine("    .\\convert_audio.ps1 \"path\\to\\audio.raw\"");
+                Console.WriteLine("  Or with C++ FLV approach (skip 18 bytes):");
+                Console.WriteLine("    .\\convert_audio.ps1 \"path\\to\\audio.raw\" -SkipBytes 18");
+                Console.WriteLine("  Or from script directory:");
+                Console.WriteLine("    .\\convert_audio.ps1  (uses audio.raw in current dir, default skip 20)");
                 Console.WriteLine("Exiting...");
                 Environment.Exit(0);
             }

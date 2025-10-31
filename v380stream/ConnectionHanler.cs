@@ -543,8 +543,11 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
 
           case 0x16:
           // Audio
-       // sox -t ima -r 8000 -e ms-adpcm streamfile.raw -e signed-integer -b 16 out.wav
-                // ffmpeg -f s16le -ar 8000 -ac 1 -acodec adpcm_ima_ws streamfile.raw out.wav
+       // Node.js (stream.ts line 134): skips 20 bytes -> slice(20)
+       // C++ FLV (FlvStream.cpp line 493): skips 18 bytes -> begin + 18  
+       // Raw output (v380.cpp line 501): writes full frames (no skip)
+       // Current: writing full frames for raw output, conversion tools should skip headers
+       // Node.js FFmpeg: -f s16le -ar 8000 -acodec adpcm_ima_ws -ac 1 (with 20-byte skip)
            aframe.AddRange(frameData);
         if (curFrame == totalFrame - 1)
        {
