@@ -44,7 +44,7 @@ class Program
         var connection = new ConnectionHanler(logger, config);
         
         Console.WriteLine("V380 Stream Capture - Press Ctrl+C to stop");
-        Console.WriteLine("Output files: video.h264, audio.raw");
+        Console.WriteLine("Output files: video.h264, audio.wav (converted on-the-fly)");
         Console.WriteLine();
         
         var token = connection.Authorise();
@@ -70,14 +70,7 @@ class Program
                 connection.StopStreaming();
                 Console.WriteLine("\nStream stopped. Files saved:");
                 Console.WriteLine("  - video.h264 (raw H.264 stream)");
-                Console.WriteLine("  - audio.raw (raw IMA ADPCM audio)");
-                Console.WriteLine("\nTo convert audio:");
-                Console.WriteLine("  PowerShell command (from any location):");
-                Console.WriteLine("    .\\convert_audio.ps1 \"path\\to\\audio.raw\"");
-                Console.WriteLine("  Or with C++ FLV approach (skip 18 bytes):");
-                Console.WriteLine("    .\\convert_audio.ps1 \"path\\to\\audio.raw\" -SkipBytes 18");
-                Console.WriteLine("  Or from script directory:");
-                Console.WriteLine("    .\\convert_audio.ps1  (uses audio.raw in current dir, default skip 20)");
+                Console.WriteLine("  - audio.wav (PCM WAV, ready to play - converted on-the-fly)");
                 Console.WriteLine("Exiting...");
                 Environment.Exit(0);
             }

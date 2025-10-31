@@ -12,12 +12,20 @@ class ConnectionHanler
     private readonly Logger _logs;
     private readonly Config _conf;
 
-  private List<byte> vframe = [];
+    private List<byte> vframe = [];
     private List<byte> aframe = [];
+    
+    // ADPCM decoder state (maintain across frames for continuous stream decoding)
+    // SoX treats the audio as continuous, so only FIRST frame has header, rest continue decoding
+    private int _adpcmPredictor = 0;
+    private int _adpcmStepIndex = 0;
+    private bool _adpcmStateInitialized = false;
+    private int _adpcmNibbleFlag = 0; // Track high/low nibble position across frames
+    private int _adpcmCurrentByte = 0; // Track current byte for nibble extraction across frames
 
-    // File streams for output (matching C++ implementation)
+    // File streams for output
     private FileStream? _videoFile;
-    private FileStream? _audioFile;
+    private WaveFileWriter? _wavWriter; // Write WAV directly with on-the-fly ADPCM decoding
     
     // Network connection for streaming (needed to interrupt blocking reads on Ctrl+C)
     private TcpClient? _streamClient;
@@ -327,12 +335,13 @@ class ConnectionHanler
    var buff = new byte[256];
         if (_conf is { IP: not null, ID: not null })
       {
-            // Open output files (exactly like C++ implementation)
+            // Open output files
    try
             {
          _videoFile = new FileStream("video.h264", FileMode.Create, FileAccess.Write);
-      _audioFile = new FileStream("audio.raw", FileMode.Create, FileAccess.Write);
-                _logs.Info("Created output files: video.h264 and audio.raw");
+      // Write WAV directly with on-the-fly ADPCM decoding (skip 20 bytes, decode to PCM)
+      _wavWriter = new WaveFileWriter("audio.wav", new WaveFormat(8000, 16, 1));
+                _logs.Info("Created output files: video.h264 and audio.wav");
             }
           catch (Exception ex)
             {
@@ -531,7 +540,6 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
   {
          _videoFile?.Write(vframe.ToArray(), 0, vframe.Count);
      _videoFile?.Flush();
-             _logs.Trace($"Wrote video frame: {vframe.Count} bytes");
         }
                catch (Exception ex)
           {
@@ -541,37 +549,110 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
       }
       break;
 
-          case 0x16:
-          // Audio
-       // Node.js (stream.ts line 134): skips 20 bytes -> slice(20)
-       // C++ FLV (FlvStream.cpp line 493): skips 18 bytes -> begin + 18  
-       // Raw output (v380.cpp line 501): writes full frames (no skip)
-       // Current: writing full frames for raw output, conversion tools should skip headers
-       // Node.js FFmpeg: -f s16le -ar 8000 -acodec adpcm_ima_ws -ac 1 (with 20-byte skip)
-           aframe.AddRange(frameData);
-        if (curFrame == totalFrame - 1)
-       {
- // Write to audio.raw - write full frame matching C++ raw output (v380.cpp line 501)
-         try
-    {
-   var fullFrame = aframe.ToArray();
-   // C++ raw audio output (v380.cpp line 501): fwrite(aframe.data() + 0, 1, aframe.size() - 0, stdout)
-   // Writes full frames without any header skipping for raw output
-   if (fullFrame.Length > 0)
-   {
-       _audioFile?.Write(fullFrame, 0, fullFrame.Length);
-       _audioFile?.Flush();
-       _logs.Trace($"Wrote audio frame: {fullFrame.Length} bytes (full frame, matching C++ raw output)");
-   }
-}
-            catch (Exception ex)
-   {
-          _logs.Error(ex, "Failed to write audio frame");
-     }
-     
-           aframe.Clear();
-         }
-              break;
+            case 0x16:
+                // Audio frame - decode ADPCM to PCM and write to WAV
+                // SoX treats audio as continuous ADPCM stream: first frame has header, rest are raw data
+                aframe.AddRange(frameData);
+                if (curFrame == totalFrame - 1)
+                {
+                    try
+                    {
+                        var fullFrame = aframe.ToArray();
+                        const int skipBytes = 20; // Skip header bytes (Node.js approach)
+                        if (fullFrame.Length > skipBytes)
+                        {
+                            // Extract ADPCM data after skipping header
+                            byte[] adpcmData = new byte[fullFrame.Length - skipBytes];
+                            Array.Copy(fullFrame, skipBytes, adpcmData, 0, adpcmData.Length);
+                            
+                            int outputSamples;
+                            byte[] pcmData;
+       
+                            if (!_adpcmStateInitialized)
+                            {
+                                // First frame: find and read ADPCM header (predictor + step index)
+                                int headerOffset = -1;
+                                
+                                // Check bytes 0-2 first (standard header location)
+                                if (adpcmData.Length >= 4)
+                                {
+                                    int step0 = adpcmData[2];
+                                    if (step0 >= 0 && step0 <= 88)
+                                    {
+                                        headerOffset = 0;
+                                    }
+                                    // Check bytes 4-6 (alternative header location with padding)
+                                    else if (adpcmData.Length >= 8)
+                                    {
+                                        int step4 = adpcmData[6];
+                                        if (step4 >= 0 && step4 <= 88)
+                                        {
+                                            headerOffset = 4;
+                                        }
+                                    }
+                                }
+                                
+                                if (headerOffset >= 0)
+                                {
+                                    // Initialize decoder state from header
+                                    byte[] headerData = new byte[adpcmData.Length - headerOffset];
+                                    Array.Copy(adpcmData, headerOffset, headerData, 0, headerData.Length);
+                                    
+                                    _adpcmPredictor = headerData[0] | (headerData[1] << 8);
+                                    if (_adpcmPredictor > 32767) _adpcmPredictor -= 65536;
+                                    _adpcmStepIndex = headerData[2];
+                                    if (_adpcmStepIndex > 88) _adpcmStepIndex = 88;
+                                    _adpcmStateInitialized = true;
+                                    
+                                    // Calculate output samples: (headerData.Length - 4) * 2 + 2 initial samples
+                                    int adpcmBytes = headerData.Length - 4;
+                                    outputSamples = 2 + (adpcmBytes * 2);
+                                    
+                                    pcmData = ImaAdpcmDecoder.Decode(headerData, outputSamples, false, 0, 0, 
+                                        out _adpcmPredictor, out _adpcmStepIndex, 
+                                        ref _adpcmNibbleFlag, ref _adpcmCurrentByte);
+                                }
+                                else
+                                {
+                                    // No valid header found - initialize with defaults
+                                    _adpcmPredictor = 0;
+                                    _adpcmStepIndex = 0;
+                                    _adpcmStateInitialized = true;
+                                    outputSamples = adpcmData.Length * 2;
+                                    
+                                    _logs.Warn("No valid ADPCM header found in first frame, using defaults");
+                                    pcmData = ImaAdpcmDecoder.Decode(adpcmData, outputSamples, true, 
+                                        _adpcmPredictor, _adpcmStepIndex, 
+                                        out _adpcmPredictor, out _adpcmStepIndex, 
+                                        ref _adpcmNibbleFlag, ref _adpcmCurrentByte);
+                                }
+                            }
+                            else
+                            {
+                                // Subsequent frames: continue decoding with previous state
+                                // All bytes are raw ADPCM data (each byte = 2 samples)
+                                outputSamples = adpcmData.Length * 2;
+                                pcmData = ImaAdpcmDecoder.Decode(adpcmData, outputSamples, true, 
+                                    _adpcmPredictor, _adpcmStepIndex, 
+                                    out _adpcmPredictor, out _adpcmStepIndex, 
+                                    ref _adpcmNibbleFlag, ref _adpcmCurrentByte);
+                            }
+                            
+                            if (pcmData.Length > 0)
+                            {
+                                _wavWriter?.Write(pcmData, 0, pcmData.Length);
+                                _wavWriter?.Flush();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logs.Error(ex, "Failed to decode/write audio frame");
+                    }
+                    
+                    aframe.Clear();
+                }
+                break;
         }
     }
 
@@ -605,9 +686,10 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
 
         try
         {
-        _audioFile?.Close();
-       _audioFile?.Dispose();
-   _audioFile = null;
+        _wavWriter?.Flush();
+        _wavWriter?.Close();
+        _wavWriter?.Dispose();
+   _wavWriter = null;
         }
     catch (Exception ex)
      {
