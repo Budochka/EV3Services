@@ -18,6 +18,10 @@ class ConnectionHanler
     // File streams for output (matching C++ implementation)
     private FileStream? _videoFile;
     private FileStream? _audioFile;
+    
+    // Network connection for streaming (needed to interrupt blocking reads on Ctrl+C)
+    private TcpClient? _streamClient;
+    private NetworkStream? _networkStream;
 
     // Define data classes or structs for the requests and responses
     private class LoginRequest
@@ -336,9 +340,9 @@ class ConnectionHanler
       return;
   }
 
-      var socketStream = new TcpClient(_conf.IP, _conf.Port);
-   var networkStream = socketStream.GetStream();
-            networkStream.WriteTimeout = 5000;
+      _streamClient = new TcpClient(_conf.IP, _conf.Port);
+   _networkStream = _streamClient.GetStream();
+            _networkStream.WriteTimeout = 5000;
 
   // ...existing stream login code...
 
@@ -355,10 +359,10 @@ class ConnectionHanler
            Unknown6 = 0
       };
             streamLoginLanReq.Serialize().CopyTo(buff, 0);
-       networkStream.Write(buff, 0, buff.Length);
+            _networkStream.Write(buff, 0, buff.Length);
             Array.Clear(buff);
 
-            int bytesRead = networkStream.Read(buff, 0, buff.Length);
+            int bytesRead = _networkStream.Read(buff, 0, buff.Length);
             if (bytesRead == 0)
      {
     _logs.Trace("Error starting stream");
@@ -390,24 +394,64 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
               Unknown1 = (UInt32)streamLoginResp.V21
             };
             streamStartReq.Serialize().CopyTo(buff, 0);
-            networkStream.Write(buff, 0, buff.Length);
+            _networkStream.Write(buff, 0, buff.Length);
 
          //receive bytes
      var header = new byte[12];
+            _networkStream.ReadTimeout = System.Threading.Timeout.Infinite; // No timeout for blocking reads
             while (true)
       {
-      bytesRead = networkStream.Read(header, 0, header.Length);
-     if (bytesRead < 12)
-   {
- _logs.Trace("Error receiving header");
-   break;
-  }
+      int totalBytesRead = 0;
+      // Read header in loop to handle partial reads
+      while (totalBytesRead < 12 && _networkStream != null)
+      {
+          try
+          {
+              bytesRead = _networkStream.Read(header, totalBytesRead, 12 - totalBytesRead);
+              if (bytesRead == 0)
+              {
+                  // Connection closed
+                  _logs.Trace("Connection closed by remote host");
+                  break;
+              }
+              totalBytesRead += bytesRead;
+          }
+          catch (ObjectDisposedException)
+          {
+              // Stream was closed (e.g., by StopStreaming on Ctrl+C)
+              _logs.Trace("Network stream was closed, exiting streaming loop");
+              break;
+          }
+          catch (IOException)
+          {
+              // Connection was closed
+              _logs.Trace("Network connection closed");
+              break;
+          }
+      }
+      
+      if (totalBytesRead < 12)
+      {
+          // Connection closed, exit streaming loop
+          _logs.Warn($"Incomplete header received ({totalBytesRead} bytes, expected 12). Connection closed.");
+          break;
+      }
+      
+      // Continue processing even if there are issues - don't stop streaming on errors
 
            switch (header[0])
   {
          case 0x7f:
-         HandleStream(header, networkStream);
-  break;
+         try
+         {
+             HandleStream(header, _networkStream!);
+         }
+         catch (Exception ex)
+         {
+             // Log error but continue streaming - don't stop on frame processing errors
+             _logs.Warn(ex, $"Error processing stream frame (type {header[1]}): {ex.Message}. Continuing...");
+         }
+         break;
 
              case 0x1f:
  _logs.Trace("Unparsed 0x1f data");
@@ -418,7 +462,8 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
    break;
 
           default:
-    _logs.Trace("Unknown data: " + header[0]);
+    _logs.Trace("Unknown data: " + header[0] + " (continuing stream)");
+           // Continue streaming even with unknown headers
            break;
         }
             }
@@ -447,7 +492,29 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
      int n = 0;
     while (n < len)
   {
-  n += networkStream.Read(frameData, n, len - n);
+          try
+          {
+              int read = networkStream.Read(frameData, n, len - n);
+              if (read == 0)
+              {
+                  // Connection closed while reading frame data
+                  _logs.Warn($"Connection closed while reading frame data (read {n} of {len} bytes). Skipping frame.");
+                  return; // Skip this frame and continue with next header
+              }
+              n += read;
+          }
+          catch (ObjectDisposedException)
+          {
+              // Stream was closed (e.g., by StopStreaming on Ctrl+C)
+              _logs.Trace("Network stream closed while reading frame data");
+              return;
+          }
+          catch (IOException)
+          {
+              // Connection was closed
+              _logs.Trace("Network connection closed while reading frame data");
+              return;
+          }
         }
 
    // Handle the received frame based on its type (I-Frame or P-Frame)
@@ -481,25 +548,23 @@ else if (streamLoginResp.V21 != 402 && streamLoginResp.V21 != 1001)
            aframe.AddRange(frameData);
         if (curFrame == totalFrame - 1)
        {
- // Write to audio.raw (matching C++ implementation)
+ // Write to audio.raw - write full frame matching C++ raw output (v380.cpp line 501)
          try
     {
-   _audioFile?.Write(aframe.ToArray(), 0, aframe.Count);
-_audioFile?.Flush();
-    _logs.Trace($"Wrote audio frame: {aframe.Count} bytes");
+   var fullFrame = aframe.ToArray();
+   // C++ raw audio output (v380.cpp line 501): fwrite(aframe.data() + 0, 1, aframe.size() - 0, stdout)
+   // Writes full frames without any header skipping for raw output
+   if (fullFrame.Length > 0)
+   {
+       _audioFile?.Write(fullFrame, 0, fullFrame.Length);
+       _audioFile?.Flush();
+       _logs.Trace($"Wrote audio frame: {fullFrame.Length} bytes (full frame, matching C++ raw output)");
+   }
 }
             catch (Exception ex)
    {
           _logs.Error(ex, "Failed to write audio frame");
      }
-
- try
- {
-        }
-     catch (Exception ex)
- {
-           _logs.Error(ex, "Failed to play audio");
-            }
      
            aframe.Clear();
          }
@@ -544,6 +609,22 @@ _audioFile?.Flush();
     catch (Exception ex)
      {
         _logs.Error(ex, "Error closing audio file");
+    }
+    
+    // Close network connection to interrupt any blocking reads
+    try
+    {
+        _networkStream?.Close();
+        _networkStream?.Dispose();
+        _networkStream = null;
+        
+        _streamClient?.Close();
+        _streamClient?.Dispose();
+        _streamClient = null;
+    }
+    catch (Exception ex)
+    {
+        _logs.Error(ex, "Error closing network connection");
     }
     }
 }
