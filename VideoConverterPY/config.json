@@ -1,9 +1,0 @@
-{
-  "LogFileName": "logfile.txt",
-  "RabbitUserName": "guest",
-  "RabbitPassword": "guest",
-  "RabbitHost": "localhost",
-  "RabbitPort": 5672,
-  "DelayBetweenFrames": 0.1,
-  "RTMPSource": "rtsp://192.168.10.120/live/ch00_1"
-}
