@@ -14,13 +14,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="NLog" Version="6.0.5" />
     <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="tts.proto" GrpcServices="Client" />
+    <Protobuf Include="stt.proto" GrpcServices="Client" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

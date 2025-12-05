@@ -15,6 +15,29 @@ namespace VoiceCreator
             {
                 string jsonConfig = File.ReadAllText("config.json");
                 config = JsonSerializer.Deserialize<Config>(jsonConfig);
+                
+                // Load Yandex credentials from separate file
+                try
+                {
+                    string yandexConfig = File.ReadAllText("yandex-credentials.json");
+                    var yandexCreds = JsonSerializer.Deserialize<Dictionary<string, string>>(yandexConfig);
+                    if (yandexCreds != null && yandexCreds.ContainsKey("ApiKey") && config != null)
+                    {
+                        config = new Config
+                        {
+                            LogFileName = config.LogFileName,
+                            RabbitUserName = config.RabbitUserName,
+                            RabbitPassword = config.RabbitPassword,
+                            RabbitHost = config.RabbitHost,
+                            RabbitPort = config.RabbitPort,
+                            YandexApiKey = yandexCreds["ApiKey"]
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine("Warning: Could not load Yandex credentials: {0}", ex.Message);
+                }
             }
             catch (Exception ex)
             {

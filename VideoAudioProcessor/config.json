@@ -1,0 +1,18 @@
+{
+  "LogFileName": "logfile.txt",
+  "RabbitUserName": "guest",
+  "RabbitPassword": "guest",
+  "RabbitHost": "localhost",
+  "RabbitPort": 5672,
+  "CameraIP": "192.168.10.120",
+  "CameraPort": 8800,
+  "CameraID": "44463380",
+  "CameraUserName": "admin",
+  "CameraPassword": "trek1976",
+  "VideoFps": 10.0,
+  "VideoWidth": 640,
+  "JpegQuality": 85,
+  "MaxAudioBufferSizeBytes": 10485760,
+  "SilenceDurationMs": 3000
+}
+

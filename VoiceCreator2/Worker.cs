@@ -56,13 +56,15 @@ namespace VoiceCreator
                 char[] chars = new char[bytes.Length / sizeof(char)];
                 Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
 
-                var httpClient = new HttpClient();
-                var openTTSClient = new OpenTTS(httpClient);
-                await openTTSClient.TtsAsync("larynx:nikolaev-glow_tts", new string(chars), Vocoder.High, 0.005, false);
-                //           openTTSClient.TtsAsync("espeak: Russian", new string(chars), null, null, false).Wait();
-                if (openTTSClient.IsSuccess)
+                if (!string.IsNullOrEmpty(_config?.YandexApiKey))
                 {
-                    await _publisher?.PublishAsync(openTTSClient.LastResponse);
+                    var yandexClient = new YandexSpeechKit(_config.YandexApiKey, 
+                        voice: "filipp", language: "ru-RU", emotion: "neutral", speed: 1.0);
+                    await yandexClient.SynthesizeAsync(new string(chars));
+                    if (yandexClient.IsSuccess)
+                    {
+                        await _publisher?.PublishAsync(yandexClient.LastResponse);
+                    }
                 }
             }
 

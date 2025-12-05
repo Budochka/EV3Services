@@ -345,3 +345,4 @@ healthchecksdb
 /EV3UIWF/Plugins
 VideoConverterPY/logfile.txt
 *.wav
+VoiceCreator2/yandex-credentials.json

@@ -7,5 +7,6 @@
         public string? RabbitPassword { get; init; }
         public string? RabbitHost { get; init; }
         public int RabbitPort { get; init; }
+        public string? YandexApiKey { get; init; }
     }
 }
