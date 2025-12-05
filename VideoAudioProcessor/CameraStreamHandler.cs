@@ -430,7 +430,17 @@ public class CameraStreamHandler
                 }
             }
 
-            if (totalBytesRead < 12) break;
+            if (totalBytesRead < 12)
+            {
+                _logs.Warn($"Incomplete header received ({totalBytesRead} bytes, expected 12). Connection closed.");
+                break;
+            }
+
+            // Only process frames with header starting with 0x7f (matching v380stream)
+            if (header[0] != 0x7f)
+            {
+                continue;
+            }
 
             try
             {
@@ -438,7 +448,8 @@ public class CameraStreamHandler
             }
             catch (Exception ex)
             {
-                _logs.Warn(ex, "Error processing stream frame");
+                // Log error but continue streaming - don't stop on frame processing errors
+                _logs.Warn(ex, $"Error processing stream frame (type {header[1]}): {ex.Message}. Continuing...");
             }
         }
 
@@ -456,6 +467,7 @@ public class CameraStreamHandler
 
         if (len > 500 || totalFrame == 0 || curFrame > totalFrame)
         {
+            _logs.Trace("Sanity check failed, should not happen");
             return;
         }
 
@@ -468,16 +480,22 @@ public class CameraStreamHandler
                 int read = await _networkStream.ReadAsync(frameData, n, len - n);
                 if (read == 0)
                 {
-                    return;
+                    // Connection closed while reading frame data
+                    _logs.Warn($"Connection closed while reading frame data (read {n} of {len} bytes). Skipping frame.");
+                    return; // Skip this frame and continue with next header
                 }
                 n += read;
             }
             catch (ObjectDisposedException)
             {
+                // Stream was closed (e.g., by StopStreaming on Ctrl+C)
+                _logs.Trace("Network stream closed while reading frame data");
                 return;
             }
             catch (IOException)
             {
+                // Connection was closed
+                _logs.Trace("Network connection closed while reading frame data");
                 return;
             }
         }
@@ -550,10 +568,13 @@ public class CameraStreamHandler
                             }
                             else
                             {
+                                // No valid header found - initialize with defaults
                                 _adpcmPredictor = 0;
                                 _adpcmStepIndex = 0;
                                 _adpcmStateInitialized = true;
                                 int outputSamples = adpcmData.Length * 2;
+                                
+                                _logs.Warn("No valid ADPCM header found in first frame, using defaults");
                                 pcmData = ImaAdpcmDecoder.Decode(adpcmData, outputSamples, true,
                                     _adpcmPredictor, _adpcmStepIndex,
                                     out _adpcmPredictor, out _adpcmStepIndex,
@@ -562,7 +583,8 @@ public class CameraStreamHandler
                         }
                         else
                         {
-                            // Subsequent frames: continue decoding
+                            // Subsequent frames: continue decoding with previous state
+                            // All bytes are raw ADPCM data (each byte = 2 samples)
                             int outputSamples = adpcmData.Length * 2;
                             pcmData = ImaAdpcmDecoder.Decode(adpcmData, outputSamples, true,
                                 _adpcmPredictor, _adpcmStepIndex,
