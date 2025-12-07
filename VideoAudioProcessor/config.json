@@ -13,6 +13,18 @@
   "VideoWidth": 640,
   "JpegQuality": 85,
   "MaxAudioBufferSizeBytes": 10485760,
-  "SilenceDurationMs": 3000
+  "EnergyThreshold": 500.0,
+  "EnergyMultiplier": 2.0,
+  "SilenceThreshold": 100.0,
+  "NoiseFloor": 200.0,
+  "MinZCR": 0.01,
+  "MaxZCR": 0.375,
+  "SpeechAutocorrelationThreshold": 0.3,
+  "MinBufferDurationMs": 500,
+  "MaxBufferDurationMs": 3000,
+  "SilenceFramesToEnd": 15,
+  "MaxSilentFrames": 30,
+  "EnableAdaptiveThreshold": true,
+  "AdaptationWindowSize": 100
 }
 

@@ -1,14 +1,15 @@
 ﻿using NLog;
 using RabbitMQ.Client.Events;
 using System.Threading.Tasks;
+using EV3Services.Common;
 
 namespace VoiceCreator
 {
     class Worker
     {
         private readonly Logger _logs;
-        private RabbitConsumer? _consumer;
-        private RabbitPublisher? _publisher;
+        private RabbitMQConsumer? _consumer;
+        private RabbitMQPublisher? _publisher;
         private readonly Config? _config;
 
         private bool _started;
@@ -22,19 +23,23 @@ namespace VoiceCreator
 
         public async Task InitializeAsync()
         {
-            _consumer = new RabbitConsumer(_logs);
-            await _consumer.ConnectToRabbitAsync(_config.RabbitUserName,
-                                              _config.RabbitPassword,
-                                              _config.RabbitHost,
-                                              _config.RabbitPort,
-                                              HandleRabbitMessageAsync);
+            _consumer = new RabbitMQConsumer(_logs);
+            await _consumer.ConnectToRabbitAsync(
+                _config.RabbitUserName,
+                _config.RabbitPassword,
+                _config.RabbitHost,
+                _config.RabbitPort,
+                HandleRabbitMessageAsync,
+                routingKeys: new[] { "voice.text" },
+                autoAck: false);
             _logs.Info("RabbitConsumer created");
 
-            _publisher = new RabbitPublisher(_logs);
-            await _publisher.ConnectToRabbitAsync(_config.RabbitUserName,
-                                              _config.RabbitPassword,
-                                              _config.RabbitHost,
-                                              _config.RabbitPort);
+            _publisher = new RabbitMQPublisher(_logs);
+            await _publisher.ConnectToRabbitAsync(
+                _config.RabbitUserName,
+                _config.RabbitPassword,
+                _config.RabbitHost,
+                _config.RabbitPort);
             _logs.Info("RabbitPublisher created");
         }
 
@@ -61,9 +66,9 @@ namespace VoiceCreator
                     var yandexClient = new YandexSpeechKit(_config.YandexApiKey, 
                         voice: "filipp", language: "ru-RU", emotion: "neutral", speed: 1.0);
                     await yandexClient.SynthesizeAsync(new string(chars));
-                    if (yandexClient.IsSuccess)
+                    if (yandexClient.IsSuccess && _publisher != null)
                     {
-                        await _publisher?.PublishAsync(yandexClient.LastResponse);
+                        await _publisher.PublishAsync("voice.wav", yandexClient.LastResponse);
                     }
                 }
             }

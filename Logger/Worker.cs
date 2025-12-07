@@ -2,13 +2,14 @@
 using Npgsql;
 using System.Linq;
 using System.Threading.Tasks;
+using EV3Services.Common;
 
 namespace Logger
 {
     class Worker
     { 
         private readonly NLog.Logger _logs;
-        private RabbitConsumer? _consumer;
+        private RabbitMQConsumer? _consumer;
         private readonly Config _config;
         private NpgsqlConnection? _connection;
 
@@ -23,12 +24,15 @@ namespace Logger
 
         public async Task InitializeAsync()
         {
-            _consumer = new RabbitConsumer(_logs);
-            await _consumer.ConnectToRabbitAsync(_config.RabbitUserName,
+            _consumer = new RabbitMQConsumer(_logs);
+            await _consumer.ConnectToRabbitAsync(
+                _config.RabbitUserName,
                 _config.RabbitPassword,
                 _config.RabbitHost,
                 _config.RabbitPort,
-                HandleRabbitMessageAsync);
+                HandleRabbitMessageAsync,
+                traceExchange: true,
+                autoAck: false);
             _logs.Info("RabbitConsumer created");
 
             _connection = new NpgsqlConnection(_config.ConnectionString);

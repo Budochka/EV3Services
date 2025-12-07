@@ -2,10 +2,10 @@
 
 public class WorldModel
 {
-    public float Distanse { get; set; } = 0;
+    public float Distance { get; set; } = 0;
 
     public void Reset()
     {
-        Distanse = 0;
+        Distance = 0;
     }
 }

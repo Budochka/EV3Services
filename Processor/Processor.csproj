@@ -13,6 +13,10 @@
     <PackageReference Include="Stateless" Version="5.20.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EV3Services.Common\EV3Services.Common.csproj" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="copy $(TargetPath) $(ProjectDir)..\Bin\$(ConfigurationName)&#xD;&#xA;copy $(ProjectDir)config.json $(TargetDir)" />
   </Target>

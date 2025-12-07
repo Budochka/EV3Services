@@ -8,20 +8,26 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        Config? config = new Config();
+        Config? config = null;
 
         // Load config file
         try
         {
             string jsonConfig = File.ReadAllText("config.json");
             config = JsonSerializer.Deserialize<Config>(jsonConfig);
+            
+            if (config == null)
+            {
+                Console.Error.WriteLine("Error: config.json is invalid or empty");
+                Environment.Exit(-1);
+            }
 
             // Load Yandex credentials from separate file
             try
             {
                 string yandexConfig = File.ReadAllText("yandex-credentials.json");
                 var yandexCreds = JsonSerializer.Deserialize<Dictionary<string, string>>(yandexConfig);
-                if (yandexCreds?.TryGetValue("ApiKey", out var apiKey) == true && config != null)
+                if (yandexCreds?.TryGetValue("ApiKey", out var apiKey) == true)
                 {
                     config = config with { YandexApiKey = apiKey };
                 }
@@ -35,10 +41,15 @@ class Program
                 Console.Error.WriteLine("Warning: Could not load Yandex credentials: {0}", ex.Message);
             }
         }
+        catch (FileNotFoundException)
+        {
+            Console.Error.WriteLine("Error: config.json not found");
+            Environment.Exit(-1);
+        }
         catch (Exception ex)
         {
-            Console.Error.WriteLine("Error while reading config file {0}", ex.Message);
-            System.Environment.Exit(-1);
+            Console.Error.WriteLine("Error while reading config file: {0}", ex.Message);
+            Environment.Exit(-1);
         }
 
         // Initialize logger
@@ -46,7 +57,7 @@ class Program
 
         var logfile = new NLog.Targets.FileTarget("logfile")
         {
-            FileName = config?.LogFileName,
+            FileName = config?.LogFileName ?? "logfile.txt",
             DeleteOldFileOnStartup = true,
             Layout = "${longdate} : ${callsite} : ${message}"
         };
@@ -67,7 +78,7 @@ class Program
         worker.Start();
         Console.WriteLine("Press Enter to exit");
         Console.ReadLine();
-        worker.Stop();
+        await worker.StopAsync();
     }
 }
 

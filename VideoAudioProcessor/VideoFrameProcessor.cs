@@ -92,9 +92,20 @@ public class VideoFrameProcessor
             try
             {
                 if (File.Exists(tempH264)) File.Delete(tempH264);
+            }
+            catch (Exception ex)
+            {
+                _logs.Trace(ex, "Failed to delete temp H264 file");
+            }
+            
+            try
+            {
                 if (File.Exists(tempJpeg)) File.Delete(tempJpeg);
             }
-            catch { /* Ignore cleanup errors */ }
+            catch (Exception ex)
+            {
+                _logs.Trace(ex, "Failed to delete temp JPEG file");
+            }
         }
     }
 }

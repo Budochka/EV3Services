@@ -24,7 +24,29 @@ public record Config
     
     // Audio processing settings
     public int MaxAudioBufferSizeBytes { get; init; } = 10 * 1024 * 1024;
-    public int SilenceDurationMs { get; init; } = 3000;
+    
+    // VAD Settings
+    public double EnergyThreshold { get; init; } = 500.0;        // RMS threshold
+    public double EnergyMultiplier { get; init; } = 2.0;         // Multiplier for adaptive threshold
+    public double SilenceThreshold { get; init; } = 100.0;       // RMS for silence
+    public double NoiseFloor { get; init; } = 200.0;            // Baseline noise level
+    
+    // Zero-Crossing Rate
+    public double MinZCR { get; init; } = 0.01;                 // Min ZCR for speech (100 crossings/sec at 8kHz)
+    public double MaxZCR { get; init; } = 0.375;                // Max ZCR for speech (3000 crossings/sec)
+    
+    // Spectral Analysis
+    public double SpeechAutocorrelationThreshold { get; init; } = 0.3; // Autocorrelation for speech
+    
+    // Buffering
+    public int MinBufferDurationMs { get; init; } = 500;        // Min audio before sending
+    public int MaxBufferDurationMs { get; init; } = 3000;       // Max buffer before forced flush
+    public int SilenceFramesToEnd { get; init; } = 15;           // Frames of silence to end speech
+    public int MaxSilentFrames { get; init; } = 30;             // Max silent frames before reset
+    
+    // Adaptive Learning
+    public bool EnableAdaptiveThreshold { get; init; } = true;  // Learn noise floor
+    public int AdaptationWindowSize { get; init; } = 100;       // Frames for adaptation
     
     // Yandex API key (loaded from separate file)
     public string? YandexApiKey { get; init; }

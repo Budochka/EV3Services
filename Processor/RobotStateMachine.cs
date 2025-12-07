@@ -31,19 +31,16 @@ class RobotStateMachine
 
         _stateMachine.Configure(State.DirectControl)
             .OnEntry(StartDirectControl)
-            .OnExit(StopDirectControl)
             .Permit(_explore, State.Explore)
             .Permit(_greet, State.Greeting);
 
         _stateMachine.Configure(State.Explore)
             .OnEntry(StartExplore)
-            .OnExit(StopExplore)
             .Permit(_direct, State.DirectControl)
             .Permit(_greet, State.Greeting);
 
         _stateMachine.Configure(State.Greeting)
             .OnEntry(StartGreeting)
-            .OnExit(StopGreeting)
             .Permit(_explore, State.Explore)
             .Permit(_direct, State.DirectControl);
     }
@@ -60,13 +57,9 @@ class RobotStateMachine
 
     public void StartDirectControl()
     {
-        _logs.Info("State changed to DirectCoontrol");
+        _logs.Info("State changed to DirectControl");
 
         ClearAll();
-    }
-
-    public void StopDirectControl()
-    {
     }
 
     public void StartGreeting()
@@ -76,10 +69,6 @@ class RobotStateMachine
         ClearAll();
     }
 
-    public void StopGreeting()
-    {
-    }
-
     public void StartExplore()
     {
         _logs.Info("State changed to Explore");
@@ -87,8 +76,5 @@ class RobotStateMachine
         ClearAll();
     }
 
-    public void StopExplore()
-    {
-
-    }
+    public WorldModel WorldModel => _worldModel;
 }

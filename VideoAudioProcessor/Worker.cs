@@ -12,13 +12,16 @@ class Worker
     private CameraStreamHandler? _cameraStream;
     private VideoFrameProcessor? _videoProcessor;
     private YandexSpeechRecognizer? _speechRecognizer;
+    private AudioPreProcessor? _audioPreProcessor;
     
     private bool _started = false;
     private DateTime _lastVideoFrameTime = DateTime.MinValue;
     private readonly TimeSpan _videoFrameInterval;
     
-    // Audio buffering for speech recognition (Yandex streaming handles silence, but we track for buffer limits)
-    private long _audioBufferSize = 0;
+    // Statistics tracking (thread-safe using Interlocked)
+    private long _totalAudioFrames = 0;
+    private long _filteredAudioFrames = 0;
+    private long _apiCalls = 0;
 
     public Worker(Logger log, Config? config)
     {
@@ -29,8 +32,6 @@ class Worker
 
     public async Task InitializeAsync()
     {
-        if (_config == null) return;
-
         // Initialize RabbitMQ publisher
         _publisher = new RabbitMQPublisher(_logs, _config);
         var connected = await _publisher.ConnectAsync();
@@ -45,11 +46,18 @@ class Worker
         _videoProcessor = new VideoFrameProcessor(_logs, _config.VideoWidth, _config.JpegQuality);
         _logs.Info("Video processor initialized");
 
+        // Initialize audio pre-processor (VAD, silence/noise filtering)
+        _audioPreProcessor = new AudioPreProcessor(_logs, _config);
+        _audioPreProcessor.SpeechDetected += (s, data) => _ = OnSpeechDetectedAsync(s, data);
+        _audioPreProcessor.SilenceDetected += OnSilenceDetected;
+        _audioPreProcessor.NoiseDetected += OnNoiseDetected;
+        _logs.Info("Audio pre-processor initialized");
+
         // Initialize speech recognizer if API key available
         if (!string.IsNullOrEmpty(_config.YandexApiKey))
         {
             _speechRecognizer = new YandexSpeechRecognizer(_logs, _config.YandexApiKey, "ru-RU");
-            _speechRecognizer.TextRecognized += OnTextRecognized;
+            _speechRecognizer.TextRecognized += (s, text) => _ = OnTextRecognizedAsync(s, text);
             await _speechRecognizer.StartRecognitionAsync();
             _logs.Info("Speech recognizer initialized");
         }
@@ -60,7 +68,7 @@ class Worker
 
         // Initialize camera stream handler
         _cameraStream = new CameraStreamHandler(_logs, _config);
-        _cameraStream.VideoFrameReceived += OnVideoFrameReceived;
+        _cameraStream.VideoFrameReceived += (s, data) => _ = OnVideoFrameReceivedAsync(s, data);
         _cameraStream.AudioFrameReceived += OnAudioFrameReceived;
         
         var cameraConnected = await _cameraStream.ConnectAsync();
@@ -75,21 +83,55 @@ class Worker
     public void Start()
     {
         _started = true;
-        if (_cameraStream != null)
-        {
-            _ = _cameraStream.StartStreamingAsync();
-        }
+        _ = _cameraStream?.StartStreamingAsync();
     }
 
-    public void Stop()
+    public async Task StopAsync()
     {
         _started = false;
         _cameraStream?.StopStreaming();
-        _speechRecognizer?.StopRecognitionAsync().Wait(1000);
+        
+        // Flush any remaining audio in buffer
+        _audioPreProcessor?.Flush();
+        
+        // Stop speech recognizer with timeout
+        if (_speechRecognizer != null)
+        {
+            try
+            {
+                await _speechRecognizer.StopRecognitionAsync().WaitAsync(TimeSpan.FromSeconds(1));
+            }
+            catch (TimeoutException)
+            {
+                _logs.Warn("Timeout stopping speech recognizer");
+            }
+            catch (Exception ex)
+            {
+                _logs.Warn(ex, "Error stopping speech recognizer");
+            }
+        }
+        
+        // Dispose camera stream handler
+        if (_cameraStream != null)
+        {
+            await _cameraStream.DisposeAsync();
+        }
+        
         _publisher?.Disconnect();
+        
+        // Log statistics (thread-safe reads)
+        var total = Interlocked.Read(ref _totalAudioFrames);
+        var filtered = Interlocked.Read(ref _filteredAudioFrames);
+        var apiCalls = Interlocked.Read(ref _apiCalls);
+        
+        if (total > 0)
+        {
+            double filterRate = (filtered / (double)total) * 100.0;
+            _logs.Info($"Audio processing stats: Total frames: {total}, Filtered: {filtered} ({filterRate:F1}%), API calls: {apiCalls}");
+        }
     }
 
-    private async void OnVideoFrameReceived(object? sender, byte[] h264Frame)
+    private async Task OnVideoFrameReceivedAsync(object? sender, byte[] h264Frame)
     {
         if (!_started || _videoProcessor == null || _publisher == null) return;
 
@@ -111,27 +153,20 @@ class Worker
         }
         catch (Exception ex)
         {
-            _logs.Warn(ex, "Failed to process video frame");
+            _logs.Error(ex, "Failed to process video frame");
         }
     }
 
-    private async void OnAudioFrameReceived(object? sender, byte[] pcmData)
+    private void OnAudioFrameReceived(object? sender, byte[] pcmData)
     {
-        if (!_started || _speechRecognizer == null || pcmData.Length == 0) return;
+        if (!_started || _audioPreProcessor == null || pcmData.Length == 0) return;
 
         try
         {
-            // Check buffer size limit (simple counter, Yandex streaming handles actual buffering)
-            if (_audioBufferSize + pcmData.Length > _config.MaxAudioBufferSizeBytes)
-            {
-                _logs.Warn("Audio buffer size limit reached, skipping chunk");
-                return;
-            }
-
-            _audioBufferSize += pcmData.Length;
-
-            // Send to speech recognizer (streaming mode handles silence detection automatically)
-            await _speechRecognizer.AddAudioChunkAsync(pcmData);
+            Interlocked.Increment(ref _totalAudioFrames);
+            
+            // Process through audio pre-processor (VAD, silence/noise filtering)
+            _audioPreProcessor.ProcessAudioFrame(pcmData);
         }
         catch (Exception ex)
         {
@@ -139,7 +174,48 @@ class Worker
         }
     }
 
-    private async void OnTextRecognized(object? sender, string text)
+    private async Task OnSpeechDetectedAsync(object? sender, byte[] audioData)
+    {
+        if (!_started || _speechRecognizer == null || audioData.Length == 0) return;
+
+        try
+        {
+            // Check buffer size limit
+            if (audioData.Length > _config.MaxAudioBufferSizeBytes)
+            {
+                _logs.Warn($"Audio buffer size limit exceeded ({audioData.Length} bytes), skipping");
+                return;
+            }
+
+            Interlocked.Increment(ref _apiCalls);
+            
+            // Send batched audio to speech recognizer
+            // Yandex streaming API handles large chunks internally
+            await _speechRecognizer.AddAudioChunkAsync(audioData);
+            
+            _logs.Trace($"Sent {audioData.Length} bytes of speech audio to Yandex API");
+        }
+        catch (Exception ex)
+        {
+            _logs.Error(ex, "Failed to send speech audio to recognizer");
+        }
+    }
+
+    private void OnSilenceDetected(object? sender, EventArgs e)
+    {
+        if (!_started) return;
+        Interlocked.Increment(ref _filteredAudioFrames);
+        _logs.Trace("Silence detected, filtered");
+    }
+
+    private void OnNoiseDetected(object? sender, EventArgs e)
+    {
+        if (!_started) return;
+        Interlocked.Increment(ref _filteredAudioFrames);
+        _logs.Trace("White noise detected, filtered");
+    }
+
+    private async Task OnTextRecognizedAsync(object? sender, string text)
     {
         if (!_started || _publisher == null || string.IsNullOrWhiteSpace(text)) return;
 
@@ -150,7 +226,7 @@ class Worker
         }
         catch (Exception ex)
         {
-            _logs.Warn(ex, "Failed to publish recognized text");
+            _logs.Error(ex, "Failed to publish recognized text");
         }
     }
 }

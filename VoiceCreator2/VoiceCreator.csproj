@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EV3Services.Common\EV3Services.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="tts.proto" GrpcServices="Client" />
   </ItemGroup>
 

@@ -2,14 +2,15 @@
 using NLog;
 using RabbitMQ.Client.Events;
 using System.Threading.Tasks;
+using EV3Services.Common;
 
 namespace EV3UIWF
 {
     class Worker
     { 
         private readonly Logger _logs;
-        private RabbitConsumer _consumer;
-        private RabbitPublisher _publisher;
+        private RabbitMQConsumer _consumer;
+        private RabbitMQPublisher _publisher;
         private readonly Config _config;
 
         private bool _started;
@@ -27,19 +28,23 @@ namespace EV3UIWF
 
         public async Task InitializeAsync()
         {
-            _consumer = new RabbitConsumer(_logs);
-            await _consumer.ConnectToRabbitAsync(_config.RabbitUserName,
-                                      _config.RabbitPassword,
-                                      _config.RabbitHost,
-                                      _config.RabbitPort,
-                                      HandleRabbitMessageAsync);
+            _consumer = new RabbitMQConsumer(_logs);
+            await _consumer.ConnectToRabbitAsync(
+                _config.RabbitUserName,
+                _config.RabbitPassword,
+                _config.RabbitHost,
+                _config.RabbitPort,
+                HandleRabbitMessageAsync,
+                routingKeys: new[] { "images.general" },
+                autoAck: true);
             _logs.Info("RabbitConsumer created");
 
-            _publisher = new RabbitPublisher(_logs);
-            await _publisher.ConnectToRabbitAsync(_config.RabbitUserName,
-                                      _config.RabbitPassword,
-                                      _config.RabbitHost,
-                                      _config.RabbitPort);
+            _publisher = new RabbitMQPublisher(_logs);
+            await _publisher.ConnectToRabbitAsync(
+                _config.RabbitUserName,
+                _config.RabbitPassword,
+                _config.RabbitHost,
+                _config.RabbitPort);
             _logs.Info("RabbitPublisher created");
         }
 
@@ -61,11 +66,9 @@ namespace EV3UIWF
         private async Task HandleRabbitMessageAsync(object sender, BasicDeliverEventArgs args)
         {
             var bytes = args.Body.ToArray();
-            if ((bytes.Length > 0) && _started)
+            if (bytes.Length > 0 && _started)
             {
-                var buffer = new byte[bytes.Length / sizeof(byte)];
-                Buffer.BlockCopy(bytes, 0, buffer, 0, bytes.Length);
-                Notify?.Invoke(args.RoutingKey, buffer);
+                Notify?.Invoke(args.RoutingKey, bytes);
             }
 
             var ec = (AsyncEventingBasicConsumer)sender;

@@ -54,7 +54,9 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
   - `DistanceHandler`: Processes ultrasonic sensor data
   - `FacesHanler`: Processes face detection/recognition results
   - `StateHandler`: Manages robot state transitions
-- **Routing Keys**: Consumes from multiple keys, publishes movement commands
+- **Routing Keys**:
+  - Consumes: `sensors.*` (touch, distance, color), `state.*` (direct, explore, greet), `text.speech`, `text.face_name`
+  - Publishes: `voice.text`, `movement.turn`, `movement.distance`, `movement.headturn`
 
 #### 2. **EV3Handler2** (Python 3.11)
 - **Purpose**: Direct interface to LEGO EV3 hardware
@@ -73,10 +75,11 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
 #### 3. **Logger** (C# .NET 8.0)
 - **Purpose**: Centralized event logging to database
 - **Responsibilities**:
-  - Consumes all RabbitMQ messages
-  - Stores events in MySQL database
+  - Consumes all RabbitMQ messages via Firehose Tracer
+  - Stores events in PostgreSQL database
   - Provides audit trail for robot operations
-- **Database**: MySQL with `Events` table (Time, Topic, Data)
+- **Database**: PostgreSQL with `Events` table (Time, Topic, Data)
+- **Routing Keys**: Consumes all messages via `amq.rabbitmq.trace` exchange (non-consuming logging)
 
 ### Computer Vision Services
 
@@ -109,7 +112,7 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
   - Compares faces against known database
 - **Routing Keys**:
   - Consumes: `images.face`
-  - Publishes: Recognition results
+  - Publishes: `text.face_name` (recognized face name)
 
 #### 7. **v380stream** (C# .NET 8.0)
 - **Purpose**: V380 IP camera stream capture utility
@@ -128,7 +131,7 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
   - Supports Russian language (`filipp` voice)
   - Publishes audio to RabbitMQ
 - **Routing Keys**:
-  - Consumes: Text messages
+  - Consumes: `voice.text` (text messages to synthesize)
   - Publishes: `voice.wav` (audio data)
 
 ### User Interface
@@ -140,6 +143,9 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
   - Plugin system for extensibility
   - Real-time message monitoring
   - Command publishing to RabbitMQ
+- **Routing Keys**:
+  - Consumes: `images.general` (for display)
+  - Publishes: `voice.text`, `movement.turn`, `movement.distance`, `movement.headturn`, `state.direct`, `state.explore`, `state.greet`
 - **Plugins**: Python scripts in `Plugins/` folder
 
 ### Legacy Services
@@ -161,16 +167,21 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
 
 | Routing Key | Publisher | Consumer | Content |
 |-------------|-----------|----------|---------|
-| `images.general` | VideoAudioProcessor | FaceDetector, Logger | JPEG image bytes |
+| `voice.text` | Processor, EV3UIWF | VoiceCreator2, Logger | UTF-16 text (to synthesize) |
+| `voice.wav` | VoiceCreator2 | EV3Handler2, Logger | WAV audio bytes |
+| `images.general` | VideoAudioProcessor | FaceDetector, EV3UIWF, Logger | JPEG image bytes |
 | `images.face` | FaceDetector | FaceRecognizer, Logger | JPEG face image bytes |
 | `text.speech` | VideoAudioProcessor | Processor, Logger | UTF-8 text (recognized speech) |
-| `voice.wav` | VoiceCreator2 | EV3Handler2, Logger | WAV audio bytes |
-| `movement.turn` | Processor, EV3UIWF | EV3Handler2 | Movement command (turn) |
-| `movement.distance` | Processor, EV3UIWF | EV3Handler2 | Movement command (forward/back) |
-| `movement.headturn` | Processor, EV3UIWF | EV3Handler2 | Head rotation command |
+| `text.face_name` | FaceRecognizer | Processor, Logger | UTF-8 text (recognized face name) |
+| `movement.turn` | Processor, EV3UIWF | EV3Handler2, Logger | Movement command (turn) |
+| `movement.distance` | Processor, EV3UIWF | EV3Handler2, Logger | Movement command (forward/back) |
+| `movement.headturn` | Processor, EV3UIWF | EV3Handler2, Logger | Head rotation command |
 | `sensors.touch` | EV3Handler2 | Processor, Logger | Touch sensor state |
 | `sensors.distance` | EV3Handler2 | Processor, Logger | Ultrasonic distance (cm) |
 | `sensors.color` | EV3Handler2 | Processor, Logger | Color sensor data |
+| `state.direct` | EV3UIWF | Processor, Logger | State command (direct control) |
+| `state.explore` | EV3UIWF | Processor, Logger | State command (explore mode) |
+| `state.greet` | EV3UIWF | Processor, Logger | State command (greeting mode) |
 
 ## Technology Stack
 
@@ -188,12 +199,12 @@ EV3Services is a message-driven robotics platform that orchestrates multiple ser
 - **ev3dev2**: LEGO EV3 Python library
 - **Yandex SpeechKit**: Speech recognition and synthesis
 - **FFmpeg**: Video/audio processing
-- **MySQL**: Event logging database
+- **PostgreSQL**: Event logging database
 
 ### External Services
 
 - **RabbitMQ**: Message broker (required)
-- **MySQL**: Database for logging (required)
+- **PostgreSQL**: Database for logging (required)
 - **Yandex SpeechKit API**: Speech processing (optional)
 - **FFmpeg**: Video processing (required for VideoAudioProcessor)
 
@@ -241,11 +252,16 @@ EV3Services/
    - Download from https://www.rabbitmq.com/download.html
    - Start RabbitMQ server
 
-3. **Setup MySQL Database**:
+3. **Setup PostgreSQL Database**:
+   ```powershell
+   cd Database
+   .\create_database.ps1 -DbHost "storage2" -AdminUser "admin" -AdminPassword "your_password"
+   ```
+   Or manually:
    ```sql
    CREATE DATABASE ev3;
-   USE ev3;
-   SOURCE Database/ev3.sql;
+   \c ev3
+   \i ev3_postgresql.sql
    ```
 
 4. **Configure Services**:
@@ -380,11 +396,11 @@ Services using Yandex SpeechKit require a separate credentials file:
 ```
 User Input (EV3UIWF)
     ↓
-    Publishes: text message
+    Publishes: voice.text
     ↓
 VoiceCreator2
     ↓
-    Consumes: text
+    Consumes: voice.text
     Synthesizes: WAV audio
     Publishes: voice.wav
     ↓
@@ -412,11 +428,11 @@ FaceRecognizer
     ↓
     Consumes: images.face
     Recognizes: Known faces
-    Publishes: Recognition result
+    Publishes: text.face_name
     ↓
 Processor
     ↓
-    Consumes: Recognition result
+    Consumes: text.face_name
     Updates: World model
     Decides: Robot action
 ```

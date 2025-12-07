@@ -6,7 +6,7 @@ using NAudio.Wave;
 
 namespace VideoAudioProcessor;
 
-public class CameraStreamHandler
+public class CameraStreamHandler : IAsyncDisposable
 {
     private readonly Logger _logs;
     private readonly Config _config;
@@ -611,6 +611,23 @@ public class CameraStreamHandler
             _streamClient?.Close();
         }
         catch { }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        StopStreaming();
+        
+        if (_networkStream != null)
+        {
+            await _networkStream.DisposeAsync();
+            _networkStream = null;
+        }
+        
+        if (_streamClient != null)
+        {
+            _streamClient.Dispose();
+            _streamClient = null;
+        }
     }
 }
 
