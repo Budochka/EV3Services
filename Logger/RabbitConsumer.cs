@@ -58,18 +58,21 @@ namespace Logger
                 return false;
             }
 
-            //declaring exchange 
-            await _channel.ExchangeDeclareAsync(exchange: "EV3", type: "topic", autoDelete: true);
-            _logs.Info("Exchange created");
-
+            // Connect to RabbitMQ Firehose Tracer exchange
+            // amq.rabbitmq.trace is a built-in internal exchange that receives copies of all messages
+            // when tracing is enabled (rabbitmqctl trace_on)
+            // Trace routing keys: "publish.exchange.routing_key" or "deliver.queue.routing_key"
             var queueDeclareResult = await _channel.QueueDeclareAsync();
             var queueName = queueDeclareResult.QueueName;
-            await _channel.QueueBindAsync(queue: queueName, exchange: "EV3", routingKey: "#");
-            _logs.Info("Queue binding complete");
+            
+            // Bind to trace exchange - this exchange already exists (internal, durable)
+            // We don't need to declare it, just bind to it
+            await _channel.QueueBindAsync(queue: queueName, exchange: "amq.rabbitmq.trace", routingKey: "#");
+            _logs.Info("Queue bound to amq.rabbitmq.trace exchange (Firehose Tracer)");
 
             var consumer = new AsyncEventingBasicConsumer(_channel);
             consumer.ReceivedAsync += ev;
-            await _channel.BasicConsumeAsync(queue: queueName, autoAck: true, consumer: consumer);
+            await _channel.BasicConsumeAsync(queue: queueName, autoAck: false, consumer: consumer);
 
             _logs.Info("Event handler set");
 

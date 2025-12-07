@@ -2,7 +2,8 @@
   "LogFileName": "logfile.txt",
   "RabbitUserName": "guest",
   "RabbitPassword": "guest",
-  "RabbitHost": "storage2",
+  "RabbitHost": "localhost",
   "RabbitPort": 5672,
   "ConnectionString": "Host=storage2;Port=5432;Username=ev3;Password=ev3;Database=ev3"
 }
+
