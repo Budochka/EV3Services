@@ -1,19 +1,14 @@
 -- PostgreSQL schema for EV3 Services Logger
 -- Optimized for logging with proper indexes and data types
-
-CREATE DATABASE ev3
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'en_US.utf8'
-    LC_CTYPE = 'en_US.utf8'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
-
-\c ev3
+--
+-- Usage:
+--   1. Manual: Connect to ev3 database first, then run: psql -d ev3 -f ev3_postgresql.sql
+--   2. Automated: Use create_database.ps1 (handles database creation and runs this file)
+--
+-- Note: This file can be run multiple times safely (uses IF NOT EXISTS where possible)
 
 -- Events table with optimized schema
-CREATE TABLE Events (
+CREATE TABLE IF NOT EXISTS Events (
     ID SERIAL PRIMARY KEY,
     Time TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     Topic VARCHAR(255) NOT NULL,
@@ -23,14 +18,14 @@ CREATE TABLE Events (
 );
 
 -- Indexes for fast queries
-CREATE INDEX idx_events_time ON Events(Time DESC);  -- DESC for recent-first queries
-CREATE INDEX idx_events_topic ON Events(Topic);
-CREATE INDEX idx_events_created ON Events(CreatedAt DESC);
-CREATE INDEX idx_events_topic_time ON Events(Topic, Time DESC);  -- Composite for topic + time queries
+CREATE INDEX IF NOT EXISTS idx_events_time ON Events(Time DESC);  -- DESC for recent-first queries
+CREATE INDEX IF NOT EXISTS idx_events_topic ON Events(Topic);
+CREATE INDEX IF NOT EXISTS idx_events_created ON Events(CreatedAt DESC);
+CREATE INDEX IF NOT EXISTS idx_events_topic_time ON Events(Topic, Time DESC);  -- Composite for topic + time queries
 
 -- Full-text search index on Topic (for searching routing keys)
 -- Note: For full-text search on binary data content, consider extracting text metadata
-CREATE INDEX idx_events_topic_gin ON Events USING GIN (to_tsvector('english', Topic));
+CREATE INDEX IF NOT EXISTS idx_events_topic_gin ON Events USING GIN (to_tsvector('english', Topic));
 
 -- Partitioning by month (optional, for very high volume)
 -- Uncomment if you expect millions of events per month
@@ -51,6 +46,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger to auto-calculate DataSize
+DROP TRIGGER IF EXISTS trigger_set_data_size ON Events;
 CREATE TRIGGER trigger_set_data_size
     BEFORE INSERT OR UPDATE ON Events
     FOR EACH ROW
